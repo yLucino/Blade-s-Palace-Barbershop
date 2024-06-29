@@ -1,0 +1,38 @@
+.header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: var(--color-BlueDark);
+  color: var(--color-GoldenLight);
+  text-transform: uppercase;
+  font-weight: 600 ;
+  font-size: 13px;
+}
+
+.info-open-establishment p, a {
+  display: flex;
+  align-items: center;
+}
+
+.info-open-establishment span {
+  margin-right: 20px;
+  color: var(--color-Golden);
+}
+
+.info-location-numberPhone ul{
+  display: flex;
+}
+
+.info-location-numberPhone ul li {
+  display: flex;
+  margin-left: 40px;
+  align-items: center;
+}
+
+.bx {
+  color: var(--color-Golden);
+  font-size: 25px;
+  margin-right: 5px;
+}
+
