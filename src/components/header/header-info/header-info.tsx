@@ -1,5 +1,8 @@
 import './header-info-style.css'
+import './header-info-responsive.css'
 
+
+// Script TSX
 const daysNotWorking: string[] = ['Dom', 'Seg']
 const hoursDayWorkingWeek: number[] = [9, 19.3]
 const hoursDayWorkingWeeked: number[] = [8, 18.3]
@@ -66,13 +69,10 @@ function activityCheckWork(dayName: string) {
         return <span>Estámos fechados</span>
       }
     }
-
-    
-    
-
   }
 }
 
+// HTML TSX
 const HeaderInfo = () => {
   return (
     <>

@@ -1,0 +1,31 @@
+
+@media (max-width: 750px) {
+  .header-info {
+    flex-direction: column;
+    padding: 10px 10px;
+  }
+  
+  .info-open-establishment {
+    margin-bottom: 10px;
+  }
+  
+  .info-location-numberPhone {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  
+  .info-location-numberPhone ul li {
+    margin-right: 15px;
+  }
+  
+  .info-location-numberPhone ul li {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .info-location-numberPhone {
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+}
