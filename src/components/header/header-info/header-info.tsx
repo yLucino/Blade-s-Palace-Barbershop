@@ -1,14 +1,13 @@
 import './header-info-style.css'
 
-// const daysNotWorking: string[] = ['Dom', 'Seg']
-// const hoursDayWorkingWeek: number[] = [9, 19.3]
-// const hoursDayWorkingWeeked: number[] = [8, 18.3]
+const daysNotWorking: string[] = ['Dom', 'Seg']
+const hoursDayWorkingWeek: number[] = [9, 19.3]
+const hoursDayWorkingWeeked: number[] = [8, 18.3]
 
 function getDayName(date: Date): string {
-  const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+  const daysOfWeek = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
   const dayIndex = date.getDay();
-
-  const day = daysOfWeek[dayIndex + 1];
+  const day = daysOfWeek[dayIndex];
   return day
 }
 
@@ -21,21 +20,57 @@ function serviceSituation() {
 
   if (month < 10) {
     const mes = "0" + `${month}`
-    const dayOfYear = `${year}-${mes}-${day}` 
-
+    const dayOfYear = `${year}-${mes}-${day}`       
     const date = new Date(dayOfYear)
     const dayName = getDayName(date)
-    return <span>{dayName}</span>
+    
+    return activityCheckWork(dayName)
   } else {
     const dayOfYear = `${year}-${month}-${day}` 
-    console.log(dayOfYear);
-
-
     const date = new Date(dayOfYear)
     const dayName = getDayName(date)
-    return <span>{dayName}</span>
-  }
 
+    return activityCheckWork(dayName)
+  } 
+}
+
+function activityCheckWork(dayName: string) {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const hoursNow = hours + (minutes / 100);
+
+  if (dayName == daysNotWorking[0] || dayName == daysNotWorking[1]) {
+    //Dom e Seg
+    return <span>Estámos fechados</span>
+  } 
+  else {
+    //Ter a Sáb
+    if (dayName == 'Sáb') {
+      //const hoursDayWorkingWeeked: number[] = [8, 18.3] (Sáb)
+      if (hoursNow >= hoursDayWorkingWeeked[0] && hoursNow <= hoursDayWorkingWeeked[1]) {
+        //('Sáb entre 8h e 18h30');
+        return <span>Estámos abertos</span>
+      } else {
+        //('Sab antes/depois das 8h e 18h30');
+        return <span>Estámos fechados</span>
+      }
+    } else {
+      // ter a sex
+      //const hoursDayWorkingWeek: number[] = [9, 19.3] (ter a sex)
+      if (hoursNow >= hoursDayWorkingWeek[0] && hoursNow <= hoursDayWorkingWeek[1]) {
+        //('ter a sex entre 9h e 19h30');
+        return <span>Estámos abertos</span>
+      } else {
+        //('ter a sex antes/depois das 9h e 19h30');
+        return <span>Estámos fechados</span>
+      }
+    }
+
+    
+    
+
+  }
 }
 
 const HeaderInfo = () => {
@@ -43,7 +78,7 @@ const HeaderInfo = () => {
     <>
       <div className='header-info'>
         <div className='info-open-establishment'>
-          <p title='09:00h as 19:30h | Sáb: 08:00h as 18:30h'>
+          <p title='Ter a Sex: 09:00h as 19:30h | Sáb: 08:00h as 18:30h'>
             {serviceSituation()}
             <i className='bx bx-time-five' ></i>
             ter a sáb
