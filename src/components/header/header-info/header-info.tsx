@@ -45,7 +45,7 @@ function activityCheckWork(dayName: string) {
 
   if (dayName == daysNotWorking[0] || dayName == daysNotWorking[1]) {
     //Dom e Seg
-    return <span>Estámos fechados</span>
+    return <span>Estamos fechados</span>
   } 
   else {
     //Ter a Sáb
@@ -88,13 +88,13 @@ const HeaderInfo = () => {
           <ul>
             <li className='location'>
               <a href="https://www.google.com/maps/dir//Blade’s+Palace+Barbershop+-+R.+Frederico+Jensen,+3020+-+Sala+-+02+-+Itoupavazinha,+Blumenau+-+SC,+89066-302/@-26.8554769,-49.1192545,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x94df1fb391f09bcb:0x36446ac4e6ea704b!2m2!1d-49.1144909!2d-26.8554769?entry=ttu" target='_blank'>
-                <i className='bx bx-map' ></i>
+                <i className='bx bx-map bx-tada-hover' ></i>
                 <p title='CEP: 89066-302'>Nrº 3020 | Rua Frederico Jensen</p>
               </a>
             </li>
             <li className='numberPhone'>
               <a href="http://wa.me/5547997085848" target='_blank'>
-                <i className='bx bx-phone'></i>
+                <i className='bx bx-phone bx-tada-hover'></i>
                 <p>(47) 99708-5848</p>
               </a>
             </li>

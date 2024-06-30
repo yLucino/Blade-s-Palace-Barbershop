@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
+  padding: 10px 50px;
   background-color: var(--color-BlueDark);
   color: var(--color-GoldenLight);
   text-transform: uppercase;

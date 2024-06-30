@@ -1,4 +1,10 @@
 
+@media (max-width: 860px) {
+  .header-info {
+    padding: 10px 20px;
+  }
+} 
+
 @media (max-width: 750px) {
   .header-info {
     flex-direction: column;
