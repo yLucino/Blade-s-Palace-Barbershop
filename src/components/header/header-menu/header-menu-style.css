@@ -1,9 +1,10 @@
 .header-menu {
-  background-color: aqua;
   display: flex;
+  background-color: var(--color-BlueDark);
   justify-content: space-between;
   padding: 10px 40px;
   align-items: center;
+  position: relative;
 }
 
 .box-logo .logo {
@@ -24,11 +25,14 @@
 }
 
 .box-nav-services nav ul li {
-  margin-left: 40px;
-  margin-right: 10px;
+  margin-left: 20px;
+  transition: .2s;
 }
 
-.box-nav-services nav ul li:hover, 
-.box-nav-menu nav ul li:hover {
-  border-bottom: 1px solid var(--color-Golden);
+.box-nav-services nav ul li a{
+  margin: 15px;
+}
+
+.bx-user, .bx-cog {
+  color: var(--color-Goldenlight);
 }

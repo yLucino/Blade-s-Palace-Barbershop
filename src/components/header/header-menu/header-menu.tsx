@@ -2,7 +2,15 @@ import './header-menu-style.css';
 import './header-menu-responsive.css';
 import logoImage from '../../../assets/image/penteado.png';
 
+import { useState } from 'react';
+
+
 const HeaderMenu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <>
       <div className='header-menu'>
@@ -33,19 +41,23 @@ const HeaderMenu = () => {
         <div className='box-nav-services'>
           <nav>
             <ul>
-              <li>
+              <li className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                <div className="bar1"></div>
+                <div className="bar2"></div>
+                <div className="bar3"></div>
+              </li>
+              <li className={`menu-content ${isOpen ? 'open' : ''}`}>
                 <a href="#login">
                   <i className='bx bx-user'></i>
                   Login
                 </a>
-              </li>
-              <li>
+
                 <a href="#administrador">
                   <i className='bx bx-cog'></i>
                   Administrador
-                </a>
                 {/* fazer area para administrado(isaque), 
                 bloqueado com usuario e senha */}
+                </a>
               </li>
             </ul>
           </nav>
