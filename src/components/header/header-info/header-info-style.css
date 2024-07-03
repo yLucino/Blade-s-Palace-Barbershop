@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 50px;
-  background-color: var(--color-BlueDark);
+  background: var(--color-BlueDark);
   color: var(--color-GoldenLight);
   text-transform: uppercase;
   font-weight: 600 ;
@@ -17,7 +17,6 @@
 
 .info-open-establishment span {
   margin-right: 20px;
-  color: var(--color-Golden);
 }
 
 .info-location-numberPhone ul{

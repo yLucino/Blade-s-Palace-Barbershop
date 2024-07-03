@@ -1,9 +1,7 @@
 import './header-menu-style.css';
 import './header-menu-responsive.css';
 import logoImage from '../../../assets/image/penteado.png';
-
 import { useState } from 'react';
-
 
 const HeaderMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +13,9 @@ const HeaderMenu = () => {
     <>
       <div className='header-menu'>
         <div className='box-logo'>
-          <img className='logo' src={logoImage} alt="logo" />
+          <a href="#">
+            <img className='logo' src={logoImage} alt="logo" />
+          </a>
         </div>
         <div className='box-nav-menu'>
           <nav>

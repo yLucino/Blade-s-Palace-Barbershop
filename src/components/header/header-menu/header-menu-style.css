@@ -1,10 +1,11 @@
 .header-menu {
   display: flex;
-  background-color: var(--color-BlueDark);
+  background: transparent;
   justify-content: space-between;
+  width: 100%;
   padding: 10px 40px;
   align-items: center;
-  position: relative;
+  position: absolute;
 }
 
 .box-logo .logo {

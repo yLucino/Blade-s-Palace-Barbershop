@@ -1,0 +1,112 @@
+.home {
+  background-color: #00000051;
+  height: 100vh;
+}
+
+.backgroundImg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+}
+
+.home-content-text {
+  padding: 160px 50px 0 50px;
+}
+
+.home-content-text h1 {
+  font-size: 42px;
+  color: var(--color-GoldenLight);
+  font-family: "Anton SC";
+  font-weight: 400;
+  letter-spacing: 5px;
+  text-shadow: 0 0 40px rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
+
+.home-content-text h2 {
+  color: var(--color-GoldenDark);
+  font-size: 25px;
+  font-family: "Anton SC";
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.home-content-text p {
+  color: var(--color-GoldenLight);
+  width: 500px;
+  font-size: 14px;
+  font-weight: 100;
+  margin-bottom: 20px;
+  line-height: 25px;
+}
+
+.nav-home-buttons {
+  margin: 40px 50px;
+}
+
+.nav-home-buttons nav ul {
+  display: flex;
+}
+
+.nav-home-buttons nav ul li {
+  margin-right: 20px;
+}
+
+.nav-home-buttons nav ul li button { 
+  padding: 15px;
+  width: 157px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.nav-home-buttons nav ul li.btn-book-haircut button{
+  background: var(--color-GoldenDark);
+  color: var(--color-GoldenLight);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid var(--color-GoldenDark);
+  box-shadow: 0 0 10px var(--color-GoldenDark);
+  transition: .2s;
+}
+
+.nav-home-buttons nav ul li.btn-book-haircut button:hover {
+  box-shadow: none;
+}
+
+.nav-home-buttons nav ul li.btn-to-schedule button{
+  background: #0000005b;
+  color: var(--color-GoldenDark);
+  border: 1px solid var(--color-GoldenDark);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.nav-home-buttons nav ul li.btn-to-schedule button:hover{
+  box-shadow: inset 0 0 10px var(--color-GoldenDark);
+}
+
+.nav-home-social {
+  margin: 70px 0 0 50px;
+}
+
+.nav-home-social ul{
+  display: flex;
+}
+
+.nav-home-social ul li i{
+  margin-right: 20px;
+  padding: 5px;
+  background: var(--color-GoldenDark);
+  color: var(--color-GoldenLight);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-GoldenDark);
+  transition: .2s;
+}
+
+.nav-home-social ul li i:hover {
+  box-shadow: none;
+}
