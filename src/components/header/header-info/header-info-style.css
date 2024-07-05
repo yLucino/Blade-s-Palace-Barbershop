@@ -8,6 +8,8 @@
   text-transform: uppercase;
   font-weight: 600 ;
   font-size: 13px;
+  position: absolute;
+  width: 100%;
 }
 
 .info-open-establishment p, a {

@@ -93,24 +93,25 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .box-logo .logo {
     width: 25px;
     height: 25px;
-    margin-left: 6px;
+    margin-left: 0px;
   }
 
   .header-menu {
     padding: 10px 5px;
+    top: 85px;
   }
 
   .box-nav-menu nav ul li{
-    margin-left: 15px;
+    margin-left: 8px;
     font-size: 10px;
   }
 
   .box-nav-services {
-    margin-right: 10px;
+    margin-right: 5px;
   }
 
   .menu-icon {
@@ -122,5 +123,9 @@
     top: 49px;
     font-size: 10px;
     width: 150px;
+  }
+  
+  .box-nav-services nav ul li {
+    margin-left: 10px;
   }
 }

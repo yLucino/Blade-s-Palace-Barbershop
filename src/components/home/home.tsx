@@ -1,16 +1,23 @@
 import './home-style.css';
-import './home-responsive.css';
-import backgroundImg from '../../assets/image/backgound16-9.jpg';
+import './home-responsive.css'
+
+import backgroundImgDesktop from '../../assets/image/bg-image.png';
+import backgroundImgLaptop from '../../assets/image/bg-image1200px.png';
+import backgroundImgMobile from '../../assets/image/bg-image500px.png';
 
 const Home = () => {
   return (
     <>
     <div className='home' id='home'>
-      <img className="backgroundImg" src={backgroundImg} alt="background image" />
+      <picture>
+        <source className="backgroundImg" srcSet={backgroundImgDesktop} media="(min-width: 1250px)"/>
+        <source className="backgroundImg" srcSet={backgroundImgLaptop} media="(min-width: 730px)"/>
+        <img className="backgroundImg" src={backgroundImgMobile} />
+      </picture>
       <div className='home-content-text'>
         <h1>Blade's Palace Barbershop</h1>
         <h2>Corte de cabelo e barba & serviços especiais</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ipsam doloremque minima modi sed dolore saepe. Labore et, exercitationem iure cumque nostrum dolore quasi quisquam aperiam voluptates minus officia iusto? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ipsam doloremque minima modi sed dolore saepe. Labore et, exercitationem iure cumque nostrum dolore quasi quisquam aperiam voluptates minus officia iusto?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ipsam doloremque minima modi sed dolore saepe. Labore et, exercitationem iure cumque nostrum dolore quasi quisquam aperiam voluptates minus officia iusto? Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
       </div>
       <div className='nav-home-buttons'>
         <nav>

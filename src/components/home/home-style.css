@@ -1,5 +1,4 @@
 .home {
-  background-color: #00000051;
   height: 100vh;
 }
 
@@ -11,7 +10,7 @@
 }
 
 .home-content-text {
-  padding: 160px 50px 0 50px;
+  padding: 220px 50px 0 50px;
 }
 
 .home-content-text h1 {
