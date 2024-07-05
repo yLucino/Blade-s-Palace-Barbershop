@@ -8,7 +8,7 @@ import backgroundImgMobile from '../../assets/image/bg-image500px.png';
 const Home = () => {
   return (
     <>
-    <div className='home' id='home'>
+    <div className='home' id='inicio'>
       <picture>
         <source className="backgroundImg" srcSet={backgroundImgDesktop} media="(min-width: 1250px)"/>
         <source className="backgroundImg" srcSet={backgroundImgLaptop} media="(min-width: 730px)"/>
