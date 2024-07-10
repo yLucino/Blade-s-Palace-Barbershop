@@ -11,7 +11,7 @@
 
 .title {
   text-align: center;
-  padding: 120px 0 65px 0;
+  padding: 100px 0 65px 0;
   font-family: 'Anton SC';
   font-size: 19px;
   color: var(--color-Yellow);
@@ -28,7 +28,6 @@
   flex-direction: column;  
   width: 100%;
   align-items: center;
-  /* justify-content: space-around; */
 }
 
 .box-cards-left ul li,
@@ -38,7 +37,7 @@
   justify-content: space-around;
   min-width: 610px;
   min-height: 190px;
-  background: #0d3e69;
+  background: var(--color-Blue);
   text-align: center;
   padding: 10px;
   margin-bottom: 15px;
@@ -49,7 +48,7 @@
 .container-cards ul li:hover {
   transform: scale(1.05);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.568);
-  background: #135c9c;
+  background: var(--color-BlueLight);
 
 }
 
@@ -70,15 +69,16 @@
 }
 
 .container-cards ul li h1 {
-  color: var(--color-GoldenDark);
+  color: var(--color-Yellow);
   font-family: 'Mochary';
   font-size: 40px;
 }
 
-.container-cards ul li p {
+.box-cards-left ul li p,
+.box-cards-right ul li p {
   text-align: justify;
   align-self: center;
-  color: var(--color-Blue);
+  color: rgba(255, 255, 255, 0.541);
   width: 270px;
   hyphens: auto;
   font-size: 14px;
@@ -93,12 +93,12 @@
 }
 
 .container-cards ul li nav a button {
-  background: var(--color-GoldenDark);
-  color: var(--color-GoldenLight);
+  background: var(--color-Yellow);
+  color: var(--color-BlueDark);
   text-transform: uppercase;
   font-weight: bold;
-  border: 1px solid var(--color-GoldenDark);
-  box-shadow: 0 0 10px var(--color-GoldenDark);
+  border: 1px solid var(--color-Yellow);
+  box-shadow: 0 0 10px var(--color-Yellow);
   transition: .2s;
   padding: 15px;
   width: 130px;
@@ -107,14 +107,14 @@
 
 .container-cards ul li nav a .btn-more-options {
   font-size: 12px;
-  border: 1px solid var(--color-GoldenDark);
+  border: 1px solid var(--color-Yellow);
   background-color: transparent;
-  color: var(--color-GoldenDark);
+  color: var(--color-Yellow);
   box-shadow: none;
 }
 
 .container-cards ul li nav a .btn-more-options:hover {
-  box-shadow: inset 0 0 10px var(--color-Black);
+  box-shadow: inset 0 0 10px var(--color-Shadow);
 }
 
 
@@ -144,18 +144,26 @@
 }
 
 .box-card-middle ul li:hover {
-  background: #fed35b;
+  background: var(--color-Yellow);
   box-shadow: none;
   transform: scale(1.03);
 }
 
 .box-card-middle ul li h1 {
-  color: #0d3e69;
+  color: var(--color-Blue);
   font-size: 45px;
 }
 
+.box-card-middle ul li p {
+  color: var(--color-BlueDark);
+  text-align: justify;
+  hyphens: auto;
+  align-self: center;
+  margin: 0 20px;
+}
+
 .box-card-middle ul li img {
-  box-shadow: 0 0 20px #04142296;
+  box-shadow: 0 0 20px var(--color-Shadow);
 }
 
 .box-card-middle ul li nav a{
@@ -166,27 +174,31 @@
 .box-card-middle ul li nav a button{
   width: 100%;
   margin-bottom: 10px;
-  background-color: #0d3e69;
+  background-color: var(--color-Blue);
   box-shadow: none;
-  border-color: #0d3e69;
+  border-color: var(--color-Blue);
+  color: var(--color-GoldenLight);
 }
 
 .box-card-middle ul li nav a button:hover{
-  background-color: #135c9c;
-  box-shadow: 0 0 10px #135c9c;
+  background-color: var(--color-BlueLight);
+  box-shadow: 0 0 10px var(--color-BlueLight);
+}
+
+.box-card-middle ul li nav a button.btn-more-options{
+  border-color: var(--color-BlueLight);
+  color: var(--color-BlueLight);
 }
 
 .box-card-middle ul li nav a button.btn-more-options:hover{
   background-color: transparent;
 }
 
-.box-card-middle ul li nav a button.btn-more-options{
-  border-color: #135c9c;
-  color: #135c9c;
-}
 
 .box-card-middle ul li nav label {
   display: flex;
   justify-content: center;
-  font-size: 11px;
+  color: var(--color-BlueLight);
+  font-size: 9px;
+  font-weight: 600;
 }

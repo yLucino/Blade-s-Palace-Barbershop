@@ -2,13 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
 
 :root {
+  --color-Blue: #0d3e69;
   --color-BlueDark: #021b2f;
+  --color-BlueLight: #135c9c;
   --color-Yellow: #fed35b;
   --color-Golden: #e6ca7d;
   --color-GoldenDark: #977656;
   --color-GoldenLight: #fcf0cf;
   --color-White: #ffffff;
   --color-Black: #000000;
+  --color-Shadow: #04142296;
 }
 
 * {

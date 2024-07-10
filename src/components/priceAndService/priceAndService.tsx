@@ -2,7 +2,7 @@ import './priceAndService-style.css';
 import './priceAndService-responsive.css';
 import imageLogo from '../../assets/image/header-img/penteado.png';
 import imageHairAndBarberCut from '../../assets/image/priceAndService-img/corte-cabeloEbarba.jpg';
-import imageHairCut from '../../assets/image/priceAndService-img/corte-cabelo.jpg'
+import imageHairCut from '../../assets/image/priceAndService-img/corte-de-cabelo.jpg'
 import imageBeardCut from '../../assets/image/priceAndService-img/corte-barba.jpg';
 import imageEyebrowCut from '../../assets/image/priceAndService-img/corte-sombrancelha.jpg';
 import imageWaxing from '../../assets/image/priceAndService-img/depilação-com-cera.jpeg'
@@ -51,7 +51,7 @@ const PriceAndService = () => {
               <li>
                 <img src={imageBeardCut} alt="imagem corte de Barba" />
                 <div className="text-container">
-                  <h1>SCorte de Barba</h1>
+                  <h1>Corte de Barba</h1>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam repellat perferendis voluptas cupiditate, molestiae sunt aspernatur rem accusamus, atque iste vel nam voluptate blanditiis rerum minima harum maiores sit nihil.</p>
                 </div>
                 <nav>
