@@ -1,9 +1,10 @@
 import './header-menu-style.css';
 import './header-menu-responsive.css';
-import logoImage from '../../../assets/image/penteado.png';
+import logoImage from '../../../assets/image/header-img/penteado.png';
 import { useState } from 'react';
 
 const HeaderMenu = () => {
+  // toggle animation bx-icon
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);

@@ -9,7 +9,7 @@ const hoursDayWorkingWeeked: number[] = [8, 18.3]
 
 // store opening hours checker
 function getDayName(date: Date): string {
-  const daysOfWeek = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
+  const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
   const dayIndex = date.getDay();
   const day = daysOfWeek[dayIndex];
   return day
@@ -21,10 +21,9 @@ function serviceSituation() {
   const month = ( 1 + now.getMonth());
   const year = now.getFullYear();
 
-
   if (month < 10) {
     const mes = "0" + `${month}`
-    const dayOfYear = `${year}-${mes}-${day}`       
+    const dayOfYear = `${year}-${mes}-${day}`      
     const date = new Date(dayOfYear)
     const dayName = getDayName(date)
     
@@ -46,19 +45,20 @@ function activityCheckWork(dayName: string) {
 
   if (dayName == daysNotWorking[0] || dayName == daysNotWorking[1]) {
     return <span>Estamos fechados</span>
+    
   } 
   else {
     if (dayName == 'Sáb') {
       if (hoursNow >= hoursDayWorkingWeeked[0] && hoursNow <= hoursDayWorkingWeeked[1]) {
-        return <span>Estámos abertos</span>
+        return <span>Estamos abertos</span>
       } else {
-        return <span>Estámos fechados</span>
+        return <span>Estamos fechados</span>
       }
     } else {
       if (hoursNow >= hoursDayWorkingWeek[0] && hoursNow <= hoursDayWorkingWeek[1]) {
-        return <span>Estámos abertos</span>
+        return <span>Estamos abertos</span>
       } else {
-        return <span>Estámos fechados</span>
+        return <span>Estamos fechados</span>
       }
     }
   }

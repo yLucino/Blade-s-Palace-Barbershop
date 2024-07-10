@@ -1,9 +1,9 @@
 import './home-style.css';
 import './home-responsive.css'
 
-import backgroundImgDesktop from '../../assets/image/bg-image.png';
-import backgroundImgLaptop from '../../assets/image/bg-image1200px.png';
-import backgroundImgMobile from '../../assets/image/bg-image500px.png';
+import backgroundImgDesktop from '../../assets/image/home-img/bg-image.png';
+import backgroundImgLaptop from '../../assets/image/home-img/bg-image1200px.png';
+import backgroundImgMobile from '../../assets/image/home-img/bg-image500px.png';
 
 const Home = () => {
   return (

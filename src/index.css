@@ -3,6 +3,7 @@
 
 :root {
   --color-BlueDark: #021b2f;
+  --color-Yellow: #fed35b;
   --color-Golden: #e6ca7d;
   --color-GoldenDark: #977656;
   --color-GoldenLight: #fcf0cf;
@@ -28,6 +29,10 @@ ul li {
   list-style-type: none;
 }
 
+h1, h2 {
+  font-weight: 400;
+}
+
 a {
   text-decoration: none;
   color: var(--color-GoldenLight);
@@ -42,3 +47,13 @@ span {
   color: var(--color-Golden);
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  background: var(--color-BlueDark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-Golden);
+  border: 2px solid var(--color-BlueDark);
+  border-radius: 5px;
+}
