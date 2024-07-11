@@ -160,6 +160,7 @@
   hyphens: auto;
   align-self: center;
   margin: 0 20px;
+  line-height: 21px;
 }
 
 .box-card-middle ul li img {
