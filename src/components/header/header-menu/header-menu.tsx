@@ -56,9 +56,7 @@ const HeaderMenu = () => {
                 <a href="#administrador">
                   <i className='bx bx-cog'></i>
                   Administrador
-                {/* fazer area para administrado(isaque), 
-                bloqueado com usuario e senha */}
-                </a>
+               </a>
               </li>
             </ul>
           </nav>

@@ -11,7 +11,7 @@
 
 .title {
   text-align: center;
-  padding: 100px 0 65px 0;
+  padding: 100px 0 60px 0;
   font-family: 'Anton SC';
   font-size: 19px;
   color: var(--color-Yellow);
@@ -35,8 +35,8 @@
  {
   display: flex;
   justify-content: space-around;
-  min-width: 610px;
-  min-height: 190px;
+  min-width: 460px;
+  min-height: 40px;
   background: var(--color-Blue);
   text-align: center;
   padding: 10px;
@@ -53,8 +53,9 @@
 }
 
 .container-cards ul li img {
-  width: 130px;
-  height: 130px;
+  width: 115px;
+  height: 115px;
+  margin: 5px;
   background-size: cover;
   border-radius: 50%;
   align-self: center;
@@ -70,8 +71,9 @@
 
 .container-cards ul li h1 {
   color: var(--color-Yellow);
-  font-family: 'Mochary';
-  font-size: 40px;
+  font-family: 'Anton SC';
+  font-size: 21px;
+  letter-spacing: .5px;
 }
 
 .box-cards-left ul li p,
@@ -79,7 +81,7 @@
   text-align: justify;
   align-self: center;
   color: rgba(255, 255, 255, 0.541);
-  width: 270px;
+  width: 320px;
   hyphens: auto;
   font-size: 14px;
   margin-right: 10px;
@@ -151,7 +153,9 @@
 
 .box-card-middle ul li h1 {
   color: var(--color-Blue);
+  font-family: 'Mochary';
   font-size: 45px;
+  letter-spacing: normal;
 }
 
 .box-card-middle ul li p {
@@ -201,5 +205,15 @@
   justify-content: center;
   color: var(--color-BlueLight);
   font-size: 9px;
+  font-weight: 600;
+}
+
+.box-cards-left ul li nav .btn-service-label label,
+.box-cards-right ul li nav .btn-service-label label {
+  display: flex;
+  justify-content: center;
+  color: var(--color-Yellow);
+  font-size: 11px;
+  margin-bottom: 2px;
   font-weight: 600;
 }

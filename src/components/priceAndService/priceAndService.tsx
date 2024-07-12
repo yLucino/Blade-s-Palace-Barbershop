@@ -7,6 +7,8 @@ import imageBeardCut from '../../assets/image/priceAndService-img/corte-barba.jp
 import imageEyebrowCut from '../../assets/image/priceAndService-img/corte-sombrancelha.jpg';
 import imageWaxing from '../../assets/image/priceAndService-img/depilação-com-cera.jpeg'
 import imageHydrationFacial from '../../assets/image/priceAndService-img/hidratação-facial.jpg';
+import imageHighlights from '../../assets/image/priceAndService-img/cabelo-com-luzes.png';
+import imageHairPlatinum from '../../assets/image/priceAndService-img/cabelo-platinado.jpg';
 
 const PriceAndService = () => {
   return (
@@ -63,6 +65,26 @@ const PriceAndService = () => {
                   </a>
                 </nav>
               </li>
+              <li>
+                <img src={imageHairPlatinum} alt="imagem corte de Cabelo Platinado" />
+                <div className="text-container">
+                  <h1>Cabelo Platinado</h1>
+                  <p>Cabelo platinado, a partir de 150 reais. Deixe o seu cabelo com um brilho incrível e uma cor deslumbrante. Aproveite essa oportunidade para ousar e destacar-se com um novo estilo.</p>
+                </div>
+                <nav>
+                  <div className="btn-service-label">
+                    <label htmlFor="btn-service-platinado">
+                      A partir de:
+                    </label>
+                    <a id='btn-service-platinado' href="#agendamento">
+                      <button>R$ 150,00</button>
+                    </a>
+                  </div>
+                  <a href="#">
+                    <button className='btn-more-options'>Ver opções</button>
+                  </a>
+                </nav>
+              </li>
             </ul>
           </div>
           <div className='box-card-middle'>
@@ -73,19 +95,19 @@ const PriceAndService = () => {
                 <p>Exclusiva assinatura mensal, onde você pode cortar o cabelo e fazer a barba quantas vezes quiser durante todo o mês. Garantindo que você esteja sempre com o visual impecável. Estaremos prontos para atender você sempre que precisar.</p>
                 <nav>
                   <label htmlFor="btn-assinatura-full">
-                    Plano Completo
+                    Plano Completo + Descontos
                   </label>
                   <a id='btn-assinatura-full' href="#assinatura">
                     <button>R$ 80,00</button>
                   </a>
                   <label htmlFor="btn-assinatura-half">
-                    Plano Cabelo ou Barba
+                    Plano Cabelo ou Barba + Descontos
                   </label>
                   <a className='btn-assinatura-half' href="#assinatura">
                     <button>R$ 60,00</button>
                   </a>
                   <a href="#">
-                    <button className='btn-more-options'>Ver mais</button>
+                    <button className='btn-more-options'>Saiba mais</button>
                   </a>
                 </nav>
               </li>
@@ -133,6 +155,26 @@ const PriceAndService = () => {
                   <a href="#agendamento">
                     <button>R$ 20,00</button>
                   </a>
+                  <a href="#">
+                    <button className='btn-more-options'>Ver opções</button>
+                  </a>
+                </nav>
+              </li>
+              <li>
+                <img src={imageHighlights} alt="imagem corte de Cabelo com luzes" />
+                <div className="text-container">
+                  <h1>Cabelo com Luzes</h1>
+                  <p>Aplicação de luzes no cabelo, a partir de 120 reais. Transforme seu visual com o toque iluminado e natural. Aproveite essa oportunidade para realçar sua beleza com estilo.</p>
+                </div>
+                <nav>
+                  <div className="btn-service-label">
+                    <label htmlFor="btn-service-luzes">
+                      A partir de:
+                    </label>
+                    <a id='btn-service-luzes' href="#agendamento">
+                      <button>R$ 120,00</button>
+                    </a>
+                  </div>
                   <a href="#">
                     <button className='btn-more-options'>Ver opções</button>
                   </a>
