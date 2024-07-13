@@ -31,8 +31,7 @@
 }
 
 .box-cards-left ul li,
-.box-cards-right ul li
- {
+.box-cards-right ul li {
   display: flex;
   justify-content: space-around;
   min-width: 460px;
@@ -49,7 +48,6 @@
   transform: scale(1.05);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.568);
   background: var(--color-BlueLight);
-
 }
 
 .container-cards ul li img {
@@ -137,7 +135,7 @@
   transform: scale(1.05);
   background: var(--color-Yellow);
   text-align: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 20px;
@@ -163,7 +161,7 @@
   text-align: justify;
   hyphens: auto;
   align-self: center;
-  margin: 0 20px;
+  margin: 0 20px 15px 20px;
   line-height: 21px;
 }
 

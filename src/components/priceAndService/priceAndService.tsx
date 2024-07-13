@@ -5,8 +5,8 @@ import imageHairAndBarberCut from '../../assets/image/priceAndService-img/corte-
 import imageHairCut from '../../assets/image/priceAndService-img/corte-de-cabelo.jpg'
 import imageBeardCut from '../../assets/image/priceAndService-img/corte-barba.jpg';
 import imageEyebrowCut from '../../assets/image/priceAndService-img/corte-sombrancelha.jpg';
-import imageWaxing from '../../assets/image/priceAndService-img/depilação-com-cera.jpeg'
-import imageHydrationFacial from '../../assets/image/priceAndService-img/hidratação-facial.jpg';
+import imageWaxing from '../../assets/image/priceAndService-img/cera-depilatoria.jpeg'
+import imageHydrationFacial from '../../assets/image/priceAndService-img/hidratação-facial.jpeg';
 import imageHighlights from '../../assets/image/priceAndService-img/cabelo-com-luzes.png';
 import imageHairPlatinum from '../../assets/image/priceAndService-img/cabelo-platinado.jpg';
 
@@ -91,25 +91,35 @@ const PriceAndService = () => {
             <ul>
               <li>
                 <h1>Assinatura Mensal</h1>
-                <img src={imageLogo} alt="imagem Logo" />
-                <p>Exclusiva assinatura mensal, onde você pode cortar o cabelo e fazer a barba quantas vezes quiser durante todo o mês. Garantindo que você esteja sempre com o visual impecável. Estaremos prontos para atender você sempre que precisar.</p>
-                <nav>
-                  <label htmlFor="btn-assinatura-full">
-                    Plano Completo + Descontos
-                  </label>
-                  <a id='btn-assinatura-full' href="#assinatura">
-                    <button>R$ 80,00</button>
-                  </a>
-                  <label htmlFor="btn-assinatura-half">
-                    Plano Cabelo ou Barba + Descontos
-                  </label>
-                  <a className='btn-assinatura-half' href="#assinatura">
-                    <button>R$ 60,00</button>
-                  </a>
-                  <a href="#">
-                    <button className='btn-more-options'>Saiba mais</button>
-                  </a>
-                </nav>
+                <div className="flex-container">
+                  <img src={imageLogo} alt="imagem Logo" />
+                  <p>Exclusiva assinatura mensal, onde você pode cortar o cabelo e fazer a barba quantas vezes quiser durante todo o mês. Garantindo que você esteja sempre com o visual impecável. Estaremos prontos para atender você sempre que precisar.</p>
+                  <nav>
+                    <div className="btns-container">
+                      <div className="btn-price">
+                        <div className="btn-full-plan">
+                          <label htmlFor="btn-assinatura-full">
+                            Plano Completo + Descontos
+                          </label>
+                          <a id='btn-assinatura-full' href="#assinatura">
+                            <button>R$ 80,00</button>
+                          </a>
+                        </div>
+                        <div className="btn-half-plan">
+                          <label htmlFor="btn-assinatura-half">
+                            Cabelo ou Barba + Descontos
+                          </label>
+                          <a className='btn-assinatura-half' href="#assinatura">
+                            <button>R$ 60,00</button>
+                          </a>
+                        </div>
+                      </div>
+                      <a className='more-option' href="#">
+                        <button className='btn-more-options'>Saiba mais</button>
+                      </a>
+                    </div>
+                  </nav>
+                </div>
               </li>
             </ul>
           </div>

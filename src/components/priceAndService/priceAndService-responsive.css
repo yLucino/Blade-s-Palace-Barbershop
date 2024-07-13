@@ -1,0 +1,243 @@
+@media (max-width: 1730px) {
+  .box-cards-left ul li,
+  .box-cards-right ul li {
+    min-height: 140px;
+  }
+
+  .container-cards ul li img {
+    width: 105px;
+    height: 105px;
+    margin: 0px;
+  }
+
+  .box-cards-left ul li h1,
+  .box-cards-right ul li h1 {
+    font-size: 19px;
+  }
+
+  .box-cards-left ul li p,
+  .box-cards-right ul li p {
+    width: 250px;
+    font-size: 13px;
+  }
+
+  .box-card-middle ul li {
+    width: 330px;
+  }
+}
+
+@media (max-width: 1530px) {
+  .box-cards-left ul li p,
+  .box-cards-right ul li p {
+    width: 200px;
+    line-height: 15px;
+  }
+
+  .box-card-middle ul li {
+    width: 300px;
+  }
+}
+
+@media (max-width: 1360px) {
+  .price-and-service {
+    height: 1100px;
+  }
+
+  .box-card-middle {
+    position: absolute;
+  }
+
+  .box-card-middle ul li {
+    width: 920px;
+    height: 200px;
+    padding: 7px 15px;
+    justify-content: center;
+  }
+  
+  .box-card-middle .flex-container {
+    display: flex;
+  }
+  
+  .box-card-middle .flex-container p {
+    max-width: 450px;
+  }
+  
+  .box-card-middle .flex-container nav .btn-price {
+    display: flex;
+  }
+
+  .box-card-middle ul li nav a {
+    width: auto;
+    margin: 0;
+  }
+
+  .box-card-middle ul li nav label {
+    justify-content: flex-start;
+  }
+
+  .box-card-middle .flex-container nav .btn-price .btn-full-plan button,
+  .box-card-middle .flex-container nav .btn-price .btn-half-plan button {
+    width: 130px;
+    margin: 2px 10px 5px 0;
+  }
+
+  .box-card-middle .flex-container nav .more-option {
+    display: flex;
+    width: 270px;
+  }
+  
+  .box-card-middle .flex-container nav .more-option button {
+    width: 100%;
+  }
+
+  .box-cards-left ul li,
+  .box-cards-right ul li {
+    min-width: auto;
+    padding: 10px;
+    position: relative;
+    top: 220px;
+  }
+
+  .box-cards-right ul li {
+    margin-left: 15px;
+  }
+
+  .box-cards-left ul li p,
+  .box-cards-right ul li p {
+    height: 105px;
+    font-size: 13px;
+    margin: 0;
+  }
+
+  .container-cards {
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .container-cards ul li nav a button {
+    width: 120px;
+  }
+
+  .container-cards ul li img {
+    min-width: 85px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .price-and-service {
+    height: 2200px;
+  }
+  
+  .box-card-middle ul li {
+    width: 520px;
+    height: 410px;
+  }
+
+  .box-card-middle .flex-container {
+    display: block;
+  }
+
+  .box-card-middle ul li h1 {
+    margin-top: 10px;
+  }
+  
+  .box-card-middle ul li p {
+    font-size: 15px;
+  }
+ 
+  .box-card-middle .flex-container nav .btn-price {
+    justify-content: space-between;
+  }
+
+  .box-card-middle ul li nav label {
+    justify-content: center;
+  }
+
+  .box-card-middle .flex-container nav .btn-price .btn-full-plan button, 
+  .box-card-middle .flex-container nav .btn-price .btn-half-plan button {
+    width: 240px;
+    margin: 5px 0 10px 0;
+  }
+
+  .box-card-middle .flex-container nav .more-option {
+    width: 100%;
+  }
+
+  .box-cards-left ul li,
+  .box-cards-right ul li {
+    top: 440px;
+    flex-direction: column;
+  }
+
+  .box-cards-left ul li nav,
+  .box-cards-right ul li nav {
+    align-items: center;
+  }
+
+  .box-cards-left  ul li nav a button,
+  .box-cards-right  ul li nav a button {
+    width: 200px;
+  }
+
+  .box-cards-left ul li nav a .btn-more-options,
+  .box-cards-right ul li nav a .btn-more-options{
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 570px) {
+  .price-and-service {
+    height: 2280px;
+  }
+
+  .box-card-middle ul li {
+    width: 320px;
+    height: 410px;
+  } 
+
+  .box-card-middle ul li h1 {
+    font-size: 39px;
+    margin: 0;
+  } 
+
+  .box-card-middle ul li p {
+    font-size: 14px;
+    line-height: 17px;
+  } 
+
+  .box-card-middle ul li img {
+    width: 80px;
+    height: 80px;
+  } 
+
+  .box-card-middle .flex-container nav .btn-price .btn-full-plan button, 
+  .box-card-middle .flex-container nav .btn-price .btn-half-plan button {
+    width: 140px;
+    margin: 5px 0 10px 0;
+  }
+
+  .box-cards-left ul li p, .box-cards-right ul li p {
+    height: 158px;
+  }
+
+  .box-cards-left ul li img, 
+  .box-cards-right ul li img {
+    width: 90px;
+    height: 84px;
+  }
+
+  .box-cards-left ul li h1, 
+  .box-cards-right ul li h1 {
+    font-size: 15px;
+  }
+
+  .box-cards-left ul li p, 
+  .box-cards-right ul li p {
+    width: 135px;
+  }
+
+  .box-cards-left  ul li nav a button,
+  .box-cards-right  ul li nav a button {
+    width: 125px;
+  }
+}
