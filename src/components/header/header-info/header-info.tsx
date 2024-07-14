@@ -3,14 +3,14 @@ import './header-info-style.css'
 import './header-info-responsive.css'
 
 
+const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 const daysNotWorking: string[] = ['Dom', 'Seg']
 const hoursDayWorkingWeek: number[] = [9, 19.3]
 const hoursDayWorkingWeeked: number[] = [8, 18.3]
 
 // store opening hours checker
 function getDayName(date: Date): string {
-  const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
-  const dayIndex = date.getDay();
+  const dayIndex = date.getUTCDay();
   const day = daysOfWeek[dayIndex];
   return day
 }
@@ -32,7 +32,7 @@ function serviceSituation() {
     const dayOfYear = `${year}-${month}-${day}` 
     const date = new Date(dayOfYear)
     const dayName = getDayName(date)
-
+    
     return activityCheckWork(dayName)
   } 
 }
@@ -45,9 +45,7 @@ function activityCheckWork(dayName: string) {
 
   if (dayName == daysNotWorking[0] || dayName == daysNotWorking[1]) {
     return <span>Estamos fechados</span>
-    
-  } 
-  else {
+  } else {
     if (dayName == 'Sáb') {
       if (hoursNow >= hoursDayWorkingWeeked[0] && hoursNow <= hoursDayWorkingWeeked[1]) {
         return <span>Estamos abertos</span>
