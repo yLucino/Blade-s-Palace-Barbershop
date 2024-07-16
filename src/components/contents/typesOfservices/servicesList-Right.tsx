@@ -4,8 +4,8 @@ import { sample_servicesNoPlan_right } from "../../../data";
 const ServicesList_Right: React.FC = () => {
   return (
     <>
-      {sample_servicesNoPlan_right.map((plan, index) => (
-        <ul>
+      <ul>
+        {sample_servicesNoPlan_right.map((plan, index) => (
           <li key={index}>
             <img src={plan.imageUrl} alt={plan.title} />
             <div className="text-container">
@@ -21,8 +21,8 @@ const ServicesList_Right: React.FC = () => {
               </a>
             </nav>
           </li>
-        </ul>
-      ))}
+        ))}
+      </ul>
     </>
   )
 }

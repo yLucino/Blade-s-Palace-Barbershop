@@ -1,18 +1,37 @@
 import './header-menu-style.css';
 import './header-menu-responsive.css';
 import logoImage from '../../../../../public/assets/image/header-img/penteado.png';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const HeaderMenu = () => {
+const HeaderMenu: React.FC = () => {
   // toggle animation bx-icon
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   }
+  // scroll to add className(scrollOn) in HeaderMenu, to Fixed in screen
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 70) {
+        setIsScrolled(true); 
+      } else {
+        setIsScrolled(false); 
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.addEventListener('scroll', handleScroll);
+    };
+  });
+
 
   return (
     <>
-      <div className='header-menu'>
+      <div className={`header-menu ${isScrolled ? 'scrollOn' : ''}`}>
         <div className='box-logo'>
           <a href="#">
             <img className='logo' src={logoImage} alt="logo" />

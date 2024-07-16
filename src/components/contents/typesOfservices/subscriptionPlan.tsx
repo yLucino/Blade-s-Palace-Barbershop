@@ -4,8 +4,8 @@ import { sample_subscriptionPlan } from '../../../data';
 const SubscriptionPlan: React.FC = () => {
   return (
     <>
-      {sample_subscriptionPlan.map((plan, index) => (
-        <ul>
+      <ul>
+        {sample_subscriptionPlan.map((plan, index) => (
           <li key={index}>
             <h1>{plan.title}</h1>
             <div className='flex-container'>
@@ -38,8 +38,8 @@ const SubscriptionPlan: React.FC = () => {
               </nav>
             </div>
           </li>
-        </ul>
-      ))}
+        ))}
+      </ul>
     </>
   )
 }
