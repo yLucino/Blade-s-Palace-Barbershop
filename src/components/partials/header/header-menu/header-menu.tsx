@@ -1,6 +1,6 @@
 import './header-menu-style.css';
 import './header-menu-responsive.css';
-import logoImage from '../../../assets/image/header-img/penteado.png';
+import logoImage from '../../../../../public/assets/image/header-img/penteado.png';
 import { useState } from 'react';
 
 const HeaderMenu = () => {
