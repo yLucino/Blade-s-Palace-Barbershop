@@ -45,13 +45,14 @@
     top: 85px;
     right: 10px;
     width: 180px;
-    backdrop-filter: blur(10px);
+    background-color: var(--color-BlueDark);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.76);
     border-radius: 20px;
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s ease;
     visibility: hidden;
+    z-index: 1000;
   }
 
   .menu-content.open {

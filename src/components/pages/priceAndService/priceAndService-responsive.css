@@ -24,6 +24,11 @@
   .box-card-middle ul li {
     width: 330px;
   }
+
+  .box-cards-left ul li .box-popUp-PriceInPlan,
+  .box-cards-right ul li .box-popUp-PriceInPlan {
+    top: -40px;
+  }
 }
 
 @media (max-width: 1530px) {
@@ -183,6 +188,12 @@
   .box-cards-right ul li nav a .btn-more-options{
     margin-top: 5px;
   }
+
+  .box-cards-left ul li .box-popUp-PriceInPlan,
+  .box-cards-right ul li .box-popUp-PriceInPlan {
+    top: 0;
+    bottom: -65px;
+  }
 }
 
 @media (max-width: 570px) {
@@ -239,5 +250,10 @@
   .box-cards-left  ul li nav a button,
   .box-cards-right  ul li nav a button {
     width: 125px;
+  }
+
+  .box-cards-left ul li .box-popUp-PriceInPlan,
+  .box-cards-right ul li .box-popUp-PriceInPlan {
+    bottom: -95px;
   }
 }

@@ -20,14 +20,11 @@ const HeaderMenu: React.FC = () => {
         setIsScrolled(false); 
       }
     }
-
-    window.addEventListener('scroll', handleScroll);
-
+    
     return () => {
       window.addEventListener('scroll', handleScroll);
     };
   });
-
 
   return (
     <>
@@ -75,7 +72,7 @@ const HeaderMenu: React.FC = () => {
                 <a href="#administrador">
                   <i className='bx bx-cog'></i>
                   Administrador
-               </a>
+                </a>
               </li>
             </ul>
           </nav>

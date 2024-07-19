@@ -17,7 +17,7 @@ const Home = () => {
       <div className='home-content-text'>
         <h1>Blade's Palace Barbershop</h1>
         <h2>Corte de cabelo e barba & serviços especiais</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ipsam doloremque minima modi sed dolore saepe. Labore et, exercitationem iure cumque nostrum dolore quasi quisquam aperiam voluptates minus officia iusto? Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        <p>Bem-vindo ao Blade's Palace Barbershop, o seu destino definitivo para um estilo impecável e cuidados excepcionais. Aqui, combinamos a tradição da barbearia com um toque moderno para oferecer uma experiência de grooming inigualável. Oferecemos: Corte de Cabelo, Barba & Serviços Especiais</p>
       </div>
       <div className='nav-home-buttons'>
         <nav>

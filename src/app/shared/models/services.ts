@@ -1,7 +1,8 @@
-export class ServiceNoPlan {
+export class Services {
   id!: string;
   title!: string;
   imageUrl!: string;
   description!: string;
-  price!: number; 
+  priceNoPlan!: number; 
+  priceInPlan!: number; 
 }
