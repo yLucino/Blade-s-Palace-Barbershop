@@ -222,7 +222,7 @@
 .box-cards-right ul li .box-popUp-PriceInPlan {
   opacity: 0;
   position: absolute;
-  background: var(--color-Blue);
+  background: var(--color-GrayBlue);
   padding: 10px;
   border-radius: 20px;
   box-shadow: 0 0 20px var(--color-Shadow);

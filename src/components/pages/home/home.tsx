@@ -35,17 +35,17 @@ const Home = () => {
         <nav>
           <ul>
             <li className='btn-social'>
-              <a href="https://www.instagram.com/bladespalacebarbershop/">
+              <a href="https://www.instagram.com/bladespalacebarbershop/" target='_blank'>
                 <i className='bx bxl-instagram-alt'></i>
               </a>
             </li>
             <li className='btn-social'>
-              <a href="https://www.facebook.com/search/top?q=blade’s%20palace%20barbershop&locale=pt_BR">
+              <a href="https://www.facebook.com/search/top?q=blade’s%20palace%20barbershop&locale=pt_BR" target='_blank'>
                 <i className='bx bxl-facebook-circle'></i>
               </a>
             </li>
             <li className='btn-social'>
-              <a href="https://api.whatsapp.com/message/OQPYP5XUZGU7E1?autoload=1&app_absent=0">
+              <a href="https://api.whatsapp.com/message/OQPYP5XUZGU7E1?autoload=1&app_absent=0" target='_blank'>
                 <i className='bx bxl-whatsapp'></i>
               </a>
             </li>

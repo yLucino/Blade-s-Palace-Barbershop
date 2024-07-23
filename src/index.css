@@ -12,6 +12,12 @@
   --color-White: #ffffff;
   --color-Black: #000000;
   --color-Shadow: #04142296;
+  --color-Gray: #1f1f1f; 
+  --color-GrayBlue: #2d3f50;
+  --color-GrayDark: #141414; 
+  --color-GrayLight: #2e2e2e;
+  --color-Brown: #8C6D51;
+  --color-BrownDark: #593831;
 }
 
 * {
@@ -32,7 +38,7 @@ ul li {
   list-style-type: none;
 }
 
-h1, h2 {
+h1, h2, h3, h4 {
   font-weight: 400;
 }
 
