@@ -1,11 +1,14 @@
 .team {
   height: 100vh;
+  background-color: var(--color-Gray);
+  position: relative;
 }
 
 .team img {
   position: absolute;
-  background-size: cover;
+  bottom: 0;
   width: 100%;
+  height: 314px;
 }
 
 .team .title h1 {
@@ -16,7 +19,27 @@
   display: flex;
   position: relative;
   justify-content: center;
-  top: 100px;
+  top: 99px;
+}
+
+.container-profiles .btn-arrow-carousel {
+  display: none;
+  align-content: center;
+}
+
+.container-profiles .btn-arrow-carousel i.bx{
+  background-color: var(--color-Yellow);
+  padding: 6px;
+  color: var(--color-Gray);
+  border-radius: 50%;
+  transition: .2s;
+  margin: 0;
+}
+
+.container-profiles .btn-arrow-carousel i.bx:hover{
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--color-Golden);
+  transform: scale(1.1);
 }
 
 .container-profiles .profile {
@@ -50,15 +73,13 @@
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--color-GoldenLight);
+  color: var(--color-Golden);
 }
 
 .container-profiles .profile h3 {
-  font-size: 13px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  font-weight: 700;
-  color: var(--color-GrayDark);
+  font-size: 12px;
+  margin: 10px 0 8px 0;
+  color: var(--color-GoldenLight);
 }
 
 .container-profiles .profile nav {
@@ -75,25 +96,24 @@
 }
 
 .container-profiles .profile nav ul li a i.bx{
-  /* background-color: var(--color-GoldenDark); */
   border-radius: 50%;
   color: var(--color-GoldenLight);
-  box-shadow: 0 0 5px var(--color-Shadow);
+  box-shadow: 0 0 10px var(--color-Shadow);
   padding: 4px;
   transition: .2s;
 }
 
 .container-profiles .profile nav ul li a i.bx:hover{
-  transform: scale(1.1);
-  /* box-shadow: none; */
+  transform: scale(1.2);
 }
 
 .container-profiles .profile p {
   background-color: var(--color-GoldenLight);
   background-color: #525151;
   color: var(--color-GrayDark);
-  font-size: 14px;
-  min-height: 135px;
+  font-size: 15px;
+  font-weight: 500;
+  min-height: 200px;
   text-align: justify;
   hyphens: auto;
   padding: 20px;

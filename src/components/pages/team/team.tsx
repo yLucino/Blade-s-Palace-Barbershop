@@ -1,10 +1,11 @@
 import './team-style.css';
-import './team-responsive.css';
+import './team-responsive.css'
+import React from 'react';
 
 import imageProfile1 from '../../../../public/assets/image/team-img/profile-img.jpg'
 import imageBackground from '../../../../public/assets/image/team-img/bg-image.png';
 
-const Team = () => {
+const Team: React.FC = () => {
   return (
     <>
       <div className='team' id='time'>
@@ -13,7 +14,10 @@ const Team = () => {
           <h1>Time</h1>
         </div>
         <div className='container-profiles'>
-          <div className="profile">
+          <div className="btn-arrow-carousel">
+            <i className='bx bx-chevron-left bx-md left'></i>
+          </div>
+          <div className="profile disabled">
             <img src={imageProfile1} alt="" />
             <h2>Matheus</h2>
             <h3>Barbeiro Profissional</h3>
@@ -63,7 +67,7 @@ const Team = () => {
             </nav>
             <p>Barbeiro com 3 anos de experiência e dedicado a estudar e entender todas as necessidades dos clientes, garantindo um serviço personalizado e de alta qualidade. Ele está sempre atualizado com as últimas tendências e técnicas para oferecer o melhor atendimento possível.</p>
           </div>
-          <div className="profile">
+          <div className="profile disabled">
             <img src={imageProfile1} alt="" />
             <h2>Vinicius</h2>
             <h3>Barbeiro Profissional</h3>
@@ -87,6 +91,9 @@ const Team = () => {
               </ul>
             </nav>
             <p>Barbeiro com um ano de experiência, está em constante busca para fornecer sempre a melhor experiência para cada cliente. Com dedicação e atenção aos detalhes, esforçado para entender e atender às necessidades individuais, garantindo que cada visita seja única e satisfatória. </p>
+          </div>
+          <div className="btn-arrow-carousel">
+            <i className='bx bx-chevron-right bx-md right'></i>
           </div>
         </div>
       </div>

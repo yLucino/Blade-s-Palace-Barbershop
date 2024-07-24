@@ -1,0 +1,47 @@
+@media (max-width: 1220px) {
+  .container-profiles .profile.disabled {
+    display: none;
+  }
+
+  .container-profiles .btn-arrow-carousel {
+    display: block;
+  }
+}
+
+@media (max-width: 500px) { 
+  .team .title {
+    padding: 64px 0 60px 0;
+  } 
+
+  .team .title h1 {
+    font-size: 22px;
+  }
+
+  .container-profiles {
+    top: 50px;
+  }
+
+  .container-profiles .profile {
+    margin: 0 10px;
+  }
+
+  .container-profiles .btn-arrow-carousel i.left{
+    margin-left: 10px;
+  }
+
+  .container-profiles .btn-arrow-carousel i.right{
+    margin-right: 10px;
+  }
+
+  .container-profiles .profile img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 0px;
+    top: -70px;
+    left: 53.5px;
+  }
+
+  .container-profiles .profile h2 {
+    margin-top: 100px;
+  }
+}
