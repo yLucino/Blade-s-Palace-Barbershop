@@ -8,17 +8,9 @@
   }
 }
 
-@media (max-width: 500px) { 
-  .team .title {
-    padding: 64px 0 60px 0;
-  } 
-
-  .team .title h1 {
-    font-size: 22px;
-  }
-
+@media (max-width: 501px) { 
   .container-profiles {
-    top: 50px;
+    top: 128px;
   }
 
   .container-profiles .profile {
@@ -38,10 +30,33 @@
     height: 150px;
     margin-bottom: 0px;
     top: -70px;
-    left: 53.5px;
+    left: 85px;
   }
 
   .container-profiles .profile h2 {
     margin-top: 100px;
+  }
+}
+@media (max-width: 455px) { 
+  .container-profiles {
+    top: 149px;
+  }
+}
+
+@media (max-width: 400px) { 
+  .team .title {
+    padding: 64px 0 60px 0;
+  } 
+
+  .team .title h1 {
+    font-size: 22px;
+  }
+
+  .container-profiles {
+    top: 50px;
+  }
+
+  .container-profiles .profile img {
+    left: 53.5px;
   }
 }
