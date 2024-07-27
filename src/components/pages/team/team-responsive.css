@@ -1,8 +1,11 @@
 @media (max-width: 1220px) {
   .container-profiles .profile.disabled {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    transition: opacity .3s ease;
+    z-index: -1;
   }
-
+  
   .container-profiles .btn-arrow-carousel {
     display: block;
   }

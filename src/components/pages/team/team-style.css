@@ -19,7 +19,7 @@
   display: flex;
   position: relative;
   justify-content: center;
-  top: 99px;
+  top: 98px;
 }
 
 .container-profiles .btn-arrow-carousel {
@@ -50,6 +50,11 @@
   margin: 0 40px;
   text-align: center;
   transition: .3s;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .container-profiles .profile:hover {
