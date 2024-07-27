@@ -1,9 +1,9 @@
 import './priceAndService-style.css';
 import './priceAndService-responsive.css';
 
-import SubscriptionPlan from '../../contents/typesOfservices/subscriptionPlan';
-import ServicesList_Left from '../../contents/typesOfservices/servicesList-Left';
-import ServicesList_Right from '../../contents/typesOfservices/servicesList-Right';
+import SubscriptionPlan from '../../contents/services_PriceServicesPage/subscriptionPlan';
+import ServicesList_Left from '../../contents/services_PriceServicesPage/servicesList-Left';
+import ServicesList_Right from '../../contents/services_PriceServicesPage/servicesList-Right';
 
 const PriceAndService = () => {
   return (

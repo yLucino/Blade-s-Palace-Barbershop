@@ -1,5 +1,6 @@
 import { Services } from './app/shared/models/services';
 import { SubscriptionPlan } from './app/shared/models/subscriptionPlan';
+import { EmployeeTeam } from './app/shared/models/employeeTeam';
 
 export const sample_subscriptionPlan: SubscriptionPlan[] = [
   {
@@ -78,5 +79,38 @@ export const sample_services_right: Services[] = [
     description: 'Aplicação de luzes no cabelo, a partir de 120 reais. Transforme seu visual com o toque iluminado e natural. Aproveite essa oportunidade para realçar sua beleza com estilo.',
     priceNoPlan: 120.00,
     priceInPlan: 80.00,
+  },
+]
+
+export const sample_employee_team: EmployeeTeam[] = [
+  {
+    id: '1',
+    imageUrl: '../../../../public/assets/image/team-img/profile-img.jpg',
+    name: 'Matheus',
+    jobRole: 'Barbeiro Profissional',
+    instagramUrl: 'https://www.instagram.com/matheuserickcoelho/',
+    facebookUrl: 'https://www.facebook.com/matheus.coelho.752487?locale=pt_BR',
+    whatsappUrl: 'https://api.whatsapp.com/message/OQPYP5XUZGU7E1?autoload=1&app_absent=0',
+    description: 'Barbeiro uma sólida experiência de 2 anos no setor, trazendo um vasto conhecimento e habilidade para cada serviço oferecido. Atencioso a todas as suas petições, ele se dedica a entender suas necessidades e a garantir que você receba o melhor atendimento possível.',
+  },
+  {
+    id: '2',
+    imageUrl: '../../../../public/assets/image/team-img/profile-img.jpg',
+    name: 'Isaque',
+    jobRole: 'Barbeiro Prof. | Fundador',
+    instagramUrl: 'https://www.instagram.com/isaqueluizsilva/',
+    facebookUrl: 'https://www.facebook.com/isaque.luizsilva.9?locale=pt_BR',
+    whatsappUrl: 'https://api.whatsapp.com/message/OQPYP5XUZGU7E1?autoload=1&app_absent=0',
+    description: 'Barbeiro com 3 anos de experiência e dedicado a estudar e entender todas as necessidades dos clientes, garantindo um serviço personalizado e de alta qualidade. Ele está sempre atualizado com as últimas tendências e técnicas para oferecer o melhor atendimento possível.',
+  },
+  {
+    id: '3',
+    imageUrl: '../../../../public/assets/image/team-img/profile-img.jpg',
+    name: 'Vinícius',
+    jobRole: 'Barbeiro Profissional',
+    instagramUrl: 'https://www.instagram.com/viniiii_oliveira/',
+    facebookUrl: 'https://www.facebook.com/?locale=pt_BR',
+    whatsappUrl: 'https://api.whatsapp.com/message/OQPYP5XUZGU7E1?autoload=1&app_absent=0',
+    description: 'Barbeiro com um ano de experiência, está em constante busca para fornecer sempre a melhor experiência para cada cliente. Com dedicação e atenção aos detalhes, esforçado para entender e atender às necessidades individuais, garantindo que cada visita seja única e satisfatória.',
   },
 ]

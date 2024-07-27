@@ -22,6 +22,10 @@
   top: 98px;
 }
 
+.container-profiles .box-profiles{
+  display: flex;
+}
+
 .container-profiles .btn-arrow-carousel {
   display: none;
   align-content: center;
