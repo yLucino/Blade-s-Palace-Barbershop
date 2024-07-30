@@ -1,0 +1,149 @@
+.scheduling {
+  height: 100vh;
+  background: var(--color-BlueDark);
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-scheduling {
+  background: var(--color-Blue);
+  padding: 15px 30px 30px 30px;
+  border-radius: 15px;
+  min-width: 800px;
+}
+
+.container-scheduling .subtitle {
+  color: var(--color-Yellow);
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Anton SC';
+}
+
+.container-scheduling hr {
+  margin: 10px 0 30px 0;
+}
+
+.partials-scheduling {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-partial form label  {
+  font-size: 14px;
+  color: var(--color-White);
+  font-weight: 600;
+}
+
+.left-partial form .box-user-info  {
+  margin-bottom: 15px;
+}
+
+.left-partial form .box-user-info input {
+  width: 320px;
+  height: 35px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin: 2px 0 5px 0;
+}
+
+.left-partial form .box-request-subscriber-plan {
+  margin-bottom: 15px;
+}
+
+.left-partial form .box-request-subscriber-plan .radio-container {
+  display: flex;
+  align-items: center;
+}
+
+.left-partial form .box-request-subscriber-plan input[type='radio'] {
+  display: none;
+}
+
+.custom-radio {
+  border: 1px solid var(--color-White);
+  width: 15px;
+  height: 15px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  position: relative;
+}
+
+.custom-radio,
+span {
+  transition: 0.5s ease;
+  color: var(--color-White);
+}
+
+.custom-radio span {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: var(--color-White);
+  border-radius: 50%;
+  position: absolute;
+  left: 3.5px;
+  top: 4px;
+}
+
+input[type='radio']:checked + .custom-radio {
+  border-color: var(--color-Yellow);
+}
+
+input[type='radio']:checked + .custom-radio span {
+  background: var(--color-Yellow);
+}
+
+.left-partial form .box-request-subscriber-plan .label-yes-no {
+  margin-left: -15px;
+  padding: 0 15px 0px 19px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.box-day-hour p {
+  margin-top: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-Yellow);
+}
+
+.box-day-hour .day-hour {
+  display: flex;
+  align-items: center;
+}
+
+.box-day-hour .day-hour label {
+  margin-right: 5px;
+}
+
+.box-day-hour .day-hour input {
+  height: 25px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  
+}
+
+.box-day-hour .day-hour input#date {
+  margin-right: 15px;
+}
+
+
+
+
+
+
+input:invalid + span:after {
+  content: "✖";
+  padding-left: 5px;
+}
+
+input:valid + span:after {
+  content: "✓";
+  padding-left: 5px;
+}
