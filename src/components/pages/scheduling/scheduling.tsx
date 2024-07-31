@@ -80,7 +80,7 @@ const Scheduling = () => {
                           <img src="https://placehold.co/50x50" />
                           <div className="text">
                             <p className='title-text'>Corte de Cabelo</p>
-                            <p className='sub-text'>Preço com a assinatura</p>
+                            <p className='sub-text'>Preço fora da assinatura</p>
                           </div>
                         </div>
                         <div className='price-service'>
@@ -95,7 +95,7 @@ const Scheduling = () => {
                           <img src="https://placehold.co/50x50" />
                           <div className="text">
                             <p className='title-text'>Corte de Cabelo</p>
-                            <p className='sub-text'>Preço com a assinatura</p>
+                            <p className='sub-text'>Preço fora da assinatura</p>
                           </div>
                         </div>
                         <div className='price-service'>
@@ -116,48 +116,76 @@ const Scheduling = () => {
               </div>
             </div>
           </div>
-          <div className='contaianer-checkout'>
+          <div className='container-arrow'>
+            <i className='bx bx-chevrons-right'></i>
+          </div>
+          <div className='container-checkout'>
             <div className="subtitle">
-              <h2>Confira as informações!</h2>
+              <h2>Confira suas informações!</h2>
+              <hr />
             </div>
             <div className="box-service-preview">
+              <div className="text-description">
+                <p>Serviços escolhidos:</p>
+              </div>
               <ul>
                 <li className='service'>
                   <div className="info-service">
-                    <img src="https://placehold.co/60x60" />
-                    <p>Corte de Cabelo</p>
-                    <p>Preço fora da assinatura</p>
+                    <img src="https://placehold.co/50x50" />
+                    <div className="text">
+                      <p className="title-text">Corte de Cabelo</p>
+                      <p className="sub-text">Preço fora da assinatura</p>
+                    </div>
                   </div>
                   <div className='price-service'>
-                    <p>R$ 30,00</p>
+                    <p>R$ 30</p>
                   </div>
                 </li>
                 <li className='service'>
                   <div className="info-service">
-                    <img src="https://placehold.co/60x60" />
-                    <p>Corte de Cabelo</p>
-                    <p>Preço fora da assinatura</p>
+                    <img src="https://placehold.co/50x50" />
+                    <div className="text">
+                      <p className="title-text">Corte de Cabelo</p>
+                      <p className="sub-text">Preço fora da assinatura</p>
+                    </div>
                   </div>
                   <div className='price-service'>
-                    <p>R$ 30,00</p>
+                    <p>R$ 30</p>
+                  </div>
+                </li>
+                <li className='service'>
+                  <div className="info-service">
+                    <img src="https://placehold.co/50x50" />
+                    <div className="text">
+                      <p className="title-text">Corte de Cabelo</p>
+                      <p className="sub-text">Preço fora da assinatura</p>
+                    </div>
+                  </div>
+                  <div className='price-service'>
+                    <p>R$ 30</p>
                   </div>
                 </li>
               </ul>
             </div>
             <div className="box-info-scheduling">
-              <div className="info-left">
-                <p>Nome: Jonh Sera</p>
-                <p>E-mail: jonh.sera@gmail.com</p>
-                <p>Telefono: (47) 99248-6476</p>
+              <div className="text-description">
+                <p>Suas informações:</p>
               </div>
-              <div className="info-right">
-                <p>É assinante: Não</p>
-                <p>Data: 01/01/2024</p>
-                <p>Hora: 20:30</p>
+              <div className="container-info">
+                <div className="info-left">
+                  <p>Nome: <span>Jonh Sera</span></p>
+                  <p>E-mail: <span>jonh.sera@gmail.com</span></p>
+                  <p>Telefone: <span>(47) 99248-6476</span></p>
+                </div>
+                <div className="info-right">
+                  <p>É assinante: <span>Não</span></p>
+                  <p>Data: <span>01/01/2024</span></p>
+                  <p>Hora: <span>20:30</span></p>
+                </div>
               </div>
             </div>
             <div className="box-total-price">
-              <p>Total: R$ 60,00</p>
+              <p>Total: <span>R$ 90</span></p>
             </div>
             <div className="box-finish-scheduling">
               <button>Agendar</button>

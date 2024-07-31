@@ -58,6 +58,10 @@ span {
   color: var(--color-Yellow);
 }
 
+button:active {
+  transform: scale(.95);
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   background: var(--color-BlueDark);

@@ -5,7 +5,7 @@
 
 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .container-scheduling {
@@ -15,15 +15,20 @@
   min-width: 800px;
 }
 
-.container-scheduling .subtitle {
+.subtitle {
   color: var(--color-Yellow);
   font-weight: bold;
   text-align: center;
   font-family: 'Anton SC';
+  letter-spacing: .1px;
+}
+
+hr {
+  margin: 10px 0 30px 0;
 }
 
 .container-scheduling hr {
-  margin: 10px 0 30px 0;
+  margin-bottom: 40px;
 }
 
 .partials-scheduling {
@@ -47,11 +52,11 @@
   padding: 10px;
   border-radius: 5px;
   border: none;
-  margin: 2px 0 5px 0;
+  margin: 5px 0 16px 0;
 }
 
 .left-partial form .box-request-subscriber-plan {
-  margin: 25px 0;
+  margin: 35px 0;
 }
 
 .left-partial form .box-request-subscriber-plan .radio-container {
@@ -143,28 +148,37 @@ input:valid + span:after {
   padding-left: 5px;
 }
 
-.right-partial .text-description {
+.text-description {
   font-size: 14px;
   color: var(--color-White);
   font-weight: 600;
   margin: 0 0 3px 8px;
 }
 
-.right-partial .preview-service .box-services-select ul {
+.right-partial .preview-service .box-services-select ul,
+.container-checkout .box-service-preview ul {
   max-height: 148px;
+  min-height: 84px;
+  min-width: 345px;
   overflow-x: hidden;
   background-color: var(--color-BlueDarkSoft);
   padding: 10px;
   border-radius: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
 
-.right-partial .preview-service .box-services-select ul li.service {
+.right-partial .preview-service .box-services-select ul {
+  max-height: 212px;
+}
+
+.right-partial .preview-service .box-services-select ul li.service,
+.container-checkout .box-service-preview ul li.service {
   display: flex;
   transition: .1s;
 }
 
-.right-partial .preview-service .box-services-select ul li.service:hover {
+.right-partial .preview-service .box-services-select ul li.service:hover,
+.container-checkout .box-service-preview ul li.service:hover {
   background: var(--color-BlueLight);
   border-radius: 5px;
   cursor: default;
@@ -200,26 +214,30 @@ input:valid + span:after {
   margin: 0 5px 0 10px;
 }
 
-.right-partial .preview-service .box-services-select ul li.service .info-service .text p.title-text {
+.right-partial .preview-service .box-services-select ul li.service .info-service .text p.title-text,
+.container-checkout .box-service-preview ul li.service .text p.title-text {
   color: var(--color-Yellow);
   font-weight: 600;
   font-size: 15px;
 }
 
-.right-partial .preview-service .box-services-select ul li.service .info-service .text p.sub-text {
+.right-partial .preview-service .box-services-select ul li.service .info-service .text p.sub-text,
+.container-checkout .box-service-preview ul li.service .text p.sub-text {
   color: var(--color-sample-text);
   font-weight: 300;
   font-size: 13px;
   line-height: 15px;
 }
 
-.right-partial .preview-service .box-services-select ul li.service .price-service {
+.right-partial .preview-service .box-services-select ul li.service .price-service,
+.container-checkout .box-service-preview ul li.service .price-service {
   display: flex;
   align-items: center;
   margin-left: 20px;
 }
 
-.right-partial .preview-service .box-services-select ul li.service .price-service p {
+.right-partial .preview-service .box-services-select ul li.service .price-service p,
+.container-checkout .box-service-preview ul li.service .price-service p {
   color: var(--color-Blue);
   font-weight: 600;
   font-size: 13px;
@@ -260,7 +278,8 @@ input:valid + span:after {
   align-items: center;
 }
 
-.right-partial .finish-box-scheduling button {
+.right-partial .finish-box-scheduling button,
+.container-checkout .box-finish-scheduling button {
   width: 240px;
   margin-bottom: 10px;
   padding: 15px;
@@ -269,14 +288,16 @@ input:valid + span:after {
   transition: .3s;
 }
 
-.right-partial .finish-box-scheduling button.concluded {
+.right-partial .finish-box-scheduling button.concluded,
+.container-checkout .box-finish-scheduling button {
   background-color: var(--color-Yellow);
   box-shadow: 0 0 10px var(--color-Yellow);
   color: var(--color-BlueDark);
   font-weight: 600;
 }
 
-.right-partial .finish-box-scheduling button.concluded:hover {
+.right-partial .finish-box-scheduling button.concluded:hover,
+.container-checkout .box-finish-scheduling button:hover {
   box-shadow: none;
   cursor: pointer;
 }
@@ -289,4 +310,96 @@ input:valid + span:after {
 .right-partial .finish-box-scheduling button.cancel:hover {
   cursor: pointer;
   box-shadow: inset 0 0 15px var(--color-BlueDark);
+}
+
+.container-arrow {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.container-arrow i {
+  font-size: 60px;
+  position: absolute;
+  left: -25px;
+}
+
+.container-checkout {
+  background: var(--color-Blue);
+  padding: 15px 30px 30px 30px;
+  border-radius: 15px;
+}
+
+.container-checkout .box-service-preview {
+  margin-bottom: 20px;
+}
+
+.container-checkout .box-service-preview ul li.service .info-service {
+  display: flex;
+  align-items: center;
+  margin: 7px;
+  width: 210px;
+}
+
+.container-checkout .box-service-preview ul li.service .info-service img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.container-checkout .box-info-scheduling {
+  margin-bottom: 10px;
+}
+
+.container-checkout .box-info-scheduling .container-info {
+  display: flex;
+  background: var(--color-BlueDarkSoft);
+  border-radius: 10px;
+  padding: 17px;
+}
+
+.container-checkout .box-info-scheduling .container-info .info-left {
+  margin-right: 20px;
+}
+
+.container-checkout .box-info-scheduling .container-info .info-left p,
+.container-checkout .box-info-scheduling .container-info .info-right p {
+  margin-bottom: 5px;
+  color: var(--color-Yellow);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.container-checkout .box-info-scheduling .container-info .info-left p span,
+.container-checkout .box-info-scheduling .container-info .info-right p span {
+  color: var(--color-sample-text);
+  font-size: 14px;
+  font-weight: 350;
+}
+
+.container-checkout .box-total-price {
+  display: flex;
+  margin-bottom: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+.container-checkout .box-total-price p {
+  background: var(--color-BlueDarkSoft);
+  width: 120px;
+  padding: 5px 10px 7px 10px;
+  border-radius: 10px;
+  color: var(--color-Yellow);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.container-checkout .box-total-price p span {
+  color: var(--color-sample-text);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.container-checkout .box-finish-scheduling {
+  display: flex;
+  justify-content: center;
 }
