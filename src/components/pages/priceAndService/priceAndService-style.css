@@ -80,7 +80,7 @@
 .box-cards-right ul li p {
   text-align: justify;
   align-self: center;
-  color: rgba(255, 255, 255, 0.541);
+  color: var(--color-sample-text);
   width: 320px;
   hyphens: auto;
   font-size: 14px;
@@ -116,7 +116,7 @@
 }
 
 .container-cards ul li nav a .btn-more-options:hover {
-  box-shadow: inset 0 0 10px var(--color-Shadow);
+  box-shadow: inset 0 0 10px var(--color-BlueDark);
 }
 
 

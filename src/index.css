@@ -4,6 +4,7 @@
 :root {
   --color-Blue: #0d3e69;
   --color-BlueDark: #021b2f;
+  --color-BlueDarkSoft: #062946;
   --color-BlueLight: #135c9c;
   --color-Yellow: #fed35b;
   --color-Golden: #e6ca7d;
@@ -11,6 +12,7 @@
   --color-GoldenLight: #fcf0cf;
   --color-White: #ffffff;
   --color-Black: #000000;
+  --color-sample-text: #ffffff8a;
   --color-Shadow: #04142296;
   --color-Gray: #1f1f1f; 
   --color-GrayBlue: #2d3f50;
