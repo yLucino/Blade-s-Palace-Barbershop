@@ -4,9 +4,9 @@ import './header-info-responsive.css'
 
 
 const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
-const daysNotWorking: string[] = ['Dom', 'Seg']
-const hoursDayWorkingWeek: number[] = [9, 19.3]
-const hoursDayWorkingWeeked: number[] = [8, 18.3]
+const daysNotWorking: string[] = ['Dom', 'Seg'];
+const hoursDayWorkingWeek: number[] = [9, 19.3];
+const hoursDayWorkingWeeked: number[] = [8, 18.3];
 
 // store opening hours checker
 function getDayName(date: Date): string {
@@ -46,7 +46,7 @@ function activityCheckWork(dayName: string) {
   if (dayName == daysNotWorking[0] || dayName == daysNotWorking[1]) {
     return <span>Estamos fechados</span>
   } else {
-    if (dayName == 'Sáb') {
+    if (dayName == daysOfWeek[6]) {
       if (hoursNow >= hoursDayWorkingWeeked[0] && hoursNow <= hoursDayWorkingWeeked[1]) {
         return <span>Estamos abertos</span>
       } else {
