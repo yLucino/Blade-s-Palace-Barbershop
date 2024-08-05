@@ -1,0 +1,42 @@
+@media (max-width: 1400px) {
+  .scheduling {
+    height: 1450px;
+  }
+  
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  .container .container-arrow {
+    margin: 30px 0 35px 0;
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .scheduling {
+    height: 1850px;
+  }
+  
+  .container-scheduling {
+    min-width: 400px;
+  }
+
+  .container-checkout {
+    min-width: 400px;
+  }
+
+  .partials-scheduling {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .partials-scheduling .left-partial {
+    margin-bottom: 30px;
+  }
+
+  .left-partial form .box-request-subscriber-plan {
+    margin: 0 0 20px 0;
+  }
+}
