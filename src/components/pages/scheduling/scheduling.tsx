@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 
 const Scheduling: React.FC = () => {
   // function to update min/max in date input
+  
   function getMinDate() {
     const now = new Date();
     const day = now.getDate();
@@ -159,8 +160,8 @@ const Scheduling: React.FC = () => {
   // function to get/formatted in Br => Full date in input type date
   const [displayDateValue, setDisplayDateValue] = useState<string>('');
   const formatDateToBR = (dateString: string): string => {
-    const [year, month, day] = dateString.split('-');
-    return `${day}/${month}/${year}`;
+    const [years, months, days] = dateString.split('-');
+    return `${days}/${months}/${years}`;
   };
 
   // function to get => Full hour in input type hour
@@ -200,6 +201,18 @@ const Scheduling: React.FC = () => {
     setDisplayHourValue('');
   };
 
+  // function for validation of the information form
+  const validationInfoInput = () => {
+    if (nameValue && dateValueBR && emailValue && planRadioValue && hourValue) {
+      if (phoneValue.length == 15) {
+        formConcluded()
+      } else {
+        alert('Por favor, preencha o campo TELEFONE corretamente para fazer o agendamento.');
+      }
+    } else {
+      alert('Por favor, preencha o formulário para fazer o agendamento.');
+    }
+  }
 
   return (
     <>
@@ -218,7 +231,7 @@ const Scheduling: React.FC = () => {
                 <form action="URL" method="post" id="form-scheduling">
                   <div className="box-user-info">
                     <label htmlFor="name">Nome Completo: </label><br></br>
-                    <input type="text" id="name" name="name" value={nameValue} onChange={handleChangeGetName} maxLength={40} required/><br></br>
+                    <input type="text" id="name" name="name" placeholder='Seu nome' value={nameValue} onChange={handleChangeGetName} maxLength={40} required/><br></br>
                     <label htmlFor="email">E-mail:</label><br></br>
                     <input type="email" name="email" id="email" placeholder='email@exemplo.com' value={emailValue} onChange={handleChangeGetEmail} maxLength={40} required/><br></br>
                     <label htmlFor="phone">Telefone: </label><br></br>
@@ -307,7 +320,7 @@ const Scheduling: React.FC = () => {
                   </div>
                 </div>
                 <div className="finish-box-scheduling">
-                  <button className='concluded' onClick={formConcluded}>Concluído</button>
+                  <button className='concluded' onClick={validationInfoInput}>Concluído</button>
                   <button className='cancel' onClick={formCancel}>Cancelar</button>
                 </div>
               </div>

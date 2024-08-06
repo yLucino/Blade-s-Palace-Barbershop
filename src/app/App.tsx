@@ -6,7 +6,7 @@ import Home from '../components/pages/home/home';
 import PriceAndService from '../components/pages/priceAndService/priceAndService';
 import Team from '../components/pages/team/team';
 import Scheduling from '../components/pages/scheduling/scheduling';
-// import Contact from '../components/pages/contact/contact';
+import Contact from '../components/pages/contact/contact';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
      <PriceAndService />
      <Team />
      <Scheduling />
-     {/* <Contact /> */}
+     <Contact />
     </>
   )
 }

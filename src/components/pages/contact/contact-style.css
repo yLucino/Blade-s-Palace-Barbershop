@@ -1,4 +1,67 @@
 .contact {
-  height: 100vh;
+  height: 300px;
   background: var(--color-Gray);
+}
+
+.contact .title {
+  padding: 40px 0 15px 0;
+}
+
+.contact nav ul {
+  display: flex;
+  justify-content: center;
+  margin: 0 50px;
+  border-bottom: 1px solid var(--color-GrayLight);
+}
+
+.contact nav ul li.btn-social {
+  margin: 0 10px 20px 0;
+}
+
+.contact nav ul li.btn-social a i {
+  border: 1px solid var(--color-Gray);
+  padding: 5px;
+  border-radius: 50%;
+  transition: .3s;
+  font-size: 30px;
+}
+
+.contact nav ul li.btn-social a i:hover {
+  border: 1px solid var(--color-Yellow);
+  color: var(--color-Yellow);
+  box-shadow: 0 0 5px var(--color-Yellow);
+}
+
+.contact .container-text {
+  margin-top: 10px;
+}
+
+.contact .container-text .location p,
+.contact .container-text .opening-hours p,
+.contact .container-text .copyright p,
+.contact .container-text .developerBy p {
+  text-align: center;
+  color: var(--color-sample-text-light);
+  font-weight: 100;
+  font-size: 13px;
+  line-height: 21px;
+}
+
+.contact .container-text .copyright p {
+  text-decoration: underline;
+}
+
+p span {
+  color: var(--color-GoldenLight);
+  margin: 0 3px;
+  text-decoration: underline;
+}
+
+.developerBy p {
+  display: flex;
+  justify-content: center;
+}
+
+.developerBy p a {
+  margin-left: 5px;
 }
