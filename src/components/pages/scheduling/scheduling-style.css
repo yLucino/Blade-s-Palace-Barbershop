@@ -13,6 +13,7 @@
   padding: 15px 30px 30px 30px;
   border-radius: 15px;
   min-width: 800px;
+  position: relative;
 }
 
 .subtitle {
@@ -274,13 +275,15 @@ input:valid + span:after {
   cursor: pointer;
 }
 
-.right-partial .finish-box-scheduling {
+.finish-box-scheduling {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  position: absolute;
+  right: 82px;
+  bottom: 30px;
 }
 
-.right-partial .finish-box-scheduling button,
+.finish-box-scheduling button,
 .container-checkout .box-finish-scheduling button {
   width: 240px;
   margin-bottom: 10px;
@@ -290,7 +293,7 @@ input:valid + span:after {
   transition: .3s;
 }
 
-.right-partial .finish-box-scheduling button.concluded,
+.finish-box-scheduling button.concluded,
 .container-checkout .box-finish-scheduling button {
   background-color: var(--color-Yellow);
   box-shadow: 0 0 10px var(--color-Yellow);
@@ -298,18 +301,18 @@ input:valid + span:after {
   font-weight: 600;
 }
 
-.right-partial .finish-box-scheduling button.concluded:hover,
+.finish-box-scheduling button.concluded:hover,
 .container-checkout .box-finish-scheduling button:hover {
   box-shadow: none;
   cursor: pointer;
 }
 
-.right-partial .finish-box-scheduling button.cancel {
+.finish-box-scheduling button.cancel {
   color: var(--color-Yellow);
   background-color: transparent;
 }
 
-.right-partial .finish-box-scheduling button.cancel:hover {
+.finish-box-scheduling button.cancel:hover {
   cursor: pointer;
   box-shadow: inset 0 0 15px var(--color-BlueDark);
 }

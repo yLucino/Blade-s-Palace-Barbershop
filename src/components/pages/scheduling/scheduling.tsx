@@ -228,7 +228,8 @@ const Scheduling: React.FC = () => {
             </div>
             <div className="partials-scheduling">
               <div className="left-partial">
-                <form action="URL" method="post" id="form-scheduling">
+                <form action="" method="" id="form-scheduling"> 
+                  {/* action="URL.php" method="post" */}
                   <div className="box-user-info">
                     <label htmlFor="name">Nome Completo: </label><br></br>
                     <input type="text" id="name" name="name" placeholder='Seu nome' value={nameValue} onChange={handleChangeGetName} maxLength={40} required/><br></br>
@@ -258,6 +259,10 @@ const Scheduling: React.FC = () => {
                       <span className="validacao"></span>
                     </div>
                     <p>(Ter a Sex: 09:00h as 19:30h | Sáb: 08:00h as 18:30h)</p>
+                  </div>
+                  <div className="finish-box-scheduling">
+                    <button className='concluded' onClick={validationInfoInput}>Concluído</button>
+                    <button className='cancel' onClick={formCancel}>Cancelar</button>
                   </div>
                 </form>
               </div>
@@ -319,10 +324,7 @@ const Scheduling: React.FC = () => {
                     <a href='#precos-e-servicos'>Adicionar mais serviços +</a>
                   </div>
                 </div>
-                <div className="finish-box-scheduling">
-                  <button className='concluded' onClick={validationInfoInput}>Concluído</button>
-                  <button className='cancel' onClick={formCancel}>Cancelar</button>
-                </div>
+                
               </div>
             </div>
           </div>

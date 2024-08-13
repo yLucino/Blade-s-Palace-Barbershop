@@ -36,6 +36,10 @@
     margin-bottom: 30px;
   }
 
+  .partials-scheduling .right-partial {
+    margin-bottom: 120px;
+  }
+
   .left-partial form .box-request-subscriber-plan {
     margin: 0 0 20px 0;
   }
