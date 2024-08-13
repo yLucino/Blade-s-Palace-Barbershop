@@ -72,6 +72,15 @@ const Team: React.FC = () => {
           <div className='title'>
             <h1>Time</h1>
           </div>
+          <div className="form-select-location">
+            <form>
+              <select name="" id="">
+                <option value="sample_employee_allteam" selected>Selecione uma unidade</option>
+                <option value="sample_employee_team_Nr3020">Rua Frederico Jensen | Nrº 3020 | Itoupavazinha</option>
+                <option value="sample_employee_team_Nr1636">Rua Franz Volles | Nrº 1636 | Itoupava Central</option>
+              </select>
+            </form>
+          </div>
           <div className='container-profiles'>
             <div className="btn-arrow-carousel">
               <i className='bx bx-chevron-left bx-md btn-chevron-team left'></i>

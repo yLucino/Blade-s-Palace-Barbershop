@@ -5,7 +5,7 @@
   }
 } 
 
-@media (max-width: 750px) {
+@media (max-width: 1070px) {
   .header-info {
     flex-direction: column;
     padding: 10px 10px;
@@ -29,9 +29,22 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 660px) {
   .info-location-numberPhone {
     font-size: 11px;
     margin-bottom: 5px;
+  }
+  .info-location-numberPhone ul li i.bx {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 585px) {
+  .info-location-numberPhone {
+    font-size: 8px;
+    font-weight: 400;
+  }
+  .info-location-numberPhone ul li i.bx {
+    font-size: 15px;
   }
 }

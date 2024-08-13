@@ -23,7 +23,7 @@ const Home = () => {
         <nav>
           <ul>
             <li className='btn-book-haircut'>
-              <a href=""><button>Opções de Cortes</button></a>
+              <a href="#precos-e-servicos"><button>Serviços</button></a>
             </li>
             <li className='btn-to-schedule'>
               <a href="#agendamento"><button>Agendamento</button></a>

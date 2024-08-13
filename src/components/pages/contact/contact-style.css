@@ -51,7 +51,7 @@
   text-decoration: underline;
 }
 
-p span {
+.container-text p span {
   color: var(--color-GoldenLight);
   margin: 0 3px;
   text-decoration: underline;

@@ -1,10 +1,10 @@
 import React from "react";
-import { sample_employee_team } from "../../../data";
+import { sample_employee_allteam } from "../../../data";
 
 const Profile: React.FC = () => {
   return (
     <>
-      {sample_employee_team.map((profile, index) => (
+      {sample_employee_allteam.map((profile, index) => (
         <div className="profile" key={index}>
           <img src={profile.imageUrl} alt={profile.name} />
           <h2>{profile.name}</h2>
