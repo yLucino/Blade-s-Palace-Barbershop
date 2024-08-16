@@ -5,7 +5,7 @@ const Profile: React.FC = () => {
   return (
     <>
       {sample_employee_allteam.map((profile, index) => (
-        <div className="profile" key={index}>
+        <div className={`profile ${profile.businessAddress}`} key={index}>
           <img src={profile.imageUrl} alt={profile.name} />
           <h2>{profile.name}</h2>
           <h3>{profile.jobRole}</h3>

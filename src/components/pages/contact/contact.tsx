@@ -44,7 +44,8 @@ const Contact = () => {
         </nav>
         <div className="container-text">
           <div className="location">
-            <p>Blade’s Palace Barbershop, R. Frederico Jensen, 3020 - Sala - 02 - Itoupavazinha, Blumenau - SC, 89066-302</p>
+            <p>Estabelecimento 1, R. Frederico Jensen, 3020 - Sala - 02 - Itoupavazinha, Blumenau - SC, 89066-302</p>
+            <p>Estabelecimento 2, R. Franz Volles, 1636 - Edifício - Itoupava Central, Blumenau - SC, 89066-101</p>
           </div>
           <div className="opening-hours">
             <p>Terça a Sexta das <span>09h00 as 19h30</span> | Sábados das <span>08h00 as 18h30</span> | Segundas e Domingos estamos <span>fechados</span>.</p>

@@ -7,4 +7,5 @@ export class EmployeeTeam {
   facebookUrl!: string;
   whatsappUrl!: string;
   description!: string;
+  businessAddress!: string;
 }

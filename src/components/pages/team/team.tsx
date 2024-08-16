@@ -1,6 +1,6 @@
 import './team-style.css';
 import './team-responsive.css'
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Profile from '../../contents/profile_TeamPage/profile';
 
 import imageBackground from '../../../../public/assets/image/team-img/bg-image.png';
@@ -64,6 +64,41 @@ const Team: React.FC = () => {
     }
   });
 
+  // Take info in select(option.value) for determine which profile will show
+  const [selectedValue, setSelecedValue] = useState<string>('');
+
+  const handleChangeSelectedValue = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = event.target.value;
+    setSelecedValue(value);
+    verificationSelectedValue(value);
+  }
+
+  function verificationSelectedValue(value: string) {
+    if (value == 'allLocation') {
+      changeStyleDisplay(value)
+    } else if (value == 'rua-frederico-jensen-Nr3020') {
+      changeStyleDisplay(value)
+    } else if (value == 'rua-franz-volles-Nr1636') {
+      changeStyleDisplay(value)
+    }
+  }
+
+  function changeStyleDisplay(value: string) {
+    const cardsEmployeeBarber = document.querySelectorAll('.profile') 
+    cardsEmployeeBarber.forEach(barber => {
+      if (value == 'allLocation') {
+        barber.classList.add('displayON')
+        barber.classList.remove('displayOFF')
+      } else if (barber.classList[1] == value) {
+        barber.classList.add('displayON')
+        barber.classList.remove('displayOFF')
+      } else {
+        barber.classList.remove('displayON')
+        barber.classList.add('displayOFF')
+      }
+    });    
+  }
+
   return (
     <>
       <div ref={containerTeamRef}>
@@ -74,10 +109,10 @@ const Team: React.FC = () => {
           </div>
           <div className="form-select-location">
             <form>
-              <select name="" id="">
-                <option value="sample_employee_allteam" selected>Selecione uma unidade</option>
-                <option value="sample_employee_team_Nr3020">Rua Frederico Jensen | Nrº 3020 | Itoupavazinha</option>
-                <option value="sample_employee_team_Nr1636">Rua Franz Volles | Nrº 1636 | Itoupava Central</option>
+              <select id="select-location" onChange={handleChangeSelectedValue} value={selectedValue}>
+                <option value="allLocation">Todos os barbeiros</option>
+                <option value="rua-frederico-jensen-Nr3020">Rua Frederico Jensen | Nrº 3020 | Itoupavazinha</option>
+                <option value="rua-franz-volles-Nr1636">Rua Franz Volles | Nrº 1636 | Itoupava Central</option>
               </select>
             </form>
           </div>
