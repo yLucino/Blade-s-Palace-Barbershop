@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 
 const Scheduling: React.FC = () => {
   // function to update min/max in date input
-  
   function getMinDate() {
     const now = new Date();
     const day = now.getDate();

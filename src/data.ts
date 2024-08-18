@@ -1,6 +1,7 @@
 import { Services } from './app/shared/models/services';
 import { SubscriptionPlan } from './app/shared/models/subscriptionPlan';
 import { EmployeeTeam } from './app/shared/models/employeeTeam';
+import { Login } from './app/shared/models/login';
 
 export const sample_subscriptionPlan: SubscriptionPlan[] = [
   {
@@ -115,5 +116,12 @@ export const sample_employee_allteam: EmployeeTeam[] = [
     whatsappUrl: 'https://api.whatsapp.com/message/OQPYP5XUZGU7E1?autoload=1&app_absent=0',
     description: 'Barbeiro com um ano de experiência, está em constante busca para fornecer sempre a melhor experiência para cada cliente. Com dedicação e atenção aos detalhes, esforçado para entender e atender às necessidades individuais, garantindo que cada visita seja única e satisfatória.',
     businessAddress: 'Rua Frederico Jensen Nrº3020',
+  },
+]
+
+export const sample_users_login: Login[] = [
+  {
+    email: 'chiodiniluciano@gmail.com',
+    password: 'chuva2243'
   },
 ]
