@@ -92,7 +92,7 @@ export const sample_employee_allteam: EmployeeTeam[] = [
     facebookUrl: 'https://www.facebook.com/matheus.coelho.752487?locale=pt_BR',
     whatsappUrl: 'https://api.whatsapp.com/message/OQPYP5XUZGU7E1?autoload=1&app_absent=0',
     description: 'Barbeiro uma sólida experiência de 2 anos no setor, trazendo um vasto conhecimento e habilidade para cada serviço oferecido. Atencioso a todas as suas petições, ele se dedica a entender suas necessidades e a garantir que você receba o melhor atendimento possível.',
-    businessAddress: 'rua-franz-volles-Nr1636',
+    businessAddress: 'Rua Franz Volles Nrº1636',
   },
   {
     id: '2',
@@ -103,7 +103,7 @@ export const sample_employee_allteam: EmployeeTeam[] = [
     facebookUrl: 'https://www.facebook.com/isaque.luizsilva.9?locale=pt_BR',
     whatsappUrl: 'https://api.whatsapp.com/message/OQPYP5XUZGU7E1?autoload=1&app_absent=0',
     description: 'Barbeiro com 3 anos de experiência e dedicado a estudar e entender todas as necessidades dos clientes, garantindo um serviço personalizado e de alta qualidade. Ele está sempre atualizado com as últimas tendências e técnicas para oferecer o melhor atendimento possível.',
-    businessAddress: 'rua-frederico-jensen-Nr3020',
+    businessAddress: 'Rua Frederico Jensen Nrº3020',
   },
   {
     id: '3',
@@ -114,42 +114,6 @@ export const sample_employee_allteam: EmployeeTeam[] = [
     facebookUrl: 'https://www.facebook.com/?locale=pt_BR',
     whatsappUrl: 'https://api.whatsapp.com/message/OQPYP5XUZGU7E1?autoload=1&app_absent=0',
     description: 'Barbeiro com um ano de experiência, está em constante busca para fornecer sempre a melhor experiência para cada cliente. Com dedicação e atenção aos detalhes, esforçado para entender e atender às necessidades individuais, garantindo que cada visita seja única e satisfatória.',
-    businessAddress: 'rua-frederico-jensen-Nr3020',
+    businessAddress: 'Rua Frederico Jensen Nrº3020',
   },
 ]
-
-// export const sample_employee_team_Nr3020: EmployeeTeam[] = [
-//   {
-//     id: '2',
-//     imageUrl: '../../../../public/assets/image/team-img/profile-img.jpg',
-//     name: 'Isaque',
-//     jobRole: 'Barbeiro Prof. | Fundador',
-//     instagramUrl: 'https://www.instagram.com/isaqueluizsilva/',
-//     facebookUrl: 'https://www.facebook.com/isaque.luizsilva.9?locale=pt_BR',
-//     whatsappUrl: 'https://api.whatsapp.com/message/OQPYP5XUZGU7E1?autoload=1&app_absent=0',
-//     description: 'Barbeiro com 3 anos de experiência e dedicado a estudar e entender todas as necessidades dos clientes, garantindo um serviço personalizado e de alta qualidade. Ele está sempre atualizado com as últimas tendências e técnicas para oferecer o melhor atendimento possível.',
-//   },
-//   {
-//     id: '3',
-//     imageUrl: '../../../../public/assets/image/team-img/profile-img.jpg',
-//     name: 'Vinícius',
-//     jobRole: 'Barbeiro Profissional',
-//     instagramUrl: 'https://www.instagram.com/viniiii_oliveira/',
-//     facebookUrl: 'https://www.facebook.com/?locale=pt_BR',
-//     whatsappUrl: 'https://api.whatsapp.com/message/OQPYP5XUZGU7E1?autoload=1&app_absent=0',
-//     description: 'Barbeiro com um ano de experiência, está em constante busca para fornecer sempre a melhor experiência para cada cliente. Com dedicação e atenção aos detalhes, esforçado para entender e atender às necessidades individuais, garantindo que cada visita seja única e satisfatória.',
-//   },
-// ]
-
-// export const sample_employee_team_Nr1636: EmployeeTeam[] = [
-//   {
-//     id: '1',
-//     imageUrl: '../../../../public/assets/image/team-img/profile-img.jpg',
-//     name: 'Matheus',
-//     jobRole: 'Barbeiro Profissional',
-//     instagramUrl: 'https://www.instagram.com/matheuserickcoelho/',
-//     facebookUrl: 'https://www.facebook.com/matheus.coelho.752487?locale=pt_BR',
-//     whatsappUrl: 'https://api.whatsapp.com/message/OQPYP5XUZGU7E1?autoload=1&app_absent=0',
-//     description: 'Barbeiro uma sólida experiência de 2 anos no setor, trazendo um vasto conhecimento e habilidade para cada serviço oferecido. Atencioso a todas as suas petições, ele se dedica a entender suas necessidades e a garantir que você receba o melhor atendimento possível.',
-//   },
-// ]
