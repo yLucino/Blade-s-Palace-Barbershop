@@ -2,6 +2,12 @@ import './scheduling-style.css';
 import './scheduling-responsive.css';
 
 import React, { useState } from 'react';
+import {
+  daysOfWeek,
+  daysNotWorking,
+  hoursDayWorkingWeekString,
+  hoursDayWorkingWeekedString
+} from '../../../app/shared/scripts/scriptsOfDate';
 
 const Scheduling: React.FC = () => {
   // function to update min/max in date input
@@ -58,10 +64,6 @@ const Scheduling: React.FC = () => {
   }
 
   // function for update min/max in hour input AND get day value input type date
-  const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
-  const daysNotWorking: string[] = ['Dom', 'Seg'];
-  const hoursDayWorkingWeek: string[] = ['09:00', '19:30'];
-  const hoursDayWorkingWeeked: string[] = ['08:00', '18:30'];
   const [dateValue, setDateValue] = useState<string>('');
   const [dateValueBR, setDateValueBR] = useState<string>('');
   const [day, setDay] = useState<number>(Number);
@@ -94,9 +96,9 @@ const Scheduling: React.FC = () => {
     if (dayName == daysNotWorking[0] || dayName == daysNotWorking[1]) {
       return '00:00'
     } else if (dayName == daysOfWeek[6]) {
-      return hoursDayWorkingWeeked[0]
+      return hoursDayWorkingWeekedString[0]
     } else {
-      return hoursDayWorkingWeek[0]
+      return hoursDayWorkingWeekString[0]
     }
   }
   
@@ -105,9 +107,9 @@ const Scheduling: React.FC = () => {
     if (dayName == daysNotWorking[0] || dayName == daysNotWorking[1]) {
       return '00:00'
     } else if (dayName == daysOfWeek[6]) {
-      return hoursDayWorkingWeeked[1]
+      return hoursDayWorkingWeekedString[1]
     } else {
-      return hoursDayWorkingWeek[1]
+      return hoursDayWorkingWeekString[1]
     }
   }
 

@@ -1,12 +1,13 @@
+import './header-info-style.css';
+import './header-info-responsive.css';
+
 import React, { useState } from 'react';
-import './header-info-style.css'
-import './header-info-responsive.css'
-
-
-const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
-const daysNotWorking: string[] = ['Dom', 'Seg'];
-const hoursDayWorkingWeek: number[] = [9, 19.3];
-const hoursDayWorkingWeeked: number[] = [8, 18.3];
+import {   
+  daysOfWeek,
+  daysNotWorking,
+  hoursDayWorkingWeekNumber,
+  hoursDayWorkingWeekedNumber
+} from '../../../../app/shared/scripts/scriptsOfDate';
 
 // store opening hours checker
 function getDayName(date: Date): string {
@@ -47,13 +48,13 @@ function activityCheckWork(dayName: string) {
     return <span>Estamos fechados</span>
   } else {
     if (dayName == daysOfWeek[6]) {
-      if (hoursNow >= hoursDayWorkingWeeked[0] && hoursNow <= hoursDayWorkingWeeked[1]) {
+      if (hoursNow >= hoursDayWorkingWeekedNumber[0] && hoursNow <= hoursDayWorkingWeekedNumber[1]) {
         return <span>Estamos abertos</span>
       } else {
         return <span>Estamos fechados</span>
       }
     } else {
-      if (hoursNow >= hoursDayWorkingWeek[0] && hoursNow <= hoursDayWorkingWeek[1]) {
+      if (hoursNow >= hoursDayWorkingWeekNumber[0] && hoursNow <= hoursDayWorkingWeekNumber[1]) {
         return <span>Estamos abertos</span>
       } else {
         return <span>Estamos fechados</span>
