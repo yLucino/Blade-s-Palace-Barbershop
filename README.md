@@ -1,10 +1,10 @@
 # WebSite Blade's Palace Barbershop
 
 ### Layout Desktop
-<img src="./src/design/wbesiteBPBSHOPPreview.gif" alt="imagem do projeto final Desktop">
+<img src="./design/wbesiteBPBSHOPPreview.gif" alt="imagem do projeto final Desktop">
 
 ### Layout Mobile
-<img src="./src/design/wbesiteBPBSHOPPreviewMobile.gif" alt="imagem do projeto final Mobile">
+<img src="./design/wbesiteBPBSHOPPreviewMobile.gif" alt="imagem do projeto final Mobile">
 
 Layout Responsivo para Desktop | Laptop | Tablet | Mobile
 

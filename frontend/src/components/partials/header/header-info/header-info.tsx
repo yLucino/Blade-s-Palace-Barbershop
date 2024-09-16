@@ -122,7 +122,7 @@ const HeaderInfo: React.FC = () => {
             onMouseEnter={handleMouseEnterMap_Nr1636}
             onMouseLeave={handleMouseLeaveMap_Nr1636}
             >
-              <a href="https://www.google.com/maps/place/R.+Franz+Volles,+1636+-+Itoupava+Central,+Blumenau+-+SC,+89066-101/@-26.8343255,-49.1080557,17z/data=!3m1!4b1!4m6!3m5!1s0x94dee1e12662eb23:0x3e5d80c7f3e4170a!8m2!3d-26.8343303!4d-49.1054808!16s%2Fg%2F11f2tshvzg?entry=ttu" target='_blank'>
+              <a href="https://www.google.com/maps/place/Blade%C2%B4s+Place+Barbershop+2/@-26.8344038,-49.1054507,20.25z/data=!4m15!1m8!3m7!1s0x94dee1e12662eb23:0x3e5d80c7f3e4170a!2sR.+Franz+Volles,+1636+-+Itoupava+Central,+Blumenau+-+SC,+89066-101!3b1!8m2!3d-26.8343303!4d-49.1054808!16s%2Fg%2F11f2tshvzg!3m5!1s0x94dee14370570c47:0x66a55f1965e75842!8m2!3d-26.8343303!4d-49.1054808!16s%2Fg%2F11lmkqq6mh?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D" target='_blank'>
                 <i className={`bx bx-map ${isHoveredMap_Nr1636 ? 'bx-tada' : ''}`}></i>
                 <p title='CEP: 89066-302'>Nrº 1636 | Rua Franz Volles</p>
               </a>

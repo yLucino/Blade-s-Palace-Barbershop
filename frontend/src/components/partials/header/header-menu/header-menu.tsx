@@ -64,11 +64,6 @@ const HeaderMenu: React.FC = () => {
                 <div className="bar3"></div>
               </li>
               <li className={`menu-content ${isOpen ? 'open' : ''}`}>
-                <a href="#login">
-                  <i className='bx bx-user'></i>
-                  Login
-                </a>
-
                 <a href="#administrador">
                   <i className='bx bx-cog'></i>
                   Administrador

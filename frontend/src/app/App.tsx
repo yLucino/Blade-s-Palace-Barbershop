@@ -1,4 +1,3 @@
-import './App.css'
 import 'boxicons/css/boxicons.min.css';
 
 import Header from '../components/partials/header/header';

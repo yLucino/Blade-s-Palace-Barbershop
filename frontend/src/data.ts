@@ -117,7 +117,7 @@ export const sample_employee_allteam: EmployeeTeam[] = [
     description: 'Barbeiro com um ano de experiência, está em constante busca para fornecer sempre a melhor experiência para cada cliente. Com dedicação e atenção aos detalhes, esforçado para entender e atender às necessidades individuais, garantindo que cada visita seja única e satisfatória.',
     businessAddress: 'Rua Frederico Jensen Nrº3020',
   },
-]
+] // in database
 
 export const sample_users_login: Login[] = [
   {
