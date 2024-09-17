@@ -11,7 +11,7 @@ export const sample_subscriptionPlan: SubscriptionPlan[] = [
     priceFullPlan: 80.00,
     priceHalfPlan: 60.00,
   }
-]
+] // in database
 
 export const sample_services_left: Services[] = [
   {
@@ -46,7 +46,7 @@ export const sample_services_left: Services[] = [
     priceNoPlan: 150.00,
     priceInPlan: 80.00,
   },
-]
+] // in database
 
 export const sample_services_right: Services[] = [
   {
@@ -81,7 +81,7 @@ export const sample_services_right: Services[] = [
     priceNoPlan: 120.00,
     priceInPlan: 80.00,
   },
-]
+] // in database
 
 export const sample_employee_allteam: EmployeeTeam[] = [
   {
