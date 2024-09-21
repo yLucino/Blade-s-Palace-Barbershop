@@ -1,4 +1,5 @@
 import './header-menu-style.css';
+import './login-admin-style.css'
 import './header-menu-responsive.css';
 import logoImage from '../../../../../public/assets/image/header-img/penteado.png';
 import React, { useState, useEffect } from 'react';
@@ -25,6 +26,11 @@ const HeaderMenu: React.FC = () => {
       window.addEventListener('scroll', handleScroll);
     };
   });
+  // Close/Open LoginAdm
+  const [isHidden, setIsHidden] = useState(true);
+  const toggleHidden = () => {
+    setIsHidden(!isHidden);
+  };
 
   return (
     <>
@@ -64,13 +70,38 @@ const HeaderMenu: React.FC = () => {
                 <div className="bar3"></div>
               </li>
               <li className={`menu-content ${isOpen ? 'open' : ''}`}>
-                <a href="#administrador">
+                <a onClick={toggleHidden} href="#administrador">
                   <i className='bx bx-cog'></i>
                   Administrador
                 </a>
               </li>
             </ul>
           </nav>
+        </div>
+        <div className={`container-adm ${isHidden ? 'hidden' : ''}`}>
+          <div className={`loginAdmin ${isHidden ? 'hidden' : ''}`}>
+            <div className="container-loginAdmin">
+              <button onClick={toggleHidden} className='btn-close'>
+                <i className='bx bx-x'></i>
+              </button>
+              <div className="box-content">
+                <div className="adm-info">
+                  <h1>Bem-vindo ADM!</h1>
+                  <img className='logo' src={logoImage} alt="logo" />
+                </div>
+                <div className="form-inputs">
+                  <form action="">
+                    <input type="text" placeholder="Usuário" required/>
+                    <input type="password" placeholder="Senha" required/>
+                    <button type="submit">Entrar</button>
+                  </form>
+                </div>
+                <div className="help-info">
+                  <p>Precisa de ajuda? <a href="mailto:dev.yluciano@gmail.com" target="_blank">clique aqui!</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
