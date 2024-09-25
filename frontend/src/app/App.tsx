@@ -7,9 +7,13 @@ import Team from '../components/pages/team/team';
 import Scheduling from '../components/pages/scheduling/scheduling';
 import Contact from '../components/pages/contact/contact';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   return (
       <>
+        <ToastContainer autoClose={3500} position={"bottom-left"} />
         <Header />
         <Home />
         <PriceAndService />

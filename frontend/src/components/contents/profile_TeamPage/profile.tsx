@@ -1,5 +1,5 @@
 import React from "react";
-import { sample_employee_allteam } from "../../../data";
+import { sample_employee_allteam } from "../../../data.env";
 
 const Profile: React.FC = () => {
   return (

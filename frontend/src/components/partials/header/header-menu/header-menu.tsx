@@ -1,8 +1,10 @@
 import './header-menu-style.css';
-import './login-admin-style.css'
+import './header-menu-login-style.css'
 import './header-menu-responsive.css';
 import logoImage from '../../../../../public/assets/image/header-img/penteado.png';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { toast } from "react-toastify";
 
 const HeaderMenu: React.FC = () => {
   // toggle animation bx-icon
@@ -10,6 +12,7 @@ const HeaderMenu: React.FC = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   }
+  
   // scroll to add className(scrollOn) in HeaderMenu, to Fixed in screen
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -26,10 +29,27 @@ const HeaderMenu: React.FC = () => {
       window.addEventListener('scroll', handleScroll);
     };
   });
-  // Close/Open LoginAdm
+  
+  // close/open LoginAdm
   const [isHidden, setIsHidden] = useState(true);
   const toggleHidden = () => {
     setIsHidden(!isHidden);
+  };
+  
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    axios.post('http://localhost:8800/admin', {user, password})
+    .then(res => {
+      if (res.data == 'No record user or password') {
+        toast.error("Usuário/Senha incorreta ou inexistente!")
+      } else if (res.data == 'Login Successfully') {
+        toast.success("Login feito com sucesso!")
+      }
+    })
+    .catch(err => console.log(err));
   };
 
   return (
@@ -90,10 +110,12 @@ const HeaderMenu: React.FC = () => {
                   <img className='logo' src={logoImage} alt="logo" />
                 </div>
                 <div className="form-inputs">
-                  <form action="">
-                    <input type="text" placeholder="Usuário" required/>
-                    <input type="password" placeholder="Senha" required/>
-                    <button type="submit">Entrar</button>
+                  <form onSubmit={handleSubmit}>
+                    <input onChange={e => setUser(e.target.value)} type="text" placeholder="Usuário" required/>
+
+                    <input onChange={e => setPassword(e.target.value)} type="password" placeholder="Senha" required/>
+
+                    <button>Entrar</button>
                   </form>
                 </div>
                 <div className="help-info">

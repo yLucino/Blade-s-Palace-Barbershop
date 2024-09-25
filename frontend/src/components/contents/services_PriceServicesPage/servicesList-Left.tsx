@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { sample_services_left } from "../../../data";
+import { sample_services_left } from "../../../data.env";
 
 const ServicesList_Left: React.FC = () => {
   // hover to shows exclusive price for plan subscribers
