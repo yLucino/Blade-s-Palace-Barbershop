@@ -64,19 +64,19 @@ const HeaderMenu: React.FC = () => {
           <nav>
             <ul>
               <li>
-                <a href="#inicio">Inicio</a>
+                <a href="/">Inicio</a>
               </li>
               <li>
-                <a href="#precos-e-servicos">Preços e Serviços</a>
+                <a href="/price-and-services">Preços e Serviços</a>
               </li>
               <li>
-                <a href="#time">Time</a>
+                <a href="/team">Time</a>
               </li>
               <li>
-                <a href="#agendamento">Agendamento</a>
+                <a href="/scheduling">Agendamento</a>
               </li>
               <li>
-                <a href="#contato">Contato</a>
+                <a href="/contact">Contato</a>
               </li>
             </ul>
           </nav>

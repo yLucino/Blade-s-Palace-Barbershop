@@ -10,6 +10,7 @@
   font-size: 13px;
   position: absolute;
   width: 100%;
+  z-index: 1000;
 }
 
 .info-open-establishment p, a {

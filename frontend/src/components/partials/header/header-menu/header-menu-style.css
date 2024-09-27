@@ -7,6 +7,7 @@
   align-items: center;
   position: absolute;
   top: 45px;
+  z-index: 1000;
 }
 
 .header-menu.scrollOn {

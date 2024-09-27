@@ -1,9 +1,11 @@
 import './contact-style.css';
 import './contact-responsive.css';
+import Header from '../../partials/header/header';
 
 const Contact = () => {
   return (
     <>
+      <Header />
       <div className='contact' id='contato'>
         <div className='title'>
           <h1>Contato</h1>
