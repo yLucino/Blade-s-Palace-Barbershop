@@ -4,6 +4,9 @@ import "./admin-responsive.css";
 const Admin = () => {
   return(
     <>
+      <div className="container-admin">
+        
+      </div>
     </>
   );
 };

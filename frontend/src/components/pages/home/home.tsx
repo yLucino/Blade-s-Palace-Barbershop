@@ -1,8 +1,5 @@
 import './home-style.css';
 import './home-responsive.css'
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Header from '../../partials/header/header';
 
 import backgroundImgDesktop from '../../../../public/assets/image/home-img/bg-image.png';
 import backgroundImgLaptop from '../../../../public/assets/image/home-img/bg-image1200px.png';
@@ -11,8 +8,6 @@ import backgroundImgMobile from '../../../../public/assets/image/home-img/bg-ima
 const Home = () => {
   return (
     <>
-    <ToastContainer autoClose={3500} position={"bottom-left"} />
-    <Header />
     <div className='home' id='inicio'>
       <picture>
         <source className="backgroundImg" srcSet={backgroundImgDesktop} media="(min-width: 1250px)"/>

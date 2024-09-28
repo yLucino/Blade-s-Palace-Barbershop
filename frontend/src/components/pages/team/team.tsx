@@ -4,7 +4,6 @@ import React, {useEffect, useRef} from 'react';
 import Profile from '../../contents/profile_TeamPage/profile';
 
 import imageBackground from '../../../../public/assets/image/team-img/bg-image.png';
-import Header from '../../partials/header/header';
 
 const Team: React.FC = () => {
   const containerTeamRef = useRef<HTMLDivElement>(null);
@@ -66,7 +65,6 @@ const Team: React.FC = () => {
 
   return (
     <>
-      <Header />
       <div className='team' id='time' ref={containerTeamRef}>
         <img src={imageBackground} />
         <div className='title'>

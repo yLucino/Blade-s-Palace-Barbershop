@@ -4,12 +4,10 @@ import './priceAndService-responsive.css';
 import SubscriptionPlan from '../../contents/services_PriceServicesPage/subscriptionPlan';
 import ServicesList_Left from '../../contents/services_PriceServicesPage/servicesList-Left';
 import ServicesList_Right from '../../contents/services_PriceServicesPage/servicesList-Right';
-import Header from '../../partials/header/header';
 
 const PriceAndService = () => {
   return (
     <>
-      <Header />
       <div className="price-and-service" id="precos-e-servicos">
         <div className="title">
           <h1>Preços e Serviços</h1>

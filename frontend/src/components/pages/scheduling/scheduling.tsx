@@ -8,7 +8,6 @@ import {
   hoursDayWorkingWeekString,
   hoursDayWorkingWeekedString
 } from '../../../app/shared/scripts/scriptsOfDate';
-import Header from '../../partials/header/header';
 
 const Scheduling: React.FC = () => {
   // function to update min/max in date input
@@ -218,7 +217,6 @@ const Scheduling: React.FC = () => {
 
   return (
     <>
-      <Header />
       <div className='scheduling' id='agendamento'>
         <div className='title'>
           <h1>Agendamento</h1>

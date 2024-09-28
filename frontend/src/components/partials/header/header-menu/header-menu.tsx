@@ -2,11 +2,16 @@ import './header-menu-style.css';
 import './header-menu-login-style.css'
 import './header-menu-responsive.css';
 import logoImage from '../../../../../public/assets/image/header-img/penteado.png';
+
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from "react-toastify";
 
-const HeaderMenu: React.FC = () => {
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
+
+const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => void }) => {
   // toggle animation bx-icon
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
@@ -30,26 +35,29 @@ const HeaderMenu: React.FC = () => {
     };
   });
   
-  // close/open LoginAdm
+  // LoginAdm
+  localStorage.removeItem('authToken');
+  const navigate = useNavigate();
   const [isHidden, setIsHidden] = useState(true);
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
+
   const toggleHidden = () => {
     setIsHidden(!isHidden);
   };
   
-  const [user, setUser] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    axios.post('http://localhost:8800/admin', {user, password})
-    .then(res => {
-      if (res.data == 'No record user or password') {
-        toast.error("Usuário/Senha incorreta ou inexistente!")
-      } else if (res.data == 'Login Successfully') {
-        toast.success("Login feito com sucesso!")
+    try {
+      const response = await axios.post(`${BACKEND_URL}/admin/login`, {user, password});
+      if (response.data.message == 'Login Successfully') {
+        onLoginSuccess(response.data.token);
+        toast.success("Login feito com sucesso!");
+        navigate(`/admin`);
       }
-    })
-    .catch(err => console.log(err));
+    } catch (error) {
+      toast.error("Usuário/Senha incorreta ou inexistente!");
+    }
   };
 
   return (
@@ -64,19 +72,19 @@ const HeaderMenu: React.FC = () => {
           <nav>
             <ul>
               <li>
-                <a href="/">Inicio</a>
+                <a href="#inicio">Inicio</a>
               </li>
               <li>
-                <a href="/price-and-services">Preços e Serviços</a>
+                <a href="#precos-e-servicos">Preços e Serviços</a>
               </li>
               <li>
-                <a href="/team">Time</a>
+                <a href="#time">Time</a>
               </li>
               <li>
-                <a href="/scheduling">Agendamento</a>
+                <a href="#agendamento">Agendamento</a>
               </li>
               <li>
-                <a href="/contact">Contato</a>
+                <a href="#contato">Contato</a>
               </li>
             </ul>
           </nav>
@@ -111,9 +119,9 @@ const HeaderMenu: React.FC = () => {
                 </div>
                 <div className="form-inputs">
                   <form onSubmit={handleSubmit}>
-                    <input onChange={e => setUser(e.target.value)} type="text" placeholder="Usuário" required/>
+                    <input onChange={e => setUser(e.target.value)} type="text" placeholder="Usuário" required autoComplete="off"/>
 
-                    <input onChange={e => setPassword(e.target.value)} type="password" placeholder="Senha" required/>
+                    <input onChange={e => setPassword(e.target.value)} type="password" placeholder="Senha" required autoComplete="off"/>
 
                     <button>Entrar</button>
                   </form>
