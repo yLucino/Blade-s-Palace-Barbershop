@@ -53,7 +53,7 @@ const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => voi
       if (response.data.message == 'Login Successfully') {
         onLoginSuccess(response.data.token);
         toast.success("Login feito com sucesso!");
-        navigate(`/admin`);
+        navigate(`/admin/home`);
       }
     } catch (error) {
       toast.error("Usuário/Senha incorreta ou inexistente!");
