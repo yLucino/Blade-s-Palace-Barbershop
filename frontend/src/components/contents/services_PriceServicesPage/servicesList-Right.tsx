@@ -47,7 +47,7 @@ const ServicesList_Right: React.FC = () => {
                   </p>
                 </div>
                 <a href="#agendamento">
-                  <button className="btn-service-price">R$ {service.priceNoPlan}</button>
+                  <button className="btn-service-price text-sm">R$ {service.priceNoPlan}</button>
                 </a>
                 <a href="#">
                   <button className='btn-more-options'>Ver opções</button>

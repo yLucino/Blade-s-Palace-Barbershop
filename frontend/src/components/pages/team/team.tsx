@@ -67,7 +67,7 @@ const Team: React.FC = () => {
     <>
       <div className='team' id='time' ref={containerTeamRef}>
         <img src={imageBackground} />
-        <div className='title'>
+        <div className='title text-4xl'>
           <h1>Time</h1>
         </div>
         <div className='container-profiles'>

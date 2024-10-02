@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from "react-toastify";
+import { TextField, Button } from '@mui/material';
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
@@ -113,17 +114,19 @@ const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => voi
                 <i className='bx bx-x'></i>
               </button>
               <div className="box-content">
-                <div className="adm-info">
-                  <h1>Bem-vindo ADM!</h1>
+                <div className="adm-info flex flex-col items-center">
+                  <h1 className='text-3xl'>Bem-vindo ADM!</h1>
                   <img className='logo' src={logoImage} alt="logo" />
                 </div>
                 <div className="form-inputs">
                   <form onSubmit={handleSubmit}>
-                    <input onChange={e => setUser(e.target.value)} type="text" placeholder="Usuário" required autoComplete="off"/>
+                    <TextField onChange={e => setUser(e.target.value)} variant='filled' sx={{marginBottom: '6px'}} size='small' label='Usuário' type='text' required autoComplete='off'/>
 
-                    <input onChange={e => setPassword(e.target.value)} type="password" placeholder="Senha" required autoComplete="off"/>
+                    <TextField onChange={e => setPassword(e.target.value)} variant='filled' sx={{marginBottom: '20px'}} size='small' label='Senha' type='password' required autoComplete='off'/>
 
-                    <button>Entrar</button>
+                    <Button type='submit' size='large' variant='contained' sx={{ color: 'black'}}>
+                      Entrar
+                    </Button>
                   </form>
                 </div>
                 <div className="help-info">

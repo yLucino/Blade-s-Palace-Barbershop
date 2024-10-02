@@ -9,7 +9,7 @@ const PriceAndService = () => {
   return (
     <>
       <div className="price-and-service" id="precos-e-servicos">
-        <div className="title">
+        <div className="title text-4xl">
           <h1>Preços e Serviços</h1>
         </div>
         <div className="container-cards">

@@ -8,8 +8,8 @@ const SubscriptionPlan: React.FC = () => {
         {sample_subscriptionPlan.map((plan, index) => (
           <li key={index}>
             <h1>{plan.title}</h1>
-            <div className='flex-container'>
-              <img src={plan.imageUrl} alt={plan.title} />
+            <div className='flex-container flex flex-col justify-center'>
+              <img className='' src={plan.imageUrl} alt={plan.title} />
               <p>{plan.description}</p>
               <nav>
                 <div className="btns-container">
@@ -18,7 +18,7 @@ const SubscriptionPlan: React.FC = () => {
                       <label htmlFor="btn-assinatura-full">
                         Plano Completo + Descontos
                       </label>
-                      <a id='btn-assinatura-full' href="#assinatura">
+                      <a className='btn-assinatura-full text-sm' href="#assinatura">
                         <button>R$ {plan.priceFullPlan}</button>
                       </a>
                     </div>
@@ -26,7 +26,7 @@ const SubscriptionPlan: React.FC = () => {
                       <label htmlFor="btn-assinatura-half">
                         Cabelo ou Barba + Descontos
                       </label>
-                      <a className='btn-assinatura-half' href="#assinatura">
+                      <a className='btn-assinatura-half text-sm' href="#assinatura">
                         <button>R$ {plan.priceHalfPlan}</button>
                       </a>
                     </div>

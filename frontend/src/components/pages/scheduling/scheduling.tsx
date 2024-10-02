@@ -217,15 +217,15 @@ const Scheduling: React.FC = () => {
 
   return (
     <>
-      <div className='scheduling' id='agendamento'>
-        <div className='title'>
+      <div className='scheduling flex flex-col items-center' id='agendamento'>
+        <div className='title text-4xl'>
           <h1>Agendamento</h1>
         </div>
         <div className="container">
           <div className="container-scheduling">
             <div className="subtitle">
-              <h2>Faça seu agendamento aqui!</h2>
-              <hr />
+              <h2 className='text-2xl'>Faça seu agendamento aqui!</h2>
+              <hr className='mt-3 mb-10'/>
             </div>
             <div className="partials-scheduling">
               <div className="left-partial">
@@ -233,11 +233,11 @@ const Scheduling: React.FC = () => {
                   {/* action="URL.php" method="post" */}
                   <div className="box-user-info">
                     <label htmlFor="name">Nome Completo: </label><br></br>
-                    <input type="text" id="name" name="name" placeholder='Seu nome' value={nameValue} onChange={handleChangeGetName} maxLength={40} required/><br></br>
+                    <input className='text-sm' type="text" id="name" name="name" placeholder='Seu nome' value={nameValue} onChange={handleChangeGetName} maxLength={40} required/><br></br>
                     <label htmlFor="email">E-mail:</label><br></br>
-                    <input type="email" name="email" id="email" placeholder='email@exemplo.com' value={emailValue} onChange={handleChangeGetEmail} maxLength={40} required/><br></br>
+                    <input className='text-sm' type="email" name="email" id="email" placeholder='email@exemplo.com' value={emailValue} onChange={handleChangeGetEmail} maxLength={40} required/><br></br>
                     <label htmlFor="phone">Telefone: </label><br></br>
-                    <input type="text" name="phone" id="phone" placeholder='(xx) xxxxx-xxxx' value={phoneValue} onChange={handleChangeGetPhone} maxLength={15} required/><br></br>
+                    <input className='text-sm' type="text" name="phone" id="phone" placeholder='(xx) xxxxx-xxxx' value={phoneValue} onChange={handleChangeGetPhone} maxLength={15} required/><br></br>
                   </div>
                   <div className="box-request-subscriber-plan">
                     <label htmlFor="subscriber">Assinante do plano mensal? </label><br></br>
@@ -254,16 +254,16 @@ const Scheduling: React.FC = () => {
                   <div className="box-day-hour">
                     <div className="day-hour">
                       <label htmlFor="date">Data: </label>
-                      <input type="date" name="date" id="date" max={getMaxDate()} min={getMinDate()} value={dateValue} onChange={handleChangeGetDate} required/><br></br>
+                      <input className='text-sm' type="date" name="date" id="date" max={getMaxDate()} min={getMinDate()} value={dateValue} onChange={handleChangeGetDate} required/><br></br>
                       <label htmlFor="time">Hora: </label>
-                      <input type="time" name="time" id="time" min={getMinHour()} max={getMaxHour()} value={hourValue} onChange={handleChangeGetHour} onClick={getHour} required />
+                      <input className='text-sm' type="time" name="time" id="time" min={getMinHour()} max={getMaxHour()} value={hourValue} onChange={handleChangeGetHour} onClick={getHour} required />
                       <span className="validacao"></span>
                     </div>
                     <p>(Ter a Sex: 09:00h as 19:30h | Sáb: 08:00h as 18:30h)</p>
                   </div>
                   <div className="finish-box-scheduling">
-                    <button className='concluded' onClick={validationInfoInput}>Concluído</button>
-                    <button className='cancel' onClick={formCancel}>Cancelar</button>
+                    <button className='concluded text-sm' onClick={validationInfoInput}>Concluído</button>
+                    <button className='cancel text-sm' onClick={formCancel}>Cancelar</button>
                   </div>
                 </form>
               </div>
@@ -334,8 +334,8 @@ const Scheduling: React.FC = () => {
           </div>
           <div className='container-checkout'>
             <div className="subtitle">
-              <h2>Confira suas informações!</h2>
-              <hr />
+              <h2 className='text-2xl'>Confira suas informações!</h2>
+              <hr className='mt-3 mb-10' />
             </div>
             <div className="box-service-preview">
               <div className="text-description">
@@ -401,7 +401,7 @@ const Scheduling: React.FC = () => {
               <p>Total: <span>R$ 90</span></p>
             </div>
             <div className="box-finish-scheduling">
-              <button>Agendar</button>
+              <button className='text-sm'>Agendar</button>
             </div>
           </div>
         </div>
