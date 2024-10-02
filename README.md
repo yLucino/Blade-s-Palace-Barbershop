@@ -37,6 +37,8 @@ Luciano Chiodini - yLucino
   <img align="center" alt="MYSQL" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg">
   <img align="center" alt="EXPRESS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg">
   <img align="center" alt="AXIOS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/axios/axios-plain.svg">
+  <img align="center" alt="TAILWINDCSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg">
+  <img align="center" alt="MATERIALUI" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/materialui/materialui-plain.svg">
 </div>
 
 ## Referências
