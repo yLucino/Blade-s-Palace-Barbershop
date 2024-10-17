@@ -10,7 +10,7 @@ const ManagementAdmin = () => {
         <h1 className="text-4xl font-AntonSC tracking-wider text-Yellow">Gerenciamento do Site</h1>
         <p className="text-gray-900 font-medium text-sm">gerencie dados essenciais que podem ser volateis e imprevisíveis</p>
       </div>
-      <div className="bg-BlueDarkSoft w-3/4 p-10 m-5 grid 2xl:grid-cols-3 md:grid-cols-1 gap-3">
+      <div className="bg-BlueDarkSoft w-3/4 p-10 m-5 grid 2xl:grid-cols-3 md:grid-cols-1 gap-3 rounded-md">
         {/* Estabelecimento */}
         <div className="bg-slate-300 w-auto p-5 pt-2 rounded-xl">
           <h3 className="mb-1 font-semibold text-xl text-center">Estabelecimento</h3>
@@ -107,6 +107,34 @@ const ManagementAdmin = () => {
               </IconButton>
               <IconButton aria-label='add'>
                 <AddIcon />
+              </IconButton>
+            </div>
+          </div>
+          
+          <div className="flex flex-col items-start ml-2 mb-2">
+            <h4 className="font-medium">Redes Sociais:</h4>
+            <div className='flex items-center gap-1 mb-1'>
+              <div className="p-1 pl-2 pr-2 bg-slate-400 rounded-full">
+                <p className="text-xs"><span className='text-black text-sm'>Instagram: </span>https://www.instagram.com/bladespalacebarbershop/</p>
+              </div>
+              <IconButton aria-label='edit'>
+                <EditIcon />
+              </IconButton>
+            </div>
+            <div className='flex items-center gap-1 mb-1'>
+              <div className="p-1 pl-2 pr-2 bg-slate-400 rounded-full">
+                <p className="text-xs"><span className='text-black text-sm'>Facebook: </span>https://www.facebook.com/search/top?q=blade%E2%80%99s%20palace%20barbershop&locale=pt_BR</p>
+              </div>
+              <IconButton aria-label='edit'>
+                <EditIcon />
+              </IconButton>
+            </div>
+            <div className='flex items-center gap-1 mb-1'>
+              <div className="p-1 pl-2 pr-2 bg-slate-400 rounded-full">
+                <p className="text-xs"><span className='text-black text-sm'>Whatsapp: </span>https://www.instagram.com/bladespalacebarbershop/</p>
+              </div>
+              <IconButton aria-label='edit'>
+                <EditIcon />
               </IconButton>
             </div>
           </div>
@@ -221,6 +249,7 @@ const ManagementAdmin = () => {
                     <p><span className='text-black font-semibold'>Cargo: </span>Barbeiro Profissional</p>
                     <p><span className='text-black font-semibold'>Endereço de Atuação:</span>Itoupavazinha</p>
                     <p  className='text-xs'><span className='text-black font-semibold text-sm'>Instagram: </span>https://www.instagram.com/bladespalacebarbershop/</p>
+                    <p  className='text-xs'><span className='text-black font-semibold text-sm'>Facebook: </span>https://www.facebook.com/bladespalacebarbershop/</p>
                     <p><span className='text-black font-semibold'>Descrição: </span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi illum ex tempore aliquid vel ipsum, dolorem nemo impedit blanditiis exercitationem numquam sint alias voluptas. Iusto explicabo nobis provident impedit quidem.</p>
                   </div>
                   <div className='flex flex-col justify-evenly'>
