@@ -10,7 +10,7 @@ const ManagementAdmin = () => {
         <h1 className="text-4xl font-AntonSC tracking-wider text-Yellow">Gerenciamento do Site</h1>
         <p className="text-gray-900 font-medium text-sm">gerencie dados essenciais que podem ser volateis e imprevisíveis</p>
       </div>
-      <div className="bg-BlueDarkSoft w-3/4 p-10 m-5 grid grid-cols-3 gap-3">
+      <div className="bg-BlueDarkSoft w-3/4 p-10 m-5 grid 2xl:grid-cols-3 md:grid-cols-1 gap-3">
         {/* Estabelecimento */}
         <div className="bg-slate-300 w-auto p-5 pt-2 rounded-xl">
           <h3 className="mb-1 font-semibold text-xl text-center">Estabelecimento</h3>
@@ -120,21 +120,57 @@ const ManagementAdmin = () => {
             <hr className="border-black mb-3"/>
             <div>
               <h4 className="font-medium mb-1">Serviços:</h4>
-              <div className='flex mb-2'>
-                <div className='p-1 pl-2 pr-2 bg-slate-400 rounded-lg text-sm'>
-                  <h4 className='mb-1'><span className='text-black font-semibold'>Titúlo:</span> Corte De Cabelo</h4>
-                  <p className='mb-1'><span className='text-black font-semibold'>Imagem URL:</span> https://imagemurlexample/</p>
-                  <p className='mb-1'><span className='text-black font-semibold'>Descrição:</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium voluptatibus doloremque beatae voluptas explicabo asperiores at nisi natus quia ex.</p>
-                  <p className='mb-1'><span className='text-black font-semibold'>Preço com plano:</span> R$ 00.00</p>
-                  <p><span className='text-black font-semibold'>Preço sem plano:</span> R$ 30.00</p>
+              <div className='overflow-y-scroll overflow-x-hidden max-h-96'>
+                <div className='flex mb-2'>
+                  <div className='p-1 pl-2 pr-2 bg-slate-400 rounded-lg text-sm'>
+                    <h4 className='mb-1'><span className='text-black font-semibold'>Titúlo:</span> Corte De Cabelo</h4>
+                    <p className='mb-1'><span className='text-black font-semibold'>Imagem URL:</span> https://imagemurlexample/</p>
+                    <p className='mb-1'><span className='text-black font-semibold'>Descrição:</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium voluptatibus doloremque beatae voluptas explicabo asperiores at nisi natus quia ex.</p>
+                    <p className='mb-1'><span className='text-black font-semibold'>Preço com plano:</span> R$ 00.00</p>
+                    <p><span className='text-black font-semibold'>Preço sem plano:</span> R$ 30.00</p>
+                  </div>
+                  <div className='flex flex-col justify-evenly'>
+                    <IconButton aria-label='edit'>
+                      <EditIcon />
+                    </IconButton>
+                    <IconButton aria-label='edit'>
+                      <DeleteIcon />
+                    </IconButton>
+                  </div>
                 </div>
-                <div className='flex flex-col justify-evenly'>
-                  <IconButton aria-label='edit'>
-                    <EditIcon />
-                  </IconButton>
-                  <IconButton aria-label='edit'>
-                    <DeleteIcon />
-                  </IconButton>
+                <div className='flex mb-2'>
+                  <div className='p-1 pl-2 pr-2 bg-slate-400 rounded-lg text-sm'>
+                    <h4 className='mb-1'><span className='text-black font-semibold'>Titúlo:</span> Corte De Cabelo</h4>
+                    <p className='mb-1'><span className='text-black font-semibold'>Imagem URL:</span> https://imagemurlexample/</p>
+                    <p className='mb-1'><span className='text-black font-semibold'>Descrição:</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium voluptatibus doloremque beatae voluptas explicabo asperiores at nisi natus quia ex.</p>
+                    <p className='mb-1'><span className='text-black font-semibold'>Preço com plano:</span> R$ 00.00</p>
+                    <p><span className='text-black font-semibold'>Preço sem plano:</span> R$ 30.00</p>
+                  </div>
+                  <div className='flex flex-col justify-evenly'>
+                    <IconButton aria-label='edit'>
+                      <EditIcon />
+                    </IconButton>
+                    <IconButton aria-label='edit'>
+                      <DeleteIcon />
+                    </IconButton>
+                  </div>
+                </div>
+                <div className='flex mb-2'>
+                  <div className='p-1 pl-2 pr-2 bg-slate-400 rounded-lg text-sm'>
+                    <h4 className='mb-1'><span className='text-black font-semibold'>Titúlo:</span> Corte De Cabelo</h4>
+                    <p className='mb-1'><span className='text-black font-semibold'>Imagem URL:</span> https://imagemurlexample/</p>
+                    <p className='mb-1'><span className='text-black font-semibold'>Descrição:</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium voluptatibus doloremque beatae voluptas explicabo asperiores at nisi natus quia ex.</p>
+                    <p className='mb-1'><span className='text-black font-semibold'>Preço com plano:</span> R$ 00.00</p>
+                    <p><span className='text-black font-semibold'>Preço sem plano:</span> R$ 30.00</p>
+                  </div>
+                  <div className='flex flex-col justify-evenly'>
+                    <IconButton aria-label='edit'>
+                      <EditIcon />
+                    </IconButton>
+                    <IconButton aria-label='edit'>
+                      <DeleteIcon />
+                    </IconButton>
+                  </div>
                 </div>
               </div>
             </div>
@@ -171,8 +207,76 @@ const ManagementAdmin = () => {
         </div>
 
         {/* Time */}
-        <div>
-          
+        <div className='bg-slate-300 w-auto p-5 pt-2 rounded-xl'>
+          <div>
+            <h3 className="mb-1 font-semibold text-xl text-center">Time</h3>
+            <hr className="border-black mb-3"/>
+            <div>
+              <h4 className="font-medium mb-1">Barbeiros:</h4>
+              <div className='overflow-y-scroll overflow-x-hidden max-h-96'>
+                <div className='flex'>
+                  <div className='p-1 pl-2 pr-2 bg-slate-400 rounded-lg text-sm mb-2 max-w-80'>
+                    <p><span className='text-black font-semibold'>Nome: </span>Luciano</p>
+                    <p><span className='text-black font-semibold'>Imagem URL: </span>https://exampleimageprofilebarber/</p>
+                    <p><span className='text-black font-semibold'>Cargo: </span>Barbeiro Profissional</p>
+                    <p><span className='text-black font-semibold'>Endereço de Atuação:</span>Itoupavazinha</p>
+                    <p  className='text-xs'><span className='text-black font-semibold text-sm'>Instagram: </span>https://www.instagram.com/bladespalacebarbershop/</p>
+                    <p><span className='text-black font-semibold'>Descrição: </span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi illum ex tempore aliquid vel ipsum, dolorem nemo impedit blanditiis exercitationem numquam sint alias voluptas. Iusto explicabo nobis provident impedit quidem.</p>
+                  </div>
+                  <div className='flex flex-col justify-evenly'>
+                    <IconButton aria-label='edit'>
+                      <EditIcon />
+                    </IconButton>
+                    <IconButton aria-label='edit'>
+                      <DeleteIcon />
+                    </IconButton>
+                  </div>
+                </div>
+                <div className='flex'>
+                  <div className='p-1 pl-2 pr-2 bg-slate-400 rounded-lg text-sm mb-2 max-w-80'>
+                    <p><span className='text-black font-semibold'>Nome: </span>Luciano</p>
+                    <p><span className='text-black font-semibold'>Imagem URL: </span>https://exampleimageprofilebarber/</p>
+                    <p><span className='text-black font-semibold'>Cargo: </span>Barbeiro Profissional</p>
+                    <p><span className='text-black font-semibold'>Endereço de Atuação:</span>Itoupavazinha</p>
+                    <p  className='text-xs'><span className='text-black font-semibold text-sm'>Instagram: </span>https://www.instagram.com/bladespalacebarbershop/</p>
+                    <p><span className='text-black font-semibold'>Descrição: </span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi illum ex tempore aliquid vel ipsum, dolorem nemo impedit blanditiis exercitationem numquam sint alias voluptas. Iusto explicabo nobis provident impedit quidem.</p>
+                  </div>
+                  <div className='flex flex-col justify-evenly'>
+                    <IconButton aria-label='edit'>
+                      <EditIcon />
+                    </IconButton>
+                    <IconButton aria-label='edit'>
+                      <DeleteIcon />
+                    </IconButton>
+                  </div>
+                </div>
+                <div className='flex'>
+                  <div className='p-1 pl-2 pr-2 bg-slate-400 rounded-lg text-sm mb-2 max-w-80'>
+                    <p><span className='text-black font-semibold'>Nome: </span>Luciano</p>
+                    <p><span className='text-black font-semibold'>Imagem URL: </span>https://exampleimageprofilebarber/</p>
+                    <p><span className='text-black font-semibold'>Cargo: </span>Barbeiro Profissional</p>
+                    <p><span className='text-black font-semibold'>Endereço de Atuação:</span>Itoupavazinha</p>
+                    <p className='text-xs'><span className='text-black font-semibold text-sm'>Instagram: </span>https://www.instagram.com/bladespalacebarbershop/</p>
+                    <p><span className='text-black font-semibold'>Descrição: </span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi illum ex tempore aliquid vel ipsum, dolorem nemo impedit blanditiis exercitationem numquam sint alias voluptas. Iusto explicabo nobis provident impedit quidem.</p>
+                  </div>
+                  <div className='flex flex-col justify-evenly'>
+                    <IconButton aria-label='edit'>
+                      <EditIcon />
+                    </IconButton>
+                    <IconButton aria-label='edit'>
+                      <DeleteIcon />
+                    </IconButton>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='mt-2'>
+              <Button variant='outlined'>
+                Adicionar novo barbeiro
+                <AddIcon />
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

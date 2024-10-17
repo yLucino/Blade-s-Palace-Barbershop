@@ -11,6 +11,7 @@ import PaymentsAdmin from '../components/pages/admin/paymentsPage/paymentsAdmin.
 import MonthlyResultsAdmin from '../components/pages/admin/monthlyResultsPage/monthlyResultsAdmin.tsx';
 import CommandsAdmin from '../components/pages/admin/commandsPage/commandsAdmin.tsx';
 import OpenCommandAdmin from '../components/pages/admin/openCommandPage/openCommandAdmin.tsx';
+import CustomerSchedulingAdmin from '../components/pages/admin/customerSchedulingPage/customerSchedulingAdmin.tsx';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -57,6 +58,11 @@ function App() {
           <Route path='/admin/open-command' element={
             <ProtectedRoute isAuthenticated={isAuthenticated}>
               <OpenCommandAdmin />
+            </ProtectedRoute>
+          }/>
+          <Route path='/admin/customer-scheduling' element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <CustomerSchedulingAdmin />
             </ProtectedRoute>
           }/>
         </Routes>

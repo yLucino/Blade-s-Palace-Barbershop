@@ -55,6 +55,13 @@ const HomeAdmin = () => {
               </Link>
             </li>
           </ul>
+          <ul className='col-start-1 col-end-3'>
+            <li>
+              <Link to={'/admin/customer-scheduling'}>
+                <Button variant='contained' sx={{width: '100%', margin: '6px'}} size='large'>Agendamentos dos clientes</Button>
+              </Link>
+            </li>
+          </ul>
         </nav>
       </div>
     </>

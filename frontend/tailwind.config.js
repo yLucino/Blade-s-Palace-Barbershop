@@ -31,7 +31,7 @@ export default {
         GrayLight: '#2e2e2e',
         Brown: '#8C6D51',
         BrownDark: '#593831',
-      }
+      },
     },
   },
   plugins: [],
