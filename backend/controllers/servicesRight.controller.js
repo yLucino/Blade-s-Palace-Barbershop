@@ -1,7 +1,7 @@
 import { db } from "../.env.js";
 
-export const getServices = (_, res) => {
-  const q = "SELECT * FROM services";
+export const getServicesRight = (_, res) => {
+  const q = "SELECT * FROM services_right";
 
   db.query(q, (err, data) => {
     if (err) return res.json(err);

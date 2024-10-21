@@ -1,4 +1,4 @@
-export class SubscriptionPlan {
+export class MonthlyPlans {
   title!: string;
   imageUrl!: string;
   description!: string;

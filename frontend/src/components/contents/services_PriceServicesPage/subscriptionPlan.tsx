@@ -1,11 +1,27 @@
-import React from 'react';
-import { sample_subscriptionPlan } from '../../../data.env';
+import React, { useEffect, useState } from 'react';
+import { getMonthlyPlans } from '../../services/priceAndServicesPage/priceAndServices.service';
+import { MonthlyPlans } from '../../../app/shared/models/monthlyPlans';
 
 const SubscriptionPlan: React.FC = () => {
+  const [monthlyPlans, setMonthlyPlans] = useState<MonthlyPlans[]>([]);
+
+  useEffect(() => {
+    const getAllMonthlyPlans = async () => {
+      try {
+        const response = await getMonthlyPlans();
+        setMonthlyPlans(response); 
+      } catch (error) {
+        console.error('Error in get all monthly plans in backend', error);
+      }
+    }
+
+    getAllMonthlyPlans();
+  }, []);
+
   return (
     <>
       <ul>
-        {sample_subscriptionPlan.map((plan, index) => (
+        {monthlyPlans.map((plan, index) => (
           <li key={index}>
             <h1>{plan.title}</h1>
             <div className='flex-container flex flex-col justify-center'>

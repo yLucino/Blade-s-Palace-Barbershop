@@ -1,9 +1,24 @@
-import React, { useRef, useEffect } from 'react';
-import { sample_services_right } from "../../../data.env";
+import React, { useRef, useEffect, useState } from 'react';
+import { getServicesRight } from '../../services/priceAndServicesPage/priceAndServices.service';
+import { Services } from '../../../app/shared/models/services';
 
 const ServicesList_Right: React.FC = () => {
   // hover to shows exclusive price for plan subscribers
   const containerRef = useRef<HTMLDivElement>(null);
+  const [services, setServices] = useState<Services[]>([]);
+
+  useEffect(() => {
+    const getAllServicesRight = async () => {
+      try {
+        const response = await getServicesRight();
+        setServices(response);
+      } catch (error) {
+        console.error('Error in get all servicesRight in backend', error);
+      }
+    }
+
+    getAllServicesRight();
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -24,13 +39,13 @@ const ServicesList_Right: React.FC = () => {
         button.addEventListener('mouseleave', handleMouseLeave)
       })
     }
-  })
+  }, [services]);
 
   return (
     <>
       <div ref={containerRef}>
         <ul>
-          {sample_services_right.map((service, index) => (
+          {services.map((service, index) => (
             <li key={index}>
               <img src={service.imageUrl} alt={service.title} />
               <div className="text-container">
