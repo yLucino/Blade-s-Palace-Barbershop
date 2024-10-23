@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { getServicesRight } from '../../services/priceAndServicesPage/priceAndServices.service';
+import { getServicesRight } from '../../services/priceAndServicesPage.service';
 import { Services } from '../../../app/shared/models/services';
 
 const ServicesList_Right: React.FC = () => {

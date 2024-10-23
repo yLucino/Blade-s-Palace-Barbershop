@@ -1,10 +1,27 @@
-import React from "react";
-import { sample_employee_allteam } from "../../../data.env";
+import React, { useEffect, useState } from "react";
+import { EmployeeTeam } from "../../../app/shared/models/employeeTeam";
+import { getTeam } from "../../services/teamPage.service";
 
 const Profile: React.FC = () => {
+  // request from backend to take all employeer barbers
+  const [employeer, setEmployeer] = useState<EmployeeTeam[]>([]);
+
+  useEffect(() => {
+    const getAllTeam = async () => {
+      try {
+        const response = await getTeam();
+        setEmployeer(response); 
+      } catch (error) {
+        console.error('Error in get all team from backend', error);
+      }
+    }
+
+    getAllTeam();
+  }, []);
+
   return (
     <>
-      {sample_employee_allteam.map((profile, index) => (
+      {employeer.map((profile, index) => (
         <div className='profile' key={index}>
           <img src={profile.imageUrl} alt={profile.name} />
           <h2 className="text-2xl">{profile.name}</h2>

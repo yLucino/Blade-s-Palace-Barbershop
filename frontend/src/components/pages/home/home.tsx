@@ -1,5 +1,6 @@
 import './home-style.css';
 import './home-responsive.css'
+import SocialMedia from '../../contents/socialMedia_HomePage/socialMedia';
 
 import backgroundImgDesktop from '../../../../public/assets/image/home-img/bg-image.png';
 import backgroundImgLaptop from '../../../../public/assets/image/home-img/bg-image1200px.png';
@@ -31,27 +32,7 @@ const Home = () => {
           </ul>
         </nav>
       </div>
-      <div className='nav-home-social'>
-        <nav>
-          <ul>
-            <li className='btn-social'>
-              <a href="https://www.instagram.com/bladespalacebarbershop/" target='_blank'>
-                <i className='bx bxl-instagram-alt'></i>
-              </a>
-            </li>
-            <li className='btn-social'>
-              <a href="https://www.facebook.com/search/top?q=blade’s%20palace%20barbershop&locale=pt_BR" target='_blank'>
-                <i className='bx bxl-facebook-circle'></i>
-              </a>
-            </li>
-            <li className='btn-social'>
-              <a href="https://api.whatsapp.com/message/OQPYP5XUZGU7E1?autoload=1&app_absent=0" target='_blank'>
-                <i className='bx bxl-whatsapp'></i>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <SocialMedia />
     </div>
     </>
   )

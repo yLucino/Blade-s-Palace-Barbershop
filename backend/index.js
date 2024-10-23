@@ -8,6 +8,9 @@ import employeeBarbersRouter from "./routers/employeeBarbers.router.js";
 import monthlyPlansRouter from "./routers/monthlyPlans.router.js";
 import servicesLeftRouter from "./routers/servicesLeft.router.js";
 import servicesRightRouter from "./routers/servicesRight.router.js";
+import addressRouter from "./routers/address.router.js"
+import telephoneRouter from "./routers/telephone.router.js"
+import socialMediaRouter from "./routers/socialMedia.router.js"
 
 const app = express();
 
@@ -21,6 +24,9 @@ app.use("/employee-barbers", employeeBarbersRouter);
 app.use("/monthly-plans", monthlyPlansRouter);
 app.use("/services-left", servicesLeftRouter);
 app.use("/services-right", servicesRightRouter);
+app.use("/address", addressRouter);
+app.use("/telephone", telephoneRouter);
+app.use("/social-media", socialMediaRouter);
 
 const port = 8800;
 app.listen(port, () => {
