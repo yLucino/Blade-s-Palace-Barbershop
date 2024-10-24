@@ -11,6 +11,7 @@ import servicesRightRouter from "./routers/servicesRight.router.js";
 import addressRouter from "./routers/address.router.js"
 import telephoneRouter from "./routers/telephone.router.js"
 import socialMediaRouter from "./routers/socialMedia.router.js"
+import openingHoursRouter from "./routers/opening_hours.router.js"
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use("/services-right", servicesRightRouter);
 app.use("/address", addressRouter);
 app.use("/telephone", telephoneRouter);
 app.use("/social-media", socialMediaRouter);
+app.use("/opening-hours", openingHoursRouter);
 
 const port = 8800;
 app.listen(port, () => {

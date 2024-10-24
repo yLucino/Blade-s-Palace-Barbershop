@@ -4,4 +4,6 @@ export class Address {
   cep!: string;
   number!: string;
   url_google_maps!: string;
+  city!: string;
+  state!: string;
 }

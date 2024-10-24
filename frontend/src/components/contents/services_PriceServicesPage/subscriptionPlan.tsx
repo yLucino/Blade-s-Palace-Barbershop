@@ -24,8 +24,8 @@ const SubscriptionPlan: React.FC = () => {
         {monthlyPlans.map((plan, index) => (
           <li key={index}>
             <h1>{plan.title}</h1>
-            <div className='flex-container flex flex-col justify-center'>
-              <img className='' src={plan.imageUrl} alt={plan.title} />
+            <div className='flex-container'>
+              <img className='inline' src={plan.imageUrl} alt={plan.title} />
               <p>{plan.description}</p>
               <nav>
                 <div className="btns-container">

@@ -3,7 +3,7 @@ import { Address } from "../../../app/shared/models/address";
 import { Telephone } from "../../../app/shared/models/telephone";
 import { getAddress, getTelephone } from "../../services/headerPage.service";
 
-const Infos: React.FC = () => {
+const InfosHeader: React.FC = () => {
   const [isHoveredMap, setIsHoveredMap] = useState<number | null>(null);
   const [isHoveredPhone, setIsHoveredPhone] = useState<number | null>(null);
 
@@ -82,4 +82,4 @@ const Infos: React.FC = () => {
   )
 }
 
-export default Infos;
+export default InfosHeader;

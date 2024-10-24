@@ -1,22 +1,40 @@
+import { getOpeningHours } from "../../../components/services/openingHours.service";
+import { OpeningHours } from "../models/openingHours";
+
 // Barbershop opening dates
-const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
-const daysNotWorking: string[] = ['Dom', 'Seg'];
+const daysOfWeek: string[] = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+const daysNotWorking: string[] = [];
+
 const hoursDayWorkingWeekString: string[] = ['09:00', '19:30'];
 const hoursDayWorkingWeekedString: string[] = ['08:00', '18:30'];
-const hoursDayWorkingWeekNumber: number[] = [9, 19.3];
-const hoursDayWorkingWeekedNumber: number[] = [8, 18.3];
 
-// Dates global
-// const now = new Date();
-// const day = now.getDate();
-// const month = ( 1 + now.getMonth());
-// const year = now.getFullYear();
+let allInfosOpeningHours: OpeningHours[] = [];
+
+const getAllOpeningHours = async () => {
+  try {
+    const response = await getOpeningHours();
+    allInfosOpeningHours = response
+    getDayNotWorking();
+  } catch (error) {
+    console.error('Error in get all opening hours from backend', error);
+  }
+}
+
+const getDayNotWorking = () => {
+  allInfosOpeningHours.forEach((info) => {
+    if (info.status_open === 0) {
+      daysNotWorking.push(info.name_day_week);
+    }
+  })
+} 
+
+getDayNotWorking();
+getAllOpeningHours();
 
 export { 
+  allInfosOpeningHours,
   daysOfWeek,
   daysNotWorking,
   hoursDayWorkingWeekString,
   hoursDayWorkingWeekedString,
-  hoursDayWorkingWeekNumber,
-  hoursDayWorkingWeekedNumber
 }

@@ -1,16 +1,23 @@
 import './header-info-style.css';
 import './header-info-responsive.css';
-import Infos from '../../../contents/infos_Header/infos';
+import InfosHeader from '../../../contents/infos_Header/infosHeader';
 
 import React from 'react';
-import {   
-  daysOfWeek,
-  daysNotWorking,
-  hoursDayWorkingWeekNumber,
-  hoursDayWorkingWeekedNumber
-} from '../../../../app/shared/scripts/scriptsOfDate';
+import { daysOfWeek } from '../../../../app/shared/scripts/scriptsOfDate';
+import { getOpeningHours } from '../../../services/openingHours.service';
+import { OpeningHours } from '../../../../app/shared/models/openingHours';
 
 // store opening hours checker
+let infosOpeningHours: OpeningHours[] = [];
+const getAllOpeningHours = async () => {
+  try {
+    const response = await getOpeningHours();
+    infosOpeningHours = response
+  } catch (error) {
+    console.error('Error in get all opening hours from backend', error);
+  }
+}
+
 function getDayName(date: Date): string {
   const dayIndex = date.getUTCDay();
   const day = daysOfWeek[dayIndex];
@@ -44,38 +51,37 @@ function activityCheckWork(dayName: string) {
   const hours = now.getHours();
   const minutes = now.getMinutes();
   const hoursNow = hours + (minutes / 100);
+  const dayArrayInfo: OpeningHours[] = [];
 
-  if (dayName == daysNotWorking[0] || dayName == daysNotWorking[1]) {
+  infosOpeningHours.forEach((info) => {
+    if (dayName === info.name_day_week) {
+      dayArrayInfo.push(info);
+    }
+  })
+  
+  if (dayArrayInfo[0].status_open === 0) {
     return <span>Estamos fechados</span>
   } else {
-    if (dayName == daysOfWeek[6]) {
-      if (hoursNow >= hoursDayWorkingWeekedNumber[0] && hoursNow <= hoursDayWorkingWeekedNumber[1]) {
-        return <span>Estamos abertos</span>
-      } else {
-        return <span>Estamos fechados</span>
-      }
-    } else {
-      if (hoursNow >= hoursDayWorkingWeekNumber[0] && hoursNow <= hoursDayWorkingWeekNumber[1]) {
-        return <span>Estamos abertos</span>
-      } else {
-        return <span>Estamos fechados</span>
-      }
+    if (hoursNow >= dayArrayInfo[0].time_open && hoursNow <= dayArrayInfo[0].time_close) {
+      return <span>Estamos abertos</span>
     }
   }
 }
+
+getAllOpeningHours();
 
 const HeaderInfo: React.FC = () => {
   return (
     <>
       <div className='header-info'>
         <div className='info-open-establishment'>
-          <p title='Ter a Sex: 09:00h as 19:30h | Sáb: 08:00h as 18:30h'>
+          <p title='Seg a Sex: 09:00h as 19:30h | Sáb: 08:00h as 18:30h'>
             {serviceSituation()}
             <i className='bx bx-time-five' ></i>
-            ter a sáb
+            seg a sáb
           </p>
         </div>
-        <Infos />
+        <InfosHeader />
       </div>
     </>
   )

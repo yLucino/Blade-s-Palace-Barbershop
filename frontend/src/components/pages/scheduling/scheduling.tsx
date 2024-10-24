@@ -93,6 +93,7 @@ const Scheduling: React.FC = () => {
   
   function getMinHour() {
     const dayName = getDayName(day, month, year);
+    
     if (dayName == daysNotWorking[0] || dayName == daysNotWorking[1]) {
       return '00:00'
     } else if (dayName == daysOfWeek[6]) {
