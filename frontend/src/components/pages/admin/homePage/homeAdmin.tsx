@@ -23,7 +23,7 @@ const HomeAdmin = () => {
         <nav className="settings-and-action-options grid grid-cols-1 w-1/3 lg:grid-cols-2">
           <ul>
             <li>
-              <Link  to={'/admin/management'}>
+              <Link to={'/admin/management'}>
                 <Button variant='contained' sx={{width: '100%', margin: '6px'}} size='large'>Gerenciar Site</Button>
               </Link>
             </li>

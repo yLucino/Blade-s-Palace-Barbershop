@@ -64,6 +64,8 @@ function activityCheckWork(dayName: string) {
   } else {
     if (hoursNow >= dayArrayInfo[0].time_open && hoursNow <= dayArrayInfo[0].time_close) {
       return <span>Estamos abertos</span>
+    } else {
+      return <span>Estamos fechados</span>
     }
   }
 }

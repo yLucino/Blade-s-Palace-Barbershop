@@ -1,5 +1,7 @@
 import EditIcon from '@mui/icons-material/Edit';
 import AddIcon from '@mui/icons-material/Add';
+import HomeIcon from '@mui/icons-material/Home';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button, IconButton } from '@mui/material';
 import { useEffect, useState } from 'react';
@@ -15,6 +17,7 @@ import { getAddress, getTelephone } from '../../../services/headerPage.service';
 import { getSocialMedia } from '../../../services/homePage.service';
 import { getMonthlyPlans, getServicesLeft, getServicesRight } from '../../../services/priceAndServicesPage.service';
 import { getTeam } from '../../../services/teamPage.service';
+import { Link } from 'react-router-dom';
 
 const ManagementAdmin = () => {
   const [ openingHours, setOpeningHours ] = useState<OpeningHours[]>([]);
@@ -111,6 +114,25 @@ const ManagementAdmin = () => {
 
   return(
     <div className="bg-Blue 2xl:h-screen flex flex-col items-center p-4">
+      {/* Menu header bar */}
+      <nav className='absolute left-10'>
+        <ul className='flex gap-2'>
+          <li>
+            <Link to={'/admin/home'}>
+              <Button variant='contained' >
+                <ArrowBackIcon />
+              </Button>
+            </Link>
+          </li>
+          <li>
+            <Button variant='contained' >
+            <a href="/">
+              <HomeIcon />
+            </a>
+            </Button>
+          </li>
+        </ul>
+      </nav>
       <div className="text-center">
         <h1 className="text-4xl font-AntonSC tracking-wider text-Yellow">Gerenciamento do Site</h1>
         <p className="text-gray-900 font-medium text-sm">gerencie dados e informações essenciais que podem mudar com o tempo</p>
