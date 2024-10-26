@@ -1,5 +1,5 @@
 import express from "express";
-import { getTelephone } from "../controllers/telephone.controller.js";
+import { getTelephone } from "../../controllers/forHomeWebSite/telephone.controller.js";
 
 const router = express.Router();
 

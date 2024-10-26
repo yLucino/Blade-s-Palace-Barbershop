@@ -1,15 +1,8 @@
-import { db } from "../.env.js";
-import { SECRET_KEY } from "../.env.js";
-import express from 'express';
-import cors from 'cors';
+import { db } from "../../.env.js";
+import { SECRET_KEY } from "../../.env.js";
 import jwt from 'jsonwebtoken';
 
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-const loginAdminRouter =
-app.post('/admin/login', (req, res) => {
+export const postLoginAdmin = (req, res) => {
   const q = "SELECT * FROM bpbs_db.admin WHERE user = ? AND password = ?";
   
   db.query(q, [req.body.user, req.body.password], (err, data) => {
@@ -28,7 +21,4 @@ app.post('/admin/login', (req, res) => {
       return res.status(401).json({message: "No record user or password"});
     };
   });
-});
-
-export default loginAdminRouter
-  
+};

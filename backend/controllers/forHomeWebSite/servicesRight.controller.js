@@ -1,4 +1,4 @@
-import { db } from "../.env.js";
+import { db } from "../../.env.js";
 
 export const getServicesRight = (_, res) => {
   const q = "SELECT * FROM services_right";

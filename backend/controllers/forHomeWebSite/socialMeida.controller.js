@@ -1,4 +1,4 @@
-import { db } from "../.env.js";
+import { db } from "../../.env.js";
 
 export const getSocialMedia = (_, res) => {
   const q = "SELECT * FROM social_media";

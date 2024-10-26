@@ -1,7 +1,7 @@
-import { db } from "../.env.js";
+import { db } from "../../.env.js";
 
-export const getTelephone = (_, res) => {
-  const q = "SELECT * FROM telephone";
+export const getAddress = (_, res) => {
+  const q = "SELECT * FROM address";
 
   db.query(q, (err, data) => {
     if (err) return res.json(err);

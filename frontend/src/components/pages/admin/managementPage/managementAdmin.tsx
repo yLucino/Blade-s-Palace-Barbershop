@@ -6,22 +6,22 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { Button, IconButton } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { OpeningHours } from '../../../../app/shared/models/openingHours';
-import { Address } from '../../../../app/shared/models/address';
 import { Telephone } from '../../../../app/shared/models/telephone';
 import { Social } from '../../../../app/shared/models/social';
 import { Services } from '../../../../app/shared/models/services';
 import { MonthlyPlans } from '../../../../app/shared/models/monthlyPlans';
 import { EmployeeTeam } from '../../../../app/shared/models/employeeTeam';
 import { getOpeningHours } from '../../../services/openingHours.service';
-import { getAddress, getTelephone } from '../../../services/headerPage.service';
+import { getTelephone } from '../../../services/headerPage.service';
 import { getSocialMedia } from '../../../services/homePage.service';
 import { getMonthlyPlans, getServicesLeft, getServicesRight } from '../../../services/priceAndServicesPage.service';
 import { getTeam } from '../../../services/teamPage.service';
 import { Link } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import AddressSection from '../../../contents/managementPage/addressSection';
 
 const ManagementAdmin = () => {
   const [ openingHours, setOpeningHours ] = useState<OpeningHours[]>([]);
-  const [ address, setAddress ] = useState<Address[]>([]);
   const [ telephone, setTelephone ] = useState<Telephone[]>([]);
   const [ socialMedia, setSocialMedia ] = useState<Social[]>([]);
   const [ servicesLeft, setServicesLeft ] = useState<Services[]>([]);
@@ -36,15 +36,6 @@ const ManagementAdmin = () => {
         setOpeningHours(response);
       } catch (error) {
         console.error('Error in get all opening hours from backend', error);
-      }
-    }
-
-    const getAllAddress = async () => {
-      try {
-        const response = await getAddress();
-        setAddress(response);
-      } catch (error) {
-        console.error('Error in get all address from backend', error);
       }
     }
 
@@ -103,7 +94,6 @@ const ManagementAdmin = () => {
     }
 
     getAllOpeningHours();
-    getAllAddress();
     getAllTelephone();
     getAllSocialMedia();
     getAllServicesLeft();
@@ -114,6 +104,7 @@ const ManagementAdmin = () => {
 
   return(
     <div className="bg-Blue 2xl:h-screen flex flex-col items-center p-4">
+      <ToastContainer autoClose={3500} position={"bottom-left"} />
       {/* Menu header bar */}
       <nav className='absolute left-10'>
         <ul className='flex gap-2'>
@@ -163,22 +154,7 @@ const ManagementAdmin = () => {
           </div>
 
           {/* Endereços */}
-          <div className="flex flex-col items-start ml-2 mb-2">
-            <h4 className="font-medium">Endereços:</h4>
-              {address.map((location, index) => (
-                <div className='flex flex-wrap items-center gap-1' key={index}>
-                  <div className="p-1 pl-2 pr-2 bg-slate-400 rounded-full">
-                    <p className="text-sm">{location.street}</p>
-                  </div>
-                  <IconButton aria-label='edit'>
-                    <EditIcon />
-                  </IconButton>
-                  <IconButton aria-label='add'>
-                    <AddIcon />
-                  </IconButton>
-                </div>
-              ))}
-          </div>
+          <AddressSection />
 
           {/* Telefones */}
           <div className="flex flex-col items-start ml-2 mb-2">

@@ -1,4 +1,4 @@
-import { db } from "../.env.js";
+import { db } from "../../.env.js";
 
 export const getMonthlyPlans = (_, res) => {
   const q = "SELECT * FROM monthly_plans";

@@ -1,5 +1,5 @@
 import express from "express";
-import { getServicesLeft } from "../controllers/servicesLeft.controller.js";
+import { getServicesLeft } from "../../controllers/forHomeWebSite/servicesLeft.controller.js";
 
 const router = express.Router();
 
