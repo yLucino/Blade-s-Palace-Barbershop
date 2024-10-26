@@ -5,13 +5,11 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button, IconButton } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { OpeningHours } from '../../../../app/shared/models/openingHours';
 import { Telephone } from '../../../../app/shared/models/telephone';
 import { Social } from '../../../../app/shared/models/social';
 import { Services } from '../../../../app/shared/models/services';
 import { MonthlyPlans } from '../../../../app/shared/models/monthlyPlans';
 import { EmployeeTeam } from '../../../../app/shared/models/employeeTeam';
-import { getOpeningHours } from '../../../services/openingHours.service';
 import { getTelephone } from '../../../services/headerPage.service';
 import { getSocialMedia } from '../../../services/homePage.service';
 import { getMonthlyPlans, getServicesLeft, getServicesRight } from '../../../services/priceAndServicesPage.service';
@@ -19,9 +17,9 @@ import { getTeam } from '../../../services/teamPage.service';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import AddressSection from '../../../contents/managementPage/addressSection';
+import OpeningHoursSection from '../../../contents/managementPage/openingHoursSection';
 
 const ManagementAdmin = () => {
-  const [ openingHours, setOpeningHours ] = useState<OpeningHours[]>([]);
   const [ telephone, setTelephone ] = useState<Telephone[]>([]);
   const [ socialMedia, setSocialMedia ] = useState<Social[]>([]);
   const [ servicesLeft, setServicesLeft ] = useState<Services[]>([]);
@@ -30,14 +28,7 @@ const ManagementAdmin = () => {
   const [ team, setTeam ] = useState<EmployeeTeam[]>([]);
 
   useEffect(() => {
-    const getAllOpeningHours = async () => {
-      try {
-        const response = await getOpeningHours();
-        setOpeningHours(response);
-      } catch (error) {
-        console.error('Error in get all opening hours from backend', error);
-      }
-    }
+
 
     const getAllTelephone = async () => {
       try {
@@ -93,7 +84,6 @@ const ManagementAdmin = () => {
       }
     }
 
-    getAllOpeningHours();
     getAllTelephone();
     getAllSocialMedia();
     getAllServicesLeft();
@@ -135,23 +125,7 @@ const ManagementAdmin = () => {
           <hr className="border-black mb-3"/>
 
           {/* Data/Hora de funcionamento */}
-          <div className="flex flex-col items-start ml-2 mb-2">
-            <h4 className="font-medium mb-1">Data/Hora de funcionamento:</h4>
-            <div className='flex flex-wrap gap-1'>
-              {openingHours.map((day, index) => (
-                <div className='flex items-center' key={index}>
-                  <div className="p-1 pl-2 pr-2 bg-slate-400 rounded-full">
-                    <p className="text-sm">
-                      {day.name_day_week}: {day.time_open === null ? '' : day.time_open + 'h ás'} {day.time_close === null ? '' : day.time_close + 'h'} {day.status_open === 0 ? '(Fechado)' : ''}
-                    </p>
-                  </div>
-                  <IconButton aria-label='edit'>
-                    <EditIcon />
-                  </IconButton>
-                </div>
-              ))}
-            </div>
-          </div>
+          <OpeningHoursSection />
 
           {/* Endereços */}
           <AddressSection />

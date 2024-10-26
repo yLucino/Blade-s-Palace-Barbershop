@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { Address } from "../../../app/shared/models/address";
 import { getAddress } from "../../services/headerPage.service";
 
-import { IconButton, TextField } from '@mui/material';
+import { Button, IconButton, TextField } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import AddIcon from '@mui/icons-material/Add';
 
@@ -122,7 +122,7 @@ const AddressSection: React.FC = () => {
     setSelectedAddress(null); 
   };
 
-  const handleEditSave = async (id: number, newStreetValue: string, newDistrictValue: string, newCityValue: string, newStateValue: string, newCepValue: string, newNumberValue: string, newUrlMapsValue: string,) => {
+  const handleEditSave = async (id: number, newStreetValue: string, newDistrictValue: string, newCityValue: string, newStateValue: string, newCepValue: string, newNumberValue: string, newUrlMapsValue: string) => {
     const streetStatus = await putAddressStreet(id, newStreetValue);
     const districtStatus = await putAddressDistrict(id, newDistrictValue);
     const cityStatus = await putAddressCity(id, newCityValue);
@@ -165,7 +165,7 @@ const AddressSection: React.FC = () => {
           {isModalOpen && selectedAddress && (
             <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-10">
               <div className="bg-white p-4 rounded shadow-lg w-96">
-                <h2 className="text-lg font-bold mb-4">Editar Endereço</h2>
+                <h2 className="text-lg font-bold mb-4">Editar Endereço: {selectedAddress.street}</h2>
 
                 <TextField sx={{marginBottom: '10px'}} variant='filled' label='Rua' size='small' fullWidth type='text' value={selectedAddress.street} required onChange={(e) => setSelectedAddress({ ...selectedAddress, street: e.target.value })}/>
                 <TextField sx={{marginBottom: '10px'}} variant='filled' label='Bairro' size='small' fullWidth type='text' value={selectedAddress.district} required onChange={(e) => setSelectedAddress({ ...selectedAddress, district: e.target.value })}/>
@@ -175,11 +175,11 @@ const AddressSection: React.FC = () => {
                 <TextField sx={{marginBottom: '10px'}} variant='filled' label='Número' size='small' fullWidth type='text' value={selectedAddress.number} required onChange={(e) => setSelectedAddress({ ...selectedAddress, number: e.target.value })}/>
                 <TextField sx={{marginBottom: '10px'}} variant='filled' label='URL Google Maps' title={selectedAddress.url_google_maps} size='small' fullWidth type='text' value={selectedAddress.url_google_maps} required onChange={(e) => setSelectedAddress({ ...selectedAddress, url_google_maps: e.target.value })}/>
 
-                <div className="flex justify-end">
-                  <button className="bg-red-500 text-white px-4 py-2 rounded mr-2" onClick={handleCloseModal}>
+                <div className="flex justify-end gap-1">
+                  <Button variant="contained" color="error" onClick={handleCloseModal}>
                     Cancelar
-                  </button>
-                  <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={() => {
+                  </Button>
+                  <Button type="submit" variant="contained" color="primary" onClick={() => {
                       handleEditSave(
                         selectedAddress.id,
                         selectedAddress.street,
@@ -193,7 +193,7 @@ const AddressSection: React.FC = () => {
                       handleCloseModal();
                     }}>
                     Salvar
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>

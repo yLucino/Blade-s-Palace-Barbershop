@@ -1,6 +1,7 @@
 export class OpeningHours {
+  id!: number;
   name_day_week!: string;
-  status_open!: number;
-  time_open!: number;
-  time_close!: number;
+  status_open!: string;
+  time_open!: string;
+  time_close!: string;
 }
