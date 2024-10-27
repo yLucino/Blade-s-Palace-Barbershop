@@ -187,6 +187,7 @@ const TelephoneSection: React.FC = () => {
             <div className="bg-white p-4 rounded shadow-lg w-96">
               <h2 className="text-lg font-bold mb-4">{isEditing ? `Editar Telefone: ${selectedTelephone.number}` : 'Adicionar Telefone'}</h2>
               
+              <p className="mb-2 pl-1 text-sm text-center bg-slate-200 rounded-md">Telefone relacioando ao estabelecimento.</p>
               <TextField sx={{marginBottom: '10px'}} variant='filled' label='Telefone (xx) xxxxx-xxxx' size='small' fullWidth type='text' value={selectedTelephone.number} required onChange={(e) => setSelectedTelephone({ ...selectedTelephone, number: e.target.value })}/>
               <TextField sx={{marginBottom: '10px'}} variant='filled' label='URL Whatsapp' size='small' fullWidth type='text' value={selectedTelephone.url_api_whatsapp} required onChange={(e) => setSelectedTelephone({ ...selectedTelephone, url_api_whatsapp: e.target.value })}/>
 

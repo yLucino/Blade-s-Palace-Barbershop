@@ -2,78 +2,87 @@ import './header-info-style.css';
 import './header-info-responsive.css';
 import InfosHeader from '../../../contents/infos_Header/infosHeader';
 
-import React from 'react';
 import { daysOfWeek } from '../../../../app/shared/scripts/scriptsOfDate';
-import { getOpeningHours } from '../../../services/forHomeWebSite/openingHours.service';
+import { getOpeningHours } from '../../../services/forHomeWebSite/openingHours.service.ts';
 import { OpeningHours } from '../../../../app/shared/models/openingHours';
-
-// store opening hours checker
-let infosOpeningHours: OpeningHours[] = [];
-const getAllOpeningHours = async () => {
-  try {
-    const response = await getOpeningHours();
-    infosOpeningHours = response
-  } catch (error) {
-    console.error('Error in get all opening hours from backend', error);
-  }
-}
-
-function getDayName(date: Date): string {
-  const dayIndex = date.getUTCDay();
-  const day = daysOfWeek[dayIndex];
-  return day
-}
-
-function serviceSituation() {
-  const now = new Date();
-  const day = now.getDate();
-  const month = ( 1 + now.getMonth());
-  const year = now.getFullYear();
-
-  if (month < 10) {
-    const mes = "0" + `${month}`
-    const dayOfYear = `${year}-${mes}-${day}`      
-    const date = new Date(dayOfYear)
-    const dayName = getDayName(date)
-    
-    return activityCheckWork(dayName)
-  } else {
-    const dayOfYear = `${year}-${month}-${day}` 
-    const date = new Date(dayOfYear)
-    const dayName = getDayName(date)
-    
-    return activityCheckWork(dayName)
-  } 
-}
-
-function activityCheckWork(dayName: string) {
-  const now = new Date();
-  const hours = now.getHours();
-  const minutes = now.getMinutes();
-  const hoursNow = hours + (minutes / 100);
-  
-  const dayArrayInfo: OpeningHours[] = [];
-  
-  infosOpeningHours.forEach((info) => {
-    if (dayName === info.name_day_week) {
-      dayArrayInfo.push(info);
-    }
-  })
-
-  if (dayArrayInfo[0].status_open === 'Fechado') {
-    return <span>Estamos fechados</span>
-  } else {
-    if (hoursNow >= Number(dayArrayInfo[0].time_open) && hoursNow <= Number(dayArrayInfo[0].time_close)) {
-      return <span>Estamos abertos</span>
-    } else {
-      return <span>Estamos fechados</span>
-    }
-  }
-}
-
-getAllOpeningHours();
+import React, { useEffect, useState } from 'react';
 
 const HeaderInfo: React.FC = () => {
+  const [ infosOpeningHours, setInfosOpeningHours ] = useState<OpeningHours[]>([]);
+
+  useEffect(() => {
+    const getAllOpeningHours = async () => {
+      try {
+        const response = await getOpeningHours();
+        if (response && response.length > 0) {
+          setInfosOpeningHours(response);
+        }
+      } catch (error) {
+        console.error('Error in get all opening hours from backend', error);
+      }
+    }
+
+    getAllOpeningHours();
+  }, []);
+
+  function getDayName(date: Date): string {
+    const dayIndex = date.getUTCDay();
+    const day = daysOfWeek[dayIndex];
+    return day
+  }
+
+  function serviceSituation() {
+    const now = new Date();
+    const day = now.getDate();
+    const month = ( 1 + now.getMonth());
+    const year = now.getFullYear();
+
+    if (month < 10) {
+      const mes = "0" + `${month}`
+      const dayOfYear = `${year}-${mes}-${day}`      
+      const date = new Date(dayOfYear)
+      const dayName = getDayName(date)
+      
+      return activityCheckWork(dayName)
+    } else {
+      const dayOfYear = `${year}-${month}-${day}` 
+      const date = new Date(dayOfYear)
+      const dayName = getDayName(date)
+      
+      return activityCheckWork(dayName)
+    } 
+  }
+
+  function activityCheckWork(dayName: string) {
+    const dayArrayInfo: OpeningHours[] = [];
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const hoursNow = hours + (minutes / 100);
+    
+    infosOpeningHours.forEach((info) => {
+      if (dayName === info.name_day_week) {
+        dayArrayInfo.push(info);
+      }
+    })
+    
+    if (dayArrayInfo.length > 0) {
+      try {
+        if (dayArrayInfo[0].status_open === 'Fechado') {
+          return <span>Estamos fechados</span>
+        } else {
+          if (hoursNow >= Number(dayArrayInfo[0].time_open) && hoursNow <= Number(dayArrayInfo[0].time_close)) {
+            return <span>Estamos abertos</span>
+          } else {
+            return <span>Estamos fechados</span>
+          }
+        }
+      } catch (error) {
+        console.log('ERROR: ', error);
+      }
+    }
+  }
+
   return (
     <>
       <div className='header-info'>

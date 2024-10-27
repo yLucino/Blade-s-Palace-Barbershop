@@ -22,7 +22,7 @@ const getAllOpeningHours = async () => {
 
 const getDayNotWorking = () => {
   allInfosOpeningHours.forEach((info) => {
-    if (info.status_open === 0) {
+    if (Number(info.status_open) === 0) {
       daysNotWorking.push(info.name_day_week);
     }
   })

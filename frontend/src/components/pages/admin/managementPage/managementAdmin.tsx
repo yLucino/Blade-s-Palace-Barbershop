@@ -106,10 +106,10 @@ const ManagementAdmin = () => {
 
         {/* Preços, Serviços e Planos */}
         <div className="bg-slate-300 w-auto p-5 pt-2 rounded-xl relative">
-          {/* Serviços */}
           <div>
             <h3 className="mb-1 font-semibold text-xl text-center">Preços, Serviços e Planos</h3>
             <hr className="border-black mb-3"/>
+            {/* Serviços */}
             <div className='2xl:flex'>
               {/* Serviços da Esquerda */}
               <div>
