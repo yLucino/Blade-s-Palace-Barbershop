@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { putHourClose, putHourOpen, putStatusOpen } from "../../services/forAdminSection/managementAddress.service";
+import { putHourClose, putHourOpen, putStatusOpen } from "../../services/forAdminSection/openingHours.service";
 import { toast } from "react-toastify";
 import { OpeningHours } from "../../../app/shared/models/openingHours";
 import { getOpeningHours } from "../../services/forHomeWebSite/openingHours.service";

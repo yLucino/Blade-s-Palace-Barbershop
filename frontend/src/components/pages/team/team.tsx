@@ -1,6 +1,6 @@
 import './team-style.css';
 import './team-responsive.css'
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Profile from '../../contents/profile_TeamPage/profile';
 
 import imageBackground from '../../../../public/assets/image/team-img/bg-image.png';
@@ -8,6 +8,7 @@ import imageBackground from '../../../../public/assets/image/team-img/bg-image.p
 const Team: React.FC = () => {
   const containerTeamRef = useRef<HTMLDivElement>(null);
   const containerProfileRef = useRef<HTMLDivElement>(null);
+  const [ reRender, setReRender ] = useState(false);
   
   // employee barber carousel
   useEffect(() => {
@@ -54,6 +55,10 @@ const Team: React.FC = () => {
     const container = containerProfileRef.current;
     if (container) {
       const allProfiles = container.querySelectorAll('.profile');
+
+      if (allProfiles.length === 0) {
+        return setReRender(true);
+      }
       
       for (let count = 0; count <= (allProfiles.length - 1); count++) {
         if (count != 1) {
@@ -61,7 +66,8 @@ const Team: React.FC = () => {
         }
       }
     }
-  });
+    setReRender(false);
+  }, [reRender]);
 
   return (
     <>

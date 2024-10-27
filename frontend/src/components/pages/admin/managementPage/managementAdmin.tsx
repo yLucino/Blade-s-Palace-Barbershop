@@ -5,12 +5,10 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button, IconButton } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { Telephone } from '../../../../app/shared/models/telephone';
 import { Social } from '../../../../app/shared/models/social';
 import { Services } from '../../../../app/shared/models/services';
 import { MonthlyPlans } from '../../../../app/shared/models/monthlyPlans';
 import { EmployeeTeam } from '../../../../app/shared/models/employeeTeam';
-import { getTelephone } from '../../../services/forHomeWebSite/headerPage.service';
 import { getSocialMedia } from '../../../services/forHomeWebSite/homePage.service';
 import { getMonthlyPlans, getServicesLeft, getServicesRight } from '../../../services/forHomeWebSite/priceAndServicesPage.service';
 import { getTeam } from '../../../services/forHomeWebSite/teamPage.service';
@@ -18,9 +16,9 @@ import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import AddressSection from '../../../contents/managementPage/addressSection';
 import OpeningHoursSection from '../../../contents/managementPage/openingHoursSection';
+import TelephoneSection from '../../../contents/managementPage/telephoneSection';
 
 const ManagementAdmin = () => {
-  const [ telephone, setTelephone ] = useState<Telephone[]>([]);
   const [ socialMedia, setSocialMedia ] = useState<Social[]>([]);
   const [ servicesLeft, setServicesLeft ] = useState<Services[]>([]);
   const [ servicesRight, setServicesRight ] = useState<Services[]>([]);
@@ -28,17 +26,6 @@ const ManagementAdmin = () => {
   const [ team, setTeam ] = useState<EmployeeTeam[]>([]);
 
   useEffect(() => {
-
-
-    const getAllTelephone = async () => {
-      try {
-        const response = await getTelephone();
-        setTelephone(response);
-      } catch (error) {
-        console.error('Error in get all telephone from backend', error);
-      }
-    }
-
     const getAllSocialMedia = async () => {
       try {
         const response = await getSocialMedia();
@@ -84,7 +71,6 @@ const ManagementAdmin = () => {
       }
     }
 
-    getAllTelephone();
     getAllSocialMedia();
     getAllServicesLeft();
     getAllServicesRight();
@@ -131,22 +117,7 @@ const ManagementAdmin = () => {
           <AddressSection />
 
           {/* Telefones */}
-          <div className="flex flex-col items-start ml-2 mb-2">
-            <h4 className="font-medium">Telefones:</h4>
-            {telephone.map((phone, index) => (
-              <div className='flex flex-wrap items-center gap-1' key={index}>
-                <div className="p-1 pl-2 pr-2 bg-slate-400 rounded-full">
-                  <p className="text-sm">{phone.number}</p>
-                </div>
-                <IconButton aria-label='edit'>
-                  <EditIcon />
-                </IconButton>
-                <IconButton aria-label='add'>
-                  <AddIcon />
-                </IconButton>
-              </div>
-            ))}
-          </div>
+          <TelephoneSection />
           
           {/* Redes Sociais */}
           <div className="flex flex-col items-start ml-2 mb-2">

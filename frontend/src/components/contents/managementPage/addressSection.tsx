@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { deleteAddress, postNewAddress, putCEP, putCity, putDistrict, putNumber, putState, putStreet, putUrlMaps } from '../../services/forAdminSection/managementAddress.service';
+import { deleteAddress, postNewAddress, putCEP, putCity, putDistrict, putNumber, putState, putStreet, putUrlMaps } from '../../services/forAdminSection/address.service';
 import { toast } from 'react-toastify';
 import { Address } from "../../../app/shared/models/address";
 import { getAddress } from "../../services/forHomeWebSite/headerPage.service";
@@ -10,12 +10,12 @@ import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const AddressSection: React.FC = () => {
+  const [ address, setAddress ] = useState<Address[]>([]);
+  const [ selectedAddress, setSelectedAddress ] = useState<Address | null>(null);
   const [ isModalOpen, setIsModalOpen ] = useState(false);
   const [ isModalDeleteOpen, setIsModalDeleteOpen ] = useState(false);
-  const [ selectedAddress, setSelectedAddress ] = useState<Address | null>(null);
-  const [ reRender, setRerender ] = useState(Boolean);
-  const [ address, setAddress ] = useState<Address[]>([]);
   const [ isEditing, setIsEditing ] = useState(false);
+  const [ reRender, setRerender ] = useState(Boolean);
 
   useEffect(() => {
     const getAllAddress = async () => {
@@ -134,8 +134,6 @@ const AddressSection: React.FC = () => {
     try {
       const response = await deleteAddress(id);
       if (response === 'Address deleted successfully.') {
-        console.log('deleted successfully');
-        
         return true
       }
     } catch (error) {
@@ -162,7 +160,7 @@ const AddressSection: React.FC = () => {
   const handleEditAddClick = (location: Address, editing: boolean) => {
     setIsEditing(editing);
     setIsModalOpen(true);
-    setSelectedAddress(location);
+    setSelectedAddress(location); 
 
     if (!editing) {
       setSelectedAddress({
@@ -175,7 +173,7 @@ const AddressSection: React.FC = () => {
         url_google_maps: ''
       });
     }
-  };
+  }
 
   const handleDeleteClick = (location: Address) => {
     setIsModalDeleteOpen(true); 
@@ -315,7 +313,7 @@ const AddressSection: React.FC = () => {
                 <h2 className="text-lg font-bold mb-4">Excluir Endereço: {selectedAddress.street}</h2>
 
                 <div className="flex justify-end gap-1">
-                <Button variant="contained" color="error" onClick={handleCloseModal}>
+                  <Button variant="contained" color="error" onClick={handleCloseModal}>
                     Cancelar
                   </Button>
                   <Button type="submit" variant="contained" color="primary" onClick={() => {

@@ -7,12 +7,20 @@ import {
   putAddressCEP, 
   putAddressNumber, 
   putAddressURLMaps, 
-  putHourOpen,
-  putHourClose,
-  putStatusOpen,
   postNewAddress,
   deleteAddress,
-} from "../../controllers/forAdminSection/managementAdmin.controller.js";
+} from "../../controllers/forAdminSection/managementAddress.controller.js";
+import { 
+  putHourOpen, 
+  putHourClose, 
+  putStatusOpen 
+} from "../../controllers/forAdminSection/managementOpeningHour.controller.js";
+import { 
+  putTelephoneNumber,
+  putTelephoneUrl,
+  postNewTelephone,
+  deleteTelephone
+} from "../../controllers/forAdminSection/managementTelephone.controller.js";
 
 const router = express.Router();
 
@@ -31,5 +39,12 @@ router.delete("/delete-address/:id", deleteAddress);
 router.put("/update-hour-open/:id", putHourOpen);
 router.put("/update-hour-close/:id", putHourClose);
 router.put("/update-status-open/:id", putStatusOpen);
+
+// Routers fro Telephone PUT | POST | DELETE
+router.put("/update-number/:id", putTelephoneNumber);
+router.put("/update-url-whatsapp/:id", putTelephoneUrl);
+router.post("/add-telephone", postNewTelephone);
+router.delete("/delete-telephone/:id", deleteTelephone);
+
 
 export default router;
