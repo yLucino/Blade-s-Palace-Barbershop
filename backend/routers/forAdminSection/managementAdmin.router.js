@@ -21,6 +21,7 @@ import {
   postNewTelephone,
   deleteTelephone
 } from "../../controllers/forAdminSection/managementTelephone.controller.js";
+import { putSocialMediaUrl } from "../../controllers/forAdminSection/managementSocialMedia.controller.js";
 
 const router = express.Router();
 
@@ -40,11 +41,14 @@ router.put("/update-hour-open/:id", putHourOpen);
 router.put("/update-hour-close/:id", putHourClose);
 router.put("/update-status-open/:id", putStatusOpen);
 
-// Routers fro Telephone PUT | POST | DELETE
+// Routers for Telephone PUT | POST | DELETE
 router.put("/update-number/:id", putTelephoneNumber);
 router.put("/update-url-whatsapp/:id", putTelephoneUrl);
 router.post("/add-telephone", postNewTelephone);
 router.delete("/delete-telephone/:id", deleteTelephone);
+
+// Router for Social Media PUT
+router.put("/update-social-midea-url/:id", putSocialMediaUrl);
 
 
 export default router;

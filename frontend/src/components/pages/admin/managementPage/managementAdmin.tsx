@@ -5,11 +5,9 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button, IconButton } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { Social } from '../../../../app/shared/models/social';
 import { Services } from '../../../../app/shared/models/services';
 import { MonthlyPlans } from '../../../../app/shared/models/monthlyPlans';
 import { EmployeeTeam } from '../../../../app/shared/models/employeeTeam';
-import { getSocialMedia } from '../../../services/forHomeWebSite/homePage.service';
 import { getMonthlyPlans, getServicesLeft, getServicesRight } from '../../../services/forHomeWebSite/priceAndServicesPage.service';
 import { getTeam } from '../../../services/forHomeWebSite/teamPage.service';
 import { Link } from 'react-router-dom';
@@ -17,24 +15,15 @@ import { ToastContainer } from 'react-toastify';
 import AddressSection from '../../../contents/managementPage/addressSection';
 import OpeningHoursSection from '../../../contents/managementPage/openingHoursSection';
 import TelephoneSection from '../../../contents/managementPage/telephoneSection';
+import SocialMediaSection from '../../../contents/managementPage/socialMideaSection';
 
 const ManagementAdmin = () => {
-  const [ socialMedia, setSocialMedia ] = useState<Social[]>([]);
   const [ servicesLeft, setServicesLeft ] = useState<Services[]>([]);
   const [ servicesRight, setServicesRight ] = useState<Services[]>([]);
   const [ monthlyPlans, setMonthlyPlans ] = useState<MonthlyPlans[]>([]);
   const [ team, setTeam ] = useState<EmployeeTeam[]>([]);
 
   useEffect(() => {
-    const getAllSocialMedia = async () => {
-      try {
-        const response = await getSocialMedia();
-        setSocialMedia(response);
-      } catch (error) {
-        console.error('Error in get all social media from backend', error);
-      }
-    }
-
     const getAllServicesLeft = async () => {
       try {
         const response = await getServicesLeft();
@@ -71,7 +60,6 @@ const ManagementAdmin = () => {
       }
     }
 
-    getAllSocialMedia();
     getAllServicesLeft();
     getAllServicesRight();
     getAllMonthlyPlans();
@@ -110,29 +98,10 @@ const ManagementAdmin = () => {
           <h3 className="mb-1 font-semibold text-xl text-center">Estabelecimento</h3>
           <hr className="border-black mb-3"/>
 
-          {/* Data/Hora de funcionamento */}
           <OpeningHoursSection />
-
-          {/* Endereços */}
           <AddressSection />
-
-          {/* Telefones */}
           <TelephoneSection />
-          
-          {/* Redes Sociais */}
-          <div className="flex flex-col items-start ml-2 mb-2">
-            <h4 className="font-medium">Redes Sociais:</h4>
-            {socialMedia.map((social, index) => (
-              <div className='flex items-center gap-1 mb-1' key={index}>
-                <div className="p-1 pl-2 pr-2 bg-slate-400 rounded-lg">
-                  <p className="text-xs"><span className='text-black text-sm'>{social.name}: </span>{social.url}</p>
-                </div>
-                <IconButton aria-label='edit'>
-                  <EditIcon />
-                </IconButton>
-              </div>
-            ))}
-          </div>
+          <SocialMediaSection />
         </div>
 
         {/* Preços, Serviços e Planos */}

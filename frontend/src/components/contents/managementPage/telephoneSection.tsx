@@ -146,7 +146,7 @@ const TelephoneSection: React.FC = () => {
     setIsModalOpen(false); 
     setSelectedTelephone(null); 
     setIsEditing(false);
-    setIsModalDeleteOpen(false)
+    setIsModalDeleteOpen(false);
   };
 
   const handleDeleteConfirm = async (id: number | undefined) => {
