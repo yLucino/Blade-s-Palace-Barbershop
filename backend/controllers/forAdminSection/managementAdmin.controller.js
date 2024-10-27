@@ -1,20 +1,17 @@
 import { db } from "../../.env.js";
 
-// API for Address PUT
+// API for Address PUT | POST
+// PUT
 export const putAddressStreet = (req, res) => {
   const locationId = req.params.id;
   const { street } = req.body;
 
   const q = "UPDATE address SET street = ? WHERE id = ?";
 
-  db.query(q, [street, locationId], (error, results) => {
+  db.query(q, [street, locationId], (error) => {
     if (error) {
       console.log('Error when updating the street field:', error);
       return res.status(500).json({ error: 'Error updating address.' })
-    }
-
-    if (results.affectedRows === 0) {
-      return res.status(404).json({ error: 'Address/Street not found.' });
     }
 
     res.status(200).json({ message: 'Street updated successfully.' });
@@ -27,14 +24,10 @@ export const putAddressDistrict = (req, res) => {
 
   const q = "UPDATE address SET district = ? WHERE id = ?";
 
-  db.query(q, [district, districtId], (error, results) => {
+  db.query(q, [district, districtId], (error) => {
     if (error) {
       console.log('Error when updating the district field:', error);
       return res.status(500).json({ error: 'Error updating address.' });
-    }
-
-    if (results.affectedRows === 0) {
-      return res.status(404).json({ error: 'Address/District not found.' });
     }
 
     res.status(200).json({ message: 'District updated successfully.' });
@@ -47,14 +40,10 @@ export const putAddressCity = (req, res) => {
 
   const q = "UPDATE address SET city = ? WHERE id = ?";
 
-  db.query(q, [city, cityId], (error, results) => {
+  db.query(q, [city, cityId], (error) => {
     if (error) {
       console.log('Error when updating the city field:', error);
       return res.status(500).json({ error: 'Error updating address.' });
-    }
-
-    if (results.affectedRows === 0) {
-      return res.status(404).json({ error: 'Address/City not found.' });
     }
 
     res.status(200).json({ message: 'City updated successfully.' });
@@ -67,14 +56,10 @@ export const putAddressState = (req, res) => {
 
   const q = "UPDATE address SET state = ? WHERE id = ?";
 
-  db.query(q, [state, stateId], (error, results) => {
+  db.query(q, [state, stateId], (error) => {
     if (error) {
       console.log('Error when updating the state field:', error);
       return res.status(500).json({ error: 'Error updating address.' });
-    }
-
-    if (results.affectedRows === 0) {
-      return res.status(404).json({ error: 'Address/State not found.' });
     }
 
     res.status(200).json({ message: 'State updated successfully.' });
@@ -87,14 +72,10 @@ export const putAddressCEP = (req, res) => {
 
   const q = "UPDATE address SET cep = ? WHERE id = ?";
 
-  db.query(q, [cep, cepId], (error, results) => {
+  db.query(q, [cep, cepId], (error) => {
     if (error) {
       console.log('Error when updating the CEP field:', error);
       return res.status(500).json({ error: 'Error updating address.' });
-    }
-
-    if (results.affectedRows === 0) {
-      return res.status(404).json({ error: 'Address/CEP not found.' });
     }
 
     res.status(200).json({ message: 'CEP updated successfully.' });
@@ -107,14 +88,10 @@ export const putAddressNumber = (req, res) => {
 
   const q = "UPDATE address SET number = ? WHERE id = ?";
 
-  db.query(q, [number, numberId], (error, results) => {
+  db.query(q, [number, numberId], (error) => {
     if (error) {
       console.log('Error when updating the Number field:', error);
       return res.status(500).json({ error: 'Error updating address.' });
-    }
-
-    if (results.affectedRows === 0) {
-      return res.status(404).json({ error: 'Address/Number not found.' });
     }
 
     res.status(200).json({ message: 'Number updated successfully.' });
@@ -127,17 +104,28 @@ export const putAddressURLMaps = (req, res) => {
 
   const q = "UPDATE address SET url_google_maps = ? WHERE id = ?";
 
-  db.query(q, [urlmaps, urlmapsId], (error, results) => {
+  db.query(q, [urlmaps, urlmapsId], (error) => {
     if (error) {
       console.log('Error when updating the URL Google Maps field:', error);
       return res.status(500).json({ error: 'Error updating address.' });
     }
 
-    if (results.affectedRows === 0) {
-      return res.status(404).json({ error: 'Address/URLGoogleMaps not found.' });
+    res.status(200).json({ message: 'URL Google Maps updated successfully.' });
+  });
+}
+// POST
+export const postNewAddress = (req, res) => {
+  const { street, district, cep, number, url_google_maps, city, state } = req.body.address;
+
+  const q = "INSERT INTO address (street, district, cep, number, url_google_maps, city, state) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+  db.query(q, [street, district, cep, number, url_google_maps, city, state], (error) => {
+    if (error) {
+      console.log('Error when adding the address:', error);
+      return res.status(500).json({ error: 'Error adding address.' })
     }
 
-    res.status(200).json({ message: 'URL Google Maps updated successfully.' });
+    res.status(201).json({ message: 'Address added successfully.' });
   });
 }
 
@@ -148,14 +136,10 @@ export const putStatusOpen = (req, res) => {
   
   const q = "UPDATE opening_hours SET status_open = ? WHERE id = ?";
 
-  db.query(q, [status, statusId], (error, results) => {
+  db.query(q, [status, statusId], (error) => {
     if (error) {
       console.log('Error when updating the Status Open field:', error);
       return res.status(500).json({ error: 'Error updating opening_hours.' });      
-    }
-
-    if (results.affectedRows === 0) {
-      return res.status(404).json({ error: 'Opening_hours/Status Open not found.' });
     }
 
     res.status(200).json({ message: 'StatusOpen updated successfully.' });
@@ -168,14 +152,10 @@ export const putHourOpen = (req, res) => {
 
   const q = "UPDATE opening_hours SET time_open = ? WHERE id = ?";
 
-  db.query(q, [open, openId], (error, results) => {
+  db.query(q, [open, openId], (error) => {
     if (error) {
       console.log('Error when updating the Hour Open field:', error);
       return res.status(500).json({ error: 'Error updating opening_hours.' });
-    }
-
-    if (results.affectedRows === 0) {
-      return res.status(404).json({ error: 'Opening_hours/Hour Open not found.' });
     }
 
     res.status(200).json({ message: 'HourOpen updated successfully.' });
@@ -188,14 +168,10 @@ export const putHourClose = (req, res) => {
 
   const q = "UPDATE opening_hours SET time_close = ? WHERE id = ?";
 
-  db.query(q, [close, closeId], (error, results) => {
+  db.query(q, [close, closeId], (error) => {
     if (error) {
       console.log('Error when updating the Hour Close field:', error);
       return res.status(500).json({ error: 'Error updating opening_hours.' });
-    }
-
-    if (results.affectedRows === 0) {
-      return res.status(404).json({ error: 'Opening_hours/Hour Close not found.' });
     }
 
     res.status(200).json({ message: 'HourClose updated successfully.' });

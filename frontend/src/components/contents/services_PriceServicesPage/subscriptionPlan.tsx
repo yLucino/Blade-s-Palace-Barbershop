@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getMonthlyPlans } from '../../services/priceAndServicesPage.service';
+import { getMonthlyPlans } from '../../services/forHomeWebSite/priceAndServicesPage.service';
 import { MonthlyPlans } from '../../../app/shared/models/monthlyPlans';
 
 const SubscriptionPlan: React.FC = () => {

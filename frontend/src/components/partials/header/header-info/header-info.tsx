@@ -4,7 +4,7 @@ import InfosHeader from '../../../contents/infos_Header/infosHeader';
 
 import React from 'react';
 import { daysOfWeek } from '../../../../app/shared/scripts/scriptsOfDate';
-import { getOpeningHours } from '../../../services/openingHours.service';
+import { getOpeningHours } from '../../../services/forHomeWebSite/openingHours.service';
 import { OpeningHours } from '../../../../app/shared/models/openingHours';
 
 // store opening hours checker
@@ -51,18 +51,19 @@ function activityCheckWork(dayName: string) {
   const hours = now.getHours();
   const minutes = now.getMinutes();
   const hoursNow = hours + (minutes / 100);
+  
   const dayArrayInfo: OpeningHours[] = [];
-
+  
   infosOpeningHours.forEach((info) => {
     if (dayName === info.name_day_week) {
       dayArrayInfo.push(info);
     }
   })
-  
-  if (dayArrayInfo[0].status_open === 0) {
+
+  if (dayArrayInfo[0].status_open === 'Fechado') {
     return <span>Estamos fechados</span>
   } else {
-    if (hoursNow >= dayArrayInfo[0].time_open && hoursNow <= dayArrayInfo[0].time_close) {
+    if (hoursNow >= Number(dayArrayInfo[0].time_open) && hoursNow <= Number(dayArrayInfo[0].time_close)) {
       return <span>Estamos abertos</span>
     } else {
       return <span>Estamos fechados</span>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Social } from "../../../app/shared/models/social";
 import { Address } from "../../../app/shared/models/address";
-import { getSocialMedia } from "../../services/homePage.service";
-import { getAddress } from "../../services/headerPage.service";
+import { getSocialMedia } from "../../services/forHomeWebSite/homePage.service";
+import { getAddress } from "../../services/forHomeWebSite/headerPage.service";
 
 const InfosContact: React.FC = () => {
   const [socialMedia, setSocialMedia] = useState<Social[]>([]);

@@ -1,4 +1,4 @@
-import { getOpeningHours } from "../../../components/services/openingHours.service";
+import { getOpeningHours } from "../../../components/services/forHomeWebSite/openingHours.service";
 import { OpeningHours } from "../models/openingHours";
 
 // Barbershop opening dates

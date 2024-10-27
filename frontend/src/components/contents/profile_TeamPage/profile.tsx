@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { EmployeeTeam } from "../../../app/shared/models/employeeTeam";
-import { getTeam } from "../../services/teamPage.service";
+import { getTeam } from "../../services/forHomeWebSite/teamPage.service";
 
 const Profile: React.FC = () => {
   // request from backend to take all employeer barbers

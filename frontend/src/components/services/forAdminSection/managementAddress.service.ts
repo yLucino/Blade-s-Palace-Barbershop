@@ -1,8 +1,10 @@
 import axios from "axios"
+import { Address } from "../../../app/shared/models/address";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-// Axios request for Address PUT
+// Axios request for Address PUT | POST
+// PUT
 export const putStreet = async (id: number, street: string) => {
   try {
     const response = await axios.put(`${BACKEND_URL}/admin/management/update-street/${id}`, { street });
@@ -23,7 +25,7 @@ export const putDistrict = async (id: number, district: string) => {
       return response.data.message;
     }
   } catch (error) {
-    console.log('Error in pur District', error);
+    console.log('Error in put District', error);
   }
 }
 
@@ -84,6 +86,18 @@ export const putUrlMaps = async (id: number, urlmaps: string) => {
     }
   } catch (error) {
     console.log('Error in put URL Google Maps', error);
+  }
+}
+// POST
+export const postNewAddress = async (address: Address) => {
+  try {
+    const response = await axios.post(`${BACKEND_URL}/admin/management/add-address`, { address });
+    
+    if (response.status === 201) {
+      return response.data.message;
+    }
+  } catch (error) {
+    console.log('Error in post New Address:', error);
   }
 }
 

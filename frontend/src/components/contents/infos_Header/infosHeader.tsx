@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Address } from "../../../app/shared/models/address";
 import { Telephone } from "../../../app/shared/models/telephone";
-import { getAddress, getTelephone } from "../../services/headerPage.service";
+import { getAddress, getTelephone } from "../../services/forHomeWebSite/headerPage.service";
 
 const InfosHeader: React.FC = () => {
   const [isHoveredMap, setIsHoveredMap] = useState<number | null>(null);

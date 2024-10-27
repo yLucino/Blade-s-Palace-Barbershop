@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { putCEP, putCity, putDistrict, putNumber, putState, putStreet, putUrlMaps } from '../../services/forAdminSection/managementAddress.service';
+import { postNewAddress, putCEP, putCity, putDistrict, putNumber, putState, putStreet, putUrlMaps } from '../../services/forAdminSection/managementAddress.service';
 import { toast } from 'react-toastify';
 import { Address } from "../../../app/shared/models/address";
-import { getAddress } from "../../services/headerPage.service";
+import { getAddress } from "../../services/forHomeWebSite/headerPage.service";
 
 import { Button, IconButton, TextField } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const AddressSection: React.FC = () => {
   const [ isModalOpen, setIsModalOpen ] = useState(false);
   const [ selectedAddress, setSelectedAddress ] = useState<Address | null>(null);
   const [ reRender, setRerender ] = useState(Boolean);
   const [ address, setAddress ] = useState<Address[]>([]);
+  const [ isEditing, setIsEditing ] = useState(false);
 
   useEffect(() => {
     const getAllAddress = async () => {
@@ -28,6 +30,7 @@ const AddressSection: React.FC = () => {
     setRerender(false);
   }, [reRender])
 
+  // PUT
   const putAddressStreet = async (id: number, street: string) => {
     try {
       const response = await putStreet(id, street);
@@ -112,16 +115,52 @@ const AddressSection: React.FC = () => {
     }
   }
 
-  const handleEditClick = (location: Address) => {
-    setSelectedAddress(location);
-    setIsModalOpen(true); 
-  };
-  
-  const handleCloseModal = () => {
-    setIsModalOpen(false); 
-    setSelectedAddress(null); 
+  // POST
+  const postAddressNewAddress = async (address: Address) => {
+    try {
+      const response = await postNewAddress(address);
+      if (response === 'Address added successfully.') {
+        return true
+      }
+    } catch (error) {
+      console.log('Error in adding address', error);
+      return false
+    }
+  }
+
+  const validateFields = () => {
+    if (
+      !selectedAddress?.street ||
+      !selectedAddress?.district ||
+      !selectedAddress?.city ||
+      !selectedAddress?.state ||
+      !selectedAddress?.cep ||
+      !selectedAddress?.number ||
+      !selectedAddress?.url_google_maps
+    ) {
+      return false;
+    }
+    return true;
   };
 
+  const handleEditAddClick = (location: Address, editing: boolean) => {
+    setIsEditing(editing);
+    setSelectedAddress(location);
+    setIsModalOpen(true); 
+
+    if (!editing) {
+      setSelectedAddress({
+        street: '',
+        district: '',
+        city: '',
+        state: '',
+        cep: '',
+        number: '',
+        url_google_maps: ''
+      });
+    }
+  };
+  
   const handleEditSave = async (id: number, newStreetValue: string, newDistrictValue: string, newCityValue: string, newStateValue: string, newCepValue: string, newNumberValue: string, newUrlMapsValue: string) => {
     const streetStatus = await putAddressStreet(id, newStreetValue);
     const districtStatus = await putAddressDistrict(id, newDistrictValue);
@@ -141,6 +180,29 @@ const AddressSection: React.FC = () => {
     setRerender(true);
   };
 
+  const handleCloseModal = () => {
+    setIsModalOpen(false); 
+    setSelectedAddress(null); 
+    setIsEditing(false);
+  };
+
+  const handleAddConfirm = async (newAddressValue: Address) => {
+    if (!validateFields()) {
+      return;
+    }
+
+    const addressStatus = await postAddressNewAddress(newAddressValue);
+    setIsModalOpen(false);
+
+    if (addressStatus) {
+      toast.success('Endereço adicionado com sucesso!'); 
+    } else {
+      toast.error('Erro ao tentar adicionar o endereço!');
+    }
+
+    setRerender(true);
+  }
+
   return(
     <>
       <div className="flex flex-col items-start ml-2 mb-2">
@@ -154,18 +216,21 @@ const AddressSection: React.FC = () => {
                   CEP: {location.cep}
                 </p>
               </div>
-              <IconButton aria-label='edit' onClick={() => handleEditClick(location)}>
+              <IconButton aria-label='edit' onClick={() => handleEditAddClick(location, true)}>
                 <EditIcon />
               </IconButton>
-              <IconButton aria-label='add'>
+              <IconButton aria-label='add' onClick={() => handleEditAddClick(location, false)}>
                 <AddIcon />
+              </IconButton>
+              <IconButton aria-label='remove' >
+                <DeleteIcon />
               </IconButton>
             </div>
           ))}
           {isModalOpen && selectedAddress && (
             <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-10">
               <div className="bg-white p-4 rounded shadow-lg w-96">
-                <h2 className="text-lg font-bold mb-4">Editar Endereço: {selectedAddress.street}</h2>
+                <h2 className="text-lg font-bold mb-4">{isEditing ? `Editar Endereço: ${selectedAddress.street}` : 'Adicionar Endereço'}</h2>
 
                 <TextField sx={{marginBottom: '10px'}} variant='filled' label='Rua' size='small' fullWidth type='text' value={selectedAddress.street} required onChange={(e) => setSelectedAddress({ ...selectedAddress, street: e.target.value })}/>
                 <TextField sx={{marginBottom: '10px'}} variant='filled' label='Bairro' size='small' fullWidth type='text' value={selectedAddress.district} required onChange={(e) => setSelectedAddress({ ...selectedAddress, district: e.target.value })}/>
@@ -180,19 +245,30 @@ const AddressSection: React.FC = () => {
                     Cancelar
                   </Button>
                   <Button type="submit" variant="contained" color="primary" onClick={() => {
-                      handleEditSave(
-                        selectedAddress.id,
-                        selectedAddress.street,
-                        selectedAddress.district,
-                        selectedAddress.city,
-                        selectedAddress.state,
-                        selectedAddress.cep,
-                        selectedAddress.number,
-                        selectedAddress.url_google_maps
-                      ),
-                      handleCloseModal();
+                      if (isEditing && selectedAddress.id) {
+                        handleEditSave(
+                          selectedAddress.id,
+                          selectedAddress.street,
+                          selectedAddress.district,
+                          selectedAddress.city,
+                          selectedAddress.state,
+                          selectedAddress.cep,
+                          selectedAddress.number,
+                          selectedAddress.url_google_maps
+                        );
+                        handleCloseModal();
+                      } else {
+                        handleAddConfirm(
+                          selectedAddress
+                        );
+                        if (validateFields()) {
+                          handleCloseModal();
+                        } else {
+                          toast.error('Por favor, preencha todos os campos obrigatórios.');
+                        }
+                      }
                     }}>
-                    Salvar
+                    {isEditing ? 'Salvar' : 'Adicionar'}
                   </Button>
                 </div>
               </div>

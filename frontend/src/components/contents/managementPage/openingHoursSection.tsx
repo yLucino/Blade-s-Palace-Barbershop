@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { putHourClose, putHourOpen, putStatusOpen } from "../../services/forAdminSection/managementAddress.service";
 import { toast } from "react-toastify";
 import { OpeningHours } from "../../../app/shared/models/openingHours";
-import { getOpeningHours } from "../../services/openingHours.service";
+import { getOpeningHours } from "../../services/forHomeWebSite/openingHours.service";
 
 import { Button, IconButton, TextField } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';

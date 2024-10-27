@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { getServicesLeft } from '../../services/priceAndServicesPage.service';
+import { getServicesLeft } from '../../services/forHomeWebSite/priceAndServicesPage.service';
 import { Services } from '../../../app/shared/models/services';
 
 const ServicesList_Left: React.FC = () => {
