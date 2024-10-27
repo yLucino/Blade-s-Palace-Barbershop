@@ -113,6 +113,7 @@ export const putAddressURLMaps = (req, res) => {
     res.status(200).json({ message: 'URL Google Maps updated successfully.' });
   });
 }
+
 // POST
 export const postNewAddress = (req, res) => {
   const { street, district, cep, number, url_google_maps, city, state } = req.body.address;
@@ -128,6 +129,22 @@ export const postNewAddress = (req, res) => {
     res.status(201).json({ message: 'Address added successfully.' });
   });
 }
+
+// DELETE
+export const deleteAddress = (req, res) => {
+  const addressId = req.params.id;
+
+  const q = "DELETE FROM address WHERE id = ?";
+
+  db.query(q, [addressId], (error) => {
+    if (error) {
+      console.log('Error when deleting the address:', error);
+      return res.status(500).json({ error: 'Error deleting address.' })
+    }
+
+    res.status(201).json({ message: 'Address deleted successfully.' });
+  });
+} 
 
 // API for OpeningHour PUT
 export const putStatusOpen = (req, res) => {

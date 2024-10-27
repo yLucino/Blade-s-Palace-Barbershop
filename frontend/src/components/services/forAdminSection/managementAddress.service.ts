@@ -101,6 +101,18 @@ export const postNewAddress = async (address: Address) => {
   }
 }
 
+// DELETE
+export const deleteAddress = async (id: number | undefined) => {
+  try {
+    const response = await axios.delete(`${BACKEND_URL}/admin/management/delete-address/${id}`);
+    if (response.status === 201) {
+      return response.data.message;
+    }
+  } catch (error) {
+    console.log('Error in delete Address:', error);
+  }
+}
+
 // Axios request for OpeningHour PUT
 export const putStatusOpen = async (id: number, status: string) => {
   try {

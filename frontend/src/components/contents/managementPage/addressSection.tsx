@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { postNewAddress, putCEP, putCity, putDistrict, putNumber, putState, putStreet, putUrlMaps } from '../../services/forAdminSection/managementAddress.service';
+import { deleteAddress, postNewAddress, putCEP, putCity, putDistrict, putNumber, putState, putStreet, putUrlMaps } from '../../services/forAdminSection/managementAddress.service';
 import { toast } from 'react-toastify';
 import { Address } from "../../../app/shared/models/address";
 import { getAddress } from "../../services/forHomeWebSite/headerPage.service";
@@ -11,6 +11,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const AddressSection: React.FC = () => {
   const [ isModalOpen, setIsModalOpen ] = useState(false);
+  const [ isModalDeleteOpen, setIsModalDeleteOpen ] = useState(false);
   const [ selectedAddress, setSelectedAddress ] = useState<Address | null>(null);
   const [ reRender, setRerender ] = useState(Boolean);
   const [ address, setAddress ] = useState<Address[]>([]);
@@ -128,6 +129,21 @@ const AddressSection: React.FC = () => {
     }
   }
 
+  // DELETE
+  const deleteAddressAddressId = async (id: number | undefined) => {
+    try {
+      const response = await deleteAddress(id);
+      if (response === 'Address deleted successfully.') {
+        console.log('deleted successfully');
+        
+        return true
+      }
+    } catch (error) {
+      console.log('Error in deleting address', error);
+      return false
+    }
+  } 
+
   const validateFields = () => {
     if (
       !selectedAddress?.street ||
@@ -145,8 +161,8 @@ const AddressSection: React.FC = () => {
 
   const handleEditAddClick = (location: Address, editing: boolean) => {
     setIsEditing(editing);
+    setIsModalOpen(true);
     setSelectedAddress(location);
-    setIsModalOpen(true); 
 
     if (!editing) {
       setSelectedAddress({
@@ -160,6 +176,11 @@ const AddressSection: React.FC = () => {
       });
     }
   };
+
+  const handleDeleteClick = (location: Address) => {
+    setIsModalDeleteOpen(true); 
+    setSelectedAddress(location);
+  }
   
   const handleEditSave = async (id: number, newStreetValue: string, newDistrictValue: string, newCityValue: string, newStateValue: string, newCepValue: string, newNumberValue: string, newUrlMapsValue: string) => {
     const streetStatus = await putAddressStreet(id, newStreetValue);
@@ -184,6 +205,7 @@ const AddressSection: React.FC = () => {
     setIsModalOpen(false); 
     setSelectedAddress(null); 
     setIsEditing(false);
+    setIsModalDeleteOpen(false)
   };
 
   const handleAddConfirm = async (newAddressValue: Address) => {
@@ -198,6 +220,19 @@ const AddressSection: React.FC = () => {
       toast.success('Endereço adicionado com sucesso!'); 
     } else {
       toast.error('Erro ao tentar adicionar o endereço!');
+    }
+
+    setRerender(true);
+  }
+
+  const handleDeleteConfirm = async (id: number | undefined) => {
+    const addressDeleteStatus = await deleteAddressAddressId(id);
+    setIsModalDeleteOpen(false);
+
+    if (addressDeleteStatus) {
+      toast.success('Endereço excluído com sucesso!'); 
+    } else {
+      toast.error('Erro ao tentar excluir o endereço!');
     }
 
     setRerender(true);
@@ -222,7 +257,7 @@ const AddressSection: React.FC = () => {
               <IconButton aria-label='add' onClick={() => handleEditAddClick(location, false)}>
                 <AddIcon />
               </IconButton>
-              <IconButton aria-label='remove' >
+              <IconButton aria-label='remove' onClick={() => handleDeleteClick(location)}>
                 <DeleteIcon />
               </IconButton>
             </div>
@@ -269,6 +304,25 @@ const AddressSection: React.FC = () => {
                       }
                     }}>
                     {isEditing ? 'Salvar' : 'Adicionar'}
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
+          {isModalDeleteOpen && selectedAddress && (
+            <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-10">
+              <div className="bg-white p-4 rounded shadow-lg w-96">
+                <h2 className="text-lg font-bold mb-4">Excluir Endereço: {selectedAddress.street}</h2>
+
+                <div className="flex justify-end gap-1">
+                <Button variant="contained" color="error" onClick={handleCloseModal}>
+                    Cancelar
+                  </Button>
+                  <Button type="submit" variant="contained" color="primary" onClick={() => {
+                      handleDeleteConfirm(selectedAddress.id);
+                      handleCloseModal();
+                    }}>
+                    Excluir
                   </Button>
                 </div>
               </div>
