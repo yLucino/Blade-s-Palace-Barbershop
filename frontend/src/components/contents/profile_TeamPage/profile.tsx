@@ -17,12 +17,12 @@ const Profile: React.FC = () => {
     }
 
     getAllTeam();
-  }, []);
+  }, [])
 
   return (
     <>
       {employeer.map((profile, index) => (
-        <div className='profile' key={index}>
+        <div className={`profile ${index === 1 ? '' : 'disabled'}`} key={index}>
           <img src={profile.imageUrl} alt={profile.name} />
           <h2 className="text-2xl">{profile.name}</h2>
           <h3>{profile.jobRole}</h3>
