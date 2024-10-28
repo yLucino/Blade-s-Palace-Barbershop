@@ -22,6 +22,24 @@ import {
   deleteTelephone
 } from "../../controllers/forAdminSection/managementTelephone.controller.js";
 import { putSocialMediaUrl } from "../../controllers/forAdminSection/managementSocialMedia.controller.js";
+import { 
+  deleteServiceLeft,
+  postNewServiceLeft,
+  putServiceLeftDescription,
+  putServiceLeftImageUrl,
+  putServiceLeftPriceInPlan,
+  putServiceLeftPriceNoPlan,
+  putServiceLeftTitle 
+} from "../../controllers/forAdminSection/managementPriceAndServiceLeft.controller.js";
+import { 
+  deleteServiceRight,
+  postNewServiceRight,
+  putServiceRightDescription,
+  putServiceRightImageUrl,
+  putServiceRightPriceInPlan,
+  putServiceRightPriceNoPlan,
+  putServiceRightTitle
+} from "../../controllers/forAdminSection/managementPriceAndServiceRight.controller.js";
 
 const router = express.Router();
 
@@ -50,5 +68,22 @@ router.delete("/delete-telephone/:id", deleteTelephone);
 // Router for Social Media PUT
 router.put("/update-social-midea-url/:id", putSocialMediaUrl);
 
+// Routers for PriceAndSeriveLeft PUT | POST | DELETE
+router.put("/update-service-left-title/:id", putServiceLeftTitle);
+router.put("/update-service-left-image-url/:id", putServiceLeftImageUrl);
+router.put("/update-service-left-description/:id", putServiceLeftDescription);
+router.put("/update-service-left-price-no-plan/:id", putServiceLeftPriceNoPlan);
+router.put("/update-service-left-price-in-plan/:id", putServiceLeftPriceInPlan);
+router.post("/add-service-left", postNewServiceLeft);
+router.delete("/delete-service-left/:id", deleteServiceLeft);
+
+// Routers for PriceAndSeriveRight PUT | POST | DELETE
+router.put("/update-service-right-title/:id", putServiceRightTitle);
+router.put("/update-service-right-image-url/:id", putServiceRightImageUrl);
+router.put("/update-service-right-description/:id", putServiceRightDescription);
+router.put("/update-service-right-price-no-plan/:id", putServiceRightPriceNoPlan);
+router.put("/update-service-right-price-in-plan/:id", putServiceRightPriceInPlan);
+router.post("/add-service-right", postNewServiceRight);
+router.delete("/delete-service-right/:id", deleteServiceRight);
 
 export default router;
