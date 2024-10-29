@@ -1,8 +1,8 @@
 export class Services {
-  id!: string;
+  id?: number;
   title!: string;
   imageUrl!: string;
   description!: string;
-  priceNoPlan!: number; 
-  priceInPlan!: number; 
+  priceNoPlan!: string; 
+  priceInPlan!: string; 
 }

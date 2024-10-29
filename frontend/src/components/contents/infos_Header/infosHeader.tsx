@@ -103,15 +103,15 @@ const InfosHeader: React.FC = () => {
               <h2 className="text-lg font-bold mb-4">Endereços de atendimento</h2>
               <ul className="flex flex-col gap-4">
                 {address.map((location, index) => (
-                  <li className='location bg-BlueDarkSoft p-3 w-72 rounded-lg cursor-pointer hover:scale-105 hover:bg-BlueLight transition-all' key={index}
-                  onMouseEnter={() => handleMouseEnterMap(index)}
-                  onMouseLeave={handleMouseLeaveMap}
-                  >
-                    <a href={location.url_google_maps} target='_blank'>
-                      <i className={`bx bx-map ${isHoveredMap === index ? 'bx-tada' : ''}`}></i>
-                      <p title={`CEP: ${location.cep}`}>Nrº {location.number} | {location.street}</p>
-                    </a>
-                  </li>
+                  <a href={location.url_google_maps} target='_blank'>
+                    <li className='location bg-BlueDarkSoft p-3 w-72 rounded-lg cursor-pointer hover:scale-105 hover:bg-BlueLight transition-all' key={index}
+                    onMouseEnter={() => handleMouseEnterMap(index)}
+                    onMouseLeave={handleMouseLeaveMap}
+                    >
+                        <i className={`bx bx-map ${isHoveredMap === index ? 'bx-tada' : ''}`}></i>
+                        <p title={`CEP: ${location.cep}`}>Nrº {location.number} | {location.street}</p>
+                    </li>
+                  </a>
                 ))}
               </ul>
 
@@ -129,15 +129,15 @@ const InfosHeader: React.FC = () => {
               <h2 className="text-lg font-bold mb-4">Telefone(s) para contato</h2>
               <ul className="flex flex-col gap-4">
                 {telephone.map((phone, index) => (
-                  <li className='location bg-BlueDarkSoft p-3 w-72 rounded-lg cursor-pointer hover:scale-105 hover:bg-BlueLight transition-all' key={index}
-                  onMouseEnter={() => handleMouseEnterPhone(index)}
-                  onMouseLeave={handleMouseLeavePhone}
-                  >
-                    <a href={phone.url_api_whatsapp} target='_blank'>
-                      <i className={`bx bx-phone ${isHoveredPhone === index ? 'bx-tada' : ''}`}></i>
-                      <p>{phone.number}</p>
-                    </a>
-                  </li>
+                  <a href={phone.url_api_whatsapp} target='_blank'>
+                    <li className='location bg-BlueDarkSoft p-3 w-72 rounded-lg cursor-pointer hover:scale-105 hover:bg-BlueLight transition-all' key={index}
+                    onMouseEnter={() => handleMouseEnterPhone(index)}
+                    onMouseLeave={handleMouseLeavePhone}
+                    >
+                        <i className={`bx bx-phone ${isHoveredPhone === index ? 'bx-tada' : ''}`}></i>
+                        <p>{phone.number}</p>
+                    </li>
+                  </a>
                 ))}
               </ul>
               <div className="flex justify-end gap-1 mt-5">
