@@ -4,7 +4,7 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 // Axios request for PriceAndSericeRight PUT | POST | DELETE
 // PUT
-export const putServiceRightTitle = async (id: number, title: string) => {
+export const putServiceRightTitle = async (id: number | undefined, title: string) => {
   try {
     const response = await axios.put(`${BACKEND_URL}/admin/management/update-service-right-title/${id}`, { title });
 
@@ -16,7 +16,7 @@ export const putServiceRightTitle = async (id: number, title: string) => {
   }
 }
 
-export const putServiceRightImageUrl = async (id: number, imageUrl: string) => {
+export const putServiceRightImageUrl = async (id: number | undefined, imageUrl: string) => {
   try {
     const response = await axios.put(`${BACKEND_URL}/admin/management/update-service-right-image-url/${id}`, { imageUrl });
 
@@ -28,7 +28,7 @@ export const putServiceRightImageUrl = async (id: number, imageUrl: string) => {
   }
 }
 
-export const putServiceRightDescription = async (id: number, description: string) => {
+export const putServiceRightDescription = async (id: number | undefined, description: string) => {
   try {
     const response = await axios.put(`${BACKEND_URL}/admin/management/update-service-right-description/${id}`, { description });
 
@@ -40,7 +40,7 @@ export const putServiceRightDescription = async (id: number, description: string
   }
 }
 
-export const putServiceRightPriceNoPlan = async (id: number, priceNoPlan: string) => {
+export const putServiceRightPriceNoPlan = async (id: number | undefined, priceNoPlan: string) => {
   try {
     const response = await axios.put(`${BACKEND_URL}/admin/management/update-service-right-price-no-plan/${id}`, { priceNoPlan });
 
@@ -52,7 +52,7 @@ export const putServiceRightPriceNoPlan = async (id: number, priceNoPlan: string
   }
 }
 
-export const putServiceRightPriceInPlan = async (id: number, priceInPlan: string) => {
+export const putServiceRightPriceInPlan = async (id: number | undefined, priceInPlan: string) => {
   try {
     const response = await axios.put(`${BACKEND_URL}/admin/management/update-service-right-price-in-plan/${id}`, { priceInPlan });
 

@@ -4,7 +4,7 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 // Axios request for PriceAndSericeLeft PUT | POST | DELETE
 // PUT
-export const putServiceLeftTitle = async (id: number, title: string) => {
+export const putServiceLeftTitle = async (id: number | undefined, title: string) => {
   try {
     const response = await axios.put(`${BACKEND_URL}/admin/management/update-service-left-title/${id}`, { title });
 
@@ -16,7 +16,7 @@ export const putServiceLeftTitle = async (id: number, title: string) => {
   }
 }
 
-export const putServiceLeftImageUrl = async (id: number, imageUrl: string) => {
+export const putServiceLeftImageUrl = async (id: number | undefined, imageUrl: string) => {
   try {
     const response = await axios.put(`${BACKEND_URL}/admin/management/update-service-left-image-url/${id}`, { imageUrl });
 
@@ -28,7 +28,7 @@ export const putServiceLeftImageUrl = async (id: number, imageUrl: string) => {
   }
 }
 
-export const putServiceLeftDescription = async (id: number, description: string) => {
+export const putServiceLeftDescription = async (id: number | undefined, description: string) => {
   try {
     const response = await axios.put(`${BACKEND_URL}/admin/management/update-service-left-description/${id}`, { description });
 
@@ -40,7 +40,7 @@ export const putServiceLeftDescription = async (id: number, description: string)
   }
 }
 
-export const putServiceLeftPriceNoPlan = async (id: number, priceNoPlan: string) => {
+export const putServiceLeftPriceNoPlan = async (id: number | undefined, priceNoPlan: string) => {
   try {
     const response = await axios.put(`${BACKEND_URL}/admin/management/update-service-left-price-no-plan/${id}`, { priceNoPlan });
 
@@ -52,7 +52,7 @@ export const putServiceLeftPriceNoPlan = async (id: number, priceNoPlan: string)
   }
 }
 
-export const putServiceLeftPriceInPlan = async (id: number, priceInPlan: string) => {
+export const putServiceLeftPriceInPlan = async (id: number | undefined, priceInPlan: string) => {
   try {
     const response = await axios.put(`${BACKEND_URL}/admin/management/update-service-left-price-in-plan/${id}`, { priceInPlan });
 
@@ -67,7 +67,7 @@ export const putServiceLeftPriceInPlan = async (id: number, priceInPlan: string)
 // POST
 export const postNewServiceLeft = async (serviceLeft: Services) => {
   try {
-    const response = await axios.post(`${BACKEND_URL}/admin-management/add-service-left`, {serviceLeft});
+    const response = await axios.post(`${BACKEND_URL}/admin/management/add-service-left`, {serviceLeft});
 
     if (response.status === 200) {
       return response.data.message;
@@ -80,7 +80,7 @@ export const postNewServiceLeft = async (serviceLeft: Services) => {
 // DELETE
 export const deleteServiceLeft = async (id: number | undefined) => {
   try {
-    const response = await axios.delete(`${BACKEND_URL}/admin-management/delete-service-left/${id}`);
+    const response = await axios.delete(`${BACKEND_URL}/admin/management/delete-service-left/${id}`);
 
     if (response.status === 200) {
       return response.data.message

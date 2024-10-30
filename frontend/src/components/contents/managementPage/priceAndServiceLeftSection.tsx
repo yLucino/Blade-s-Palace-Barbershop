@@ -8,6 +8,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { Services } from "../../../app/shared/models/services";
 import { getServicesLeft } from "../../services/forHomeWebSite/priceAndServicesPage.service";
 import { toast } from "react-toastify";
+import { deleteServiceLeft, postNewServiceLeft, putServiceLeftDescription, putServiceLeftImageUrl, putServiceLeftPriceInPlan, putServiceLeftPriceNoPlan, putServiceLeftTitle } from "../../services/forAdminSection/priceAndServicesLeft.service";
 
 const PriceAndServicesLeftSection: React.FC = () => {
   const [ servicesLeft, setServicesLeft ] = useState<Services[]>([]);
@@ -15,6 +16,7 @@ const PriceAndServicesLeftSection: React.FC = () => {
   const [ isModalOpen, setIsModalOpen ] = useState(false);
   const [ isModalDeleteOpen, setIsModalDeleteOpen ] = useState(false);
   const [ isEditing, setIsEditing ] = useState(false);
+  const [ reRender, setReRender ] = useState(Boolean);
 
   useEffect(() => {
     const getAllServicesLeft = async () => {
@@ -27,7 +29,105 @@ const PriceAndServicesLeftSection: React.FC = () => {
     }
 
     getAllServicesLeft();
-  }, []);
+    setReRender(false);
+  }, [reRender]);
+
+  // PUT
+  const putPriceAndServiceLeftTitle = async (id: number | undefined, title: string) => {
+    try {
+      const response = await putServiceLeftTitle(id, title); 
+
+      if (response === 'Title updated successfully.') {
+        return true
+      }
+    } catch (error) {
+      console.log('Error in updated PriceAndService Title', error);
+      return false
+    }
+  }
+
+  const putPriceAndServiceLeftImageUrl = async (id: number | undefined, imageUrl: string) => {
+    try {
+      const response = await putServiceLeftImageUrl(id, imageUrl);
+
+      if (response === 'Image URL updated successfully.') {
+        return true
+      }
+    } catch (error) {
+      console.log('Error in updated PriceAndService ImageUrl', error);
+      return false
+    }
+  }
+
+  const putPriceAndServiceLeftDescription = async (id: number | undefined, description: string) => {
+    try {
+      const response = await putServiceLeftDescription(id, description)
+      
+      if (response === 'Description updated successfully.') {
+        return true
+      }
+    } catch (error) {
+      console.log('Error in updated PriceAndService Description');
+      return false
+    }
+  }
+
+  const putPriceAndServiceLeftPriceNoPlan = async (id: number | undefined, priceNoPlan: string) => {
+    try {
+      const response = await putServiceLeftPriceNoPlan(id, priceNoPlan);
+
+      if (response === 'Price No Plan updated successfully.') {
+        return true
+      }
+    } catch (error) {
+      console.log('Error in updated PriceAndService PriceNoPlan');
+      return false
+    }
+  }
+
+  const putPriceAndServiceLeftPriceInPlan = async (id: number | undefined, priceInPlan: string) => {
+    try {
+      const response = await putServiceLeftPriceInPlan(id, priceInPlan);
+
+      if (response === 'Price In Plan updated successfully.') {
+        return true
+      }
+    } catch (error) {
+      console.log('Error in updated PriceAndService PriceInPlan', error);
+      return false
+    }
+
+  }
+
+  // POST
+  const postPriceAndServiceLeftnewService = async (serviceLeft: Services) => {
+    try {
+      const response = await postNewServiceLeft(serviceLeft);
+
+      if (response === 'ServiceLeft added successfully.') {
+        return true
+      }
+    } catch (error) {
+      console.log('Error in adding new Service in PriceAndService', error);
+      return false      
+    }
+  }
+
+  // DELETE
+  const deletePriceAndServiceLeftDelete = async (id: number | undefined) => {
+    try {
+      const response = await deleteServiceLeft(id);
+
+      if (response === 'ServiceLeft deleted successfully.') {
+        return true
+      }
+    } catch (error) {
+      console.log('Error in deleting service', error);
+      return false      
+    }
+  }
+
+
 
   const validateFields = () => {
     if (
@@ -52,8 +152,8 @@ const PriceAndServicesLeftSection: React.FC = () => {
         title: '',
         imageUrl: '',
         description: '',
-        priceNoPlan: 0,
-        priceInPlan: 0
+        priceNoPlan: '0.00',
+        priceInPlan: '0.00'
       });
     }
   }
@@ -71,15 +171,43 @@ const PriceAndServicesLeftSection: React.FC = () => {
   }
 
   const handleEditSave = async (id: number | undefined, newTitleValeu: string, newImageUrlValeu: string, newDescriptionValeu: string, newPriceNoPlan: string, newPriceInPlan: string) => {
+    const titleStatus = await putPriceAndServiceLeftTitle(id, newTitleValeu);
+    const imageUrlStatus = await putPriceAndServiceLeftImageUrl(id, newImageUrlValeu);
+    const descriptionStatus = await putPriceAndServiceLeftDescription(id, newDescriptionValeu);
+    const priceNoPlanStatus = await putPriceAndServiceLeftPriceNoPlan(id, newPriceNoPlan);
+    const priceInPlanStatus = await putPriceAndServiceLeftPriceInPlan(id, newPriceInPlan);
 
+    if (titleStatus && imageUrlStatus && descriptionStatus && priceNoPlanStatus && priceInPlanStatus) {
+      toast.success('Serviço editado com sucesso!');
+    } else {
+      toast.error('Erro ao tentar editar o serviço!');
+    }
+
+    setReRender(true);
   }
 
-  const handleAddConfirm = (newServiceValue: Services) => {
+  const handleAddConfirm = async (newServiceValue: Services) => {
+    const newServiceStatus = await postPriceAndServiceLeftnewService(newServiceValue);
 
+    if (newServiceStatus) {
+      toast.success('Serviço adicionado ao lado Esquerdo com sucesso!');
+    } else {
+      toast.error('Erro ao tentar adicionar o serviço ao lado esquerdo!')
+    }
+
+    setReRender(true);
   }
 
-  const handleDeleteConfirm = (id: number | undefined) => {
+  const handleDeleteConfirm = async (id: number | undefined) => {
+    const deleteServiceStatus = await deletePriceAndServiceLeftDelete(id);
 
+    if (deleteServiceStatus) {
+      toast.success('Serviço excluído com sucesso!')
+    } else {
+      toast.error('Erro ao tentar excluir o serviço!')
+    }
+
+    setReRender(true);
   }
 
   return(
@@ -127,7 +255,6 @@ const PriceAndServicesLeftSection: React.FC = () => {
                     </Button>
                     <Button type="submit" variant="contained" color="primary" onClick={() => {
                         if (isEditing && selectedService.id) {
-
                           handleEditSave(
                             selectedService.id,
                             selectedService.title,
