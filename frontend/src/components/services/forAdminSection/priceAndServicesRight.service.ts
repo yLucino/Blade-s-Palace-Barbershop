@@ -67,7 +67,7 @@ export const putServiceRightPriceInPlan = async (id: number | undefined, priceIn
 // POST
 export const postNewServiceRight = async (serviceRight: Services) => {
   try {
-    const response = await axios.post(`${BACKEND_URL}/admin-management/add-service-right`, {serviceRight});
+    const response = await axios.post(`${BACKEND_URL}/admin/management/add-service-right`, {serviceRight});
 
     if (response.status === 200) {
       return response.data.message;
@@ -78,9 +78,9 @@ export const postNewServiceRight = async (serviceRight: Services) => {
 }
 
 // DELETE
-export const deleteServiceRight = async (id: number) => {
+export const deleteServiceRight = async (id: number | undefined) => {
   try {
-    const response = await axios.delete(`${BACKEND_URL}/admin-management/delete-service-right/${id}`);
+    const response = await axios.delete(`${BACKEND_URL}/admin/management/delete-service-right/${id}`);
 
     if (response.status === 200) {
       return response.data.message

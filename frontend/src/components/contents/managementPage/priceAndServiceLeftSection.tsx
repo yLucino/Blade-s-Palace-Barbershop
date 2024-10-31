@@ -187,6 +187,10 @@ const PriceAndServicesLeftSection: React.FC = () => {
   }
 
   const handleAddConfirm = async (newServiceValue: Services) => {
+    if (!validateFields()) {
+      return;
+    }
+
     const newServiceStatus = await postPriceAndServiceLeftnewService(newServiceValue);
 
     if (newServiceStatus) {
@@ -215,15 +219,15 @@ const PriceAndServicesLeftSection: React.FC = () => {
       <div>
         <div>
           <h4 className="font-medium mb-1">Serviços da Esquerda:</h4>
-          <div className='overflow-y-scroll overflow-x-hidden 2xl:max-h-80 max-h-40 mr-2'>
+          <div className='overflow-y-scroll overflow-x-hidden 2xl:max-h-80 max-h-40'>
             {servicesLeft.map((service, index) => (
               <div className='flex mb-2' key={index}>
                 <div className='p-1 pl-2 pr-2 bg-slate-400 rounded-lg text-sm'>
                   <h4 className='mb-1'><span className='text-black font-semibold'>Titúlo:</span> {service.title}</h4>
                   <p className='mb-1'><span className='text-black font-semibold'>Imagem URL:</span> {service.imageUrl}</p>
                   <p className='mb-1'><span className='text-black font-semibold'>Descrição:</span> {service.description}</p>
-                  <p className='mb-1'><span className='text-black font-semibold'>Preço com plano:</span> R$ {service.priceInPlan}</p>
-                  <p><span className='text-black font-semibold'>Preço sem plano:</span> R$ {service.priceNoPlan}</p>
+                  <p className='mb-1'><span className='text-black font-semibold'>Preço sem plano:</span> R$ {service.priceNoPlan}</p>
+                  <p><span className='text-black font-semibold'>Preço com plano:</span> R$ {service.priceInPlan}</p>
                 </div>
                 <div className='flex flex-col justify-evenly'>
                   <IconButton aria-label='edit' onClick={() => handleEditAddClick(service, true)}>
@@ -246,8 +250,8 @@ const PriceAndServicesLeftSection: React.FC = () => {
                   <TextField sx={{marginBottom: '10px'}} variant='filled' label='Título' size='small' fullWidth type='text' value={selectedService.title} required onChange={(e) => setSelectedService({ ...selectedService, title: e.target.value })}/>
                   <TextField sx={{marginBottom: '10px'}} variant='filled' label='URL Imagem' size='small' fullWidth type='text' value={selectedService.imageUrl} required onChange={(e) => setSelectedService({ ...selectedService, imageUrl: e.target.value })}/>
                   <TextField sx={{marginBottom: '10px'}} variant='filled' label='Descrição' size='small' fullWidth type='text' value={selectedService.description} required onChange={(e) => setSelectedService({ ...selectedService, description: e.target.value })}/>
-                  <TextField sx={{marginBottom: '10px'}} variant='filled' label='Preço fora do plano mensal (50.25 = 50,25 | R$)' size='small' fullWidth type='text' value={selectedService.priceNoPlan} required onChange={(e) => setSelectedService({ ...selectedService, priceNoPlan: e.target.value })}/>
-                  <TextField sx={{marginBottom: '10px'}} variant='filled' label='Preço dentro do plano mensal (50.25 = 50,25 | R$)' size='small' fullWidth type='text' value={selectedService.priceInPlan} required onChange={(e) => setSelectedService({ ...selectedService, priceInPlan: e.target.value })}/>
+                  <TextField sx={{marginBottom: '10px'}} variant='filled' label='Preço SEM plano mensal (50.25 = 50,25 | R$)' size='small' fullWidth type='text' value={selectedService.priceNoPlan} required onChange={(e) => setSelectedService({ ...selectedService, priceNoPlan: e.target.value })}/>
+                  <TextField sx={{marginBottom: '10px'}} variant='filled' label='Preço COM plano mensal (50.25 = 50,25 | R$)' size='small' fullWidth type='text' value={selectedService.priceInPlan} required onChange={(e) => setSelectedService({ ...selectedService, priceInPlan: e.target.value })}/>
 
                   <div className="flex justify-end gap-1">
                     <Button variant="contained" color="error" onClick={handleCloseModal}>
