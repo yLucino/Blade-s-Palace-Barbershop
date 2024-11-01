@@ -44,10 +44,6 @@
 }
 
 @media (max-width: 1360px) {
-  .price-and-service {
-    height: 1150px;
-  }
-
   .box-card-middle {
     position: absolute;
   }
@@ -95,12 +91,16 @@
     width: 100%;
   }
 
+  .box-cards-left ul,
+  .box-cards-right ul {
+    margin-top: 220px;
+  }
+  
   .box-cards-left ul li,
   .box-cards-right ul li {
     min-width: auto;
     padding: 10px;
     position: relative;
-    top: 220px;
   }
 
   .box-cards-right ul li {
@@ -129,10 +129,6 @@
 }
 
 @media (max-width: 1000px) {
-  .price-and-service {
-    height: 2200px;
-  }
-  
   .box-card-middle ul li {
     width: 520px;
     height: 410px;
@@ -168,9 +164,13 @@
     width: 100%;
   }
 
+  .box-cards-left ul ,
+  .box-cards-right ul {
+    margin-top: 440px;
+  }
+
   .box-cards-left ul li,
   .box-cards-right ul li {
-    top: 440px;
     flex-direction: column;
   }
 
@@ -197,10 +197,6 @@
 }
 
 @media (max-width: 570px) {
-  .price-and-service {
-    height: 2280px;
-  }
-
   .box-card-middle ul li {
     width: 320px;
     height: 410px;

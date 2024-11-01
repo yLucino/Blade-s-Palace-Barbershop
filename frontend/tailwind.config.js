@@ -32,6 +32,9 @@ export default {
         Brown: '#8C6D51',
         BrownDark: '#593831',
       },
+      height: {
+        '600': '600px',
+      },
     },
   },
   plugins: [],

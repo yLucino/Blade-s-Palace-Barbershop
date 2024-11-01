@@ -216,8 +216,8 @@ const PriceAndServicesRightSection: React.FC = () => {
 
   return(
     <>
-      <div>
-        <h4 className="font-medium mb-1 mt-4">Serviços da Direita:</h4>
+      <div className="2xl:ml-2">
+        <h4 className="font-medium 2xl:mb-0 2xl:mt-0 mb-1 mt-4">Serviços da Direita:</h4>
         <div className='overflow-y-scroll overflow-x-hidden 2xl:max-h-80 max-h-40'>
           {servicesRight.map((service, index) => (
             <div className='flex mb-2' key={index}>
