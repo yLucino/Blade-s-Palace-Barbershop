@@ -5,9 +5,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button, IconButton } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { MonthlyPlans } from '../../../../app/shared/models/monthlyPlans';
 import { EmployeeTeam } from '../../../../app/shared/models/employeeTeam';
-import { getMonthlyPlans } from '../../../services/forHomeWebSite/priceAndServicesPage.service';
 import { getTeam } from '../../../services/forHomeWebSite/teamPage.service';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -17,23 +15,12 @@ import TelephoneSection from '../../../contents/managementPage/telephoneSection'
 import SocialMediaSection from '../../../contents/managementPage/socialMideaSection';
 import PriceAndServicesLeftSection from '../../../contents/managementPage/priceAndServiceLeftSection';
 import PriceAndServicesRightSection from '../../../contents/managementPage/priceAndServiceRightSection';
+import MonthlyPlanPriceSection from '../../../contents/managementPage/monthlyPlanPriceSection';
 
 const ManagementAdmin = () => {
-  const [ monthlyPlans, setMonthlyPlans ] = useState<MonthlyPlans[]>([]);
   const [ team, setTeam ] = useState<EmployeeTeam[]>([]);
 
   useEffect(() => {
-
-
-    const getAllMonthlyPlans = async () => {
-      try {
-        const response = await getMonthlyPlans();
-        setMonthlyPlans(response);
-      } catch (error) {
-        console.error('Error in get all monthly plans from backend', error);
-      }
-    }
-
     const getAllTeam = async () => {
       try {
         const response = await getTeam();
@@ -43,7 +30,6 @@ const ManagementAdmin = () => {
       }
     }
 
-    getAllMonthlyPlans();
     getAllTeam();
   }, []);
 
@@ -87,34 +73,16 @@ const ManagementAdmin = () => {
 
         {/* Preços, Serviços e Planos */}
         <div className="bg-slate-300 w-auto p-5 pt-2 rounded-xl relative">
-          <div>
-            <h3 className="mb-1 font-semibold text-xl text-center">Preços, Serviços e Planos</h3>
-            <hr className="border-black mb-3"/>
-            <div className='2xl:flex'>
-              <PriceAndServicesLeftSection />
-              <PriceAndServicesRightSection />
-            </div>
+          {/* Preços, Serviços */}
+          <h3 className="mb-1 font-semibold text-xl text-center">Preços, Serviços e Planos</h3>
+          <hr className="border-black mb-3"/>
+          <div className='2xl:flex'>
+            <PriceAndServicesLeftSection />
+            <PriceAndServicesRightSection />
           </div>
 
           {/* Planos Mensais */}
-          <div>
-            <h4 className="font-medium mb-1">Preço Plano Mensal:</h4>
-            <div className='flex flex-col'>
-              {monthlyPlans.map((plan, index) => (
-                <div className='flex items-center text-sm gap-1' key={index}>
-                  <div className='p-1 pl-2 pr-2 bg-slate-400 rounded-full'>
-                    <p><span className='text-black font-semibold'>Plano cabelo E barba:</span> R$ {plan.priceFullPlan}</p>
-                  </div>
-                  <div className='p-1 pl-2 pr-2 bg-slate-400 rounded-full'>
-                    <p><span className='text-black font-semibold'>Plano cabelo OU barba:</span> R$ {plan.priceHalfPlan}</p>
-                  </div>
-                  <IconButton aria-label='edit'>
-                    <EditIcon />
-                  </IconButton>
-                </div>
-              ))}
-            </div>
-          </div>
+          <MonthlyPlanPriceSection />
         </div>
 
         {/* Time */}

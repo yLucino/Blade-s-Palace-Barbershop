@@ -1,7 +1,8 @@
 export class MonthlyPlans {
+  id!: number;
   title!: string;
   imageUrl!: string;
   description!: string;
-  priceFullPlan!: number; 
-  priceHalfPlan!: number; 
+  priceFullPlan!: string; 
+  priceHalfPlan!: string; 
 }

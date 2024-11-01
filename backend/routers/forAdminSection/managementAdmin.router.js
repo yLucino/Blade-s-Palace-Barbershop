@@ -40,6 +40,7 @@ import {
   putServiceRightPriceNoPlan,
   putServiceRightTitle
 } from "../../controllers/forAdminSection/managementPriceAndServiceRight.controller.js";
+import { putMonthyPlanPriceFullPlan, putMonthyPlanPriceHalfPlan } from "../../controllers/forAdminSection/managementMonthlyPlan.controller.js";
 
 const router = express.Router();
 
@@ -85,5 +86,9 @@ router.put("/update-service-right-price-no-plan/:id", putServiceRightPriceNoPlan
 router.put("/update-service-right-price-in-plan/:id", putServiceRightPriceInPlan);
 router.post("/add-service-right", postNewServiceRight);
 router.delete("/delete-service-right/:id", deleteServiceRight);
+
+// Routers for MonthlyPlan PUT
+router.put("/update-monthly-plan-full/:id", putMonthyPlanPriceFullPlan);
+router.put("/update-monthly-plan-half/:id", putMonthyPlanPriceHalfPlan);
 
 export default router;

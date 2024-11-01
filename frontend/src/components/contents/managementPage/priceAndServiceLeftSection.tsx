@@ -217,94 +217,92 @@ const PriceAndServicesLeftSection: React.FC = () => {
   return(
     <>
       <div>
-        <div>
-          <h4 className="font-medium mb-1">Serviços da Esquerda:</h4>
-          <div className='overflow-y-scroll overflow-x-hidden 2xl:max-h-80 max-h-40'>
-            {servicesLeft.map((service, index) => (
-              <div className='flex mb-2' key={index}>
-                <div className='p-1 pl-2 pr-2 bg-slate-400 rounded-lg text-sm'>
-                  <h4 className='mb-1'><span className='text-black font-semibold'>Titúlo:</span> {service.title}</h4>
-                  <p className='mb-1'><span className='text-black font-semibold'>Imagem URL:</span> {service.imageUrl}</p>
-                  <p className='mb-1'><span className='text-black font-semibold'>Descrição:</span> {service.description}</p>
-                  <p className='mb-1'><span className='text-black font-semibold'>Preço sem plano:</span> R$ {service.priceNoPlan}</p>
-                  <p><span className='text-black font-semibold'>Preço com plano:</span> R$ {service.priceInPlan}</p>
-                </div>
-                <div className='flex flex-col justify-evenly'>
-                  <IconButton aria-label='edit' onClick={() => handleEditAddClick(service, true)}>
-                    <EditIcon />
-                  </IconButton>
-                  <IconButton aria-label='add' onClick={() => handleEditAddClick(service, false)}>
-                    <AddIcon />
-                  </IconButton>
-                  <IconButton aria-label='delete' onClick={() => handleDeleteClick(service)}>
-                    <DeleteIcon />
-                  </IconButton>
-                </div>
+        <h4 className="font-medium mb-1">Serviços da Esquerda:</h4>
+        <div className='overflow-y-scroll overflow-x-hidden 2xl:max-h-80 max-h-40'>
+          {servicesLeft.map((service, index) => (
+            <div className='flex mb-2' key={index}>
+              <div className='p-1 pl-2 pr-2 bg-slate-400 rounded-lg text-sm'>
+                <h4 className='mb-1'><span className='text-black font-semibold'>Titúlo:</span> {service.title}</h4>
+                <p className='mb-1'><span className='text-black font-semibold'>Imagem URL:</span> {service.imageUrl}</p>
+                <p className='mb-1'><span className='text-black font-semibold'>Descrição:</span> {service.description}</p>
+                <p className='mb-1'><span className='text-black font-semibold'>Preço sem plano:</span> R$ {service.priceNoPlan}</p>
+                <p><span className='text-black font-semibold'>Preço com plano:</span> R$ {service.priceInPlan}</p>
               </div>
-            ))}
-            {isModalOpen && selectedService && (
-              <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-10">
-                <div className="bg-white p-4 rounded shadow-lg w-96">
-                  <h2 className="text-lg font-bold mb-4">Editar Serviço: {selectedService.title}</h2>
-                  
-                  <TextField sx={{marginBottom: '10px'}} variant='filled' label='Título' size='small' fullWidth type='text' value={selectedService.title} required onChange={(e) => setSelectedService({ ...selectedService, title: e.target.value })}/>
-                  <TextField sx={{marginBottom: '10px'}} variant='filled' label='URL Imagem' size='small' fullWidth type='text' value={selectedService.imageUrl} required onChange={(e) => setSelectedService({ ...selectedService, imageUrl: e.target.value })}/>
-                  <TextField sx={{marginBottom: '10px'}} variant='filled' label='Descrição' size='small' fullWidth type='text' value={selectedService.description} required onChange={(e) => setSelectedService({ ...selectedService, description: e.target.value })}/>
-                  <TextField sx={{marginBottom: '10px'}} variant='filled' label='Preço SEM plano mensal (50.25 = 50,25 | R$)' size='small' fullWidth type='text' value={selectedService.priceNoPlan} required onChange={(e) => setSelectedService({ ...selectedService, priceNoPlan: e.target.value })}/>
-                  <TextField sx={{marginBottom: '10px'}} variant='filled' label='Preço COM plano mensal (50.25 = 50,25 | R$)' size='small' fullWidth type='text' value={selectedService.priceInPlan} required onChange={(e) => setSelectedService({ ...selectedService, priceInPlan: e.target.value })}/>
+              <div className='flex flex-col justify-evenly'>
+                <IconButton aria-label='edit' onClick={() => handleEditAddClick(service, true)}>
+                  <EditIcon />
+                </IconButton>
+                <IconButton aria-label='add' onClick={() => handleEditAddClick(service, false)}>
+                  <AddIcon />
+                </IconButton>
+                <IconButton aria-label='delete' onClick={() => handleDeleteClick(service)}>
+                  <DeleteIcon />
+                </IconButton>
+              </div>
+            </div>
+          ))}
+          {isModalOpen && selectedService && (
+            <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-10">
+              <div className="bg-white p-4 rounded shadow-lg w-96">
+                <h2 className="text-lg font-bold mb-4">Editar Serviço: {selectedService.title}</h2>
+                
+                <TextField sx={{marginBottom: '10px'}} variant='filled' label='Título' size='small' fullWidth type='text' value={selectedService.title} required onChange={(e) => setSelectedService({ ...selectedService, title: e.target.value })}/>
+                <TextField sx={{marginBottom: '10px'}} variant='filled' label='URL Imagem' size='small' fullWidth type='text' value={selectedService.imageUrl} required onChange={(e) => setSelectedService({ ...selectedService, imageUrl: e.target.value })}/>
+                <TextField sx={{marginBottom: '10px'}} variant='filled' label='Descrição' size='small' fullWidth type='text' value={selectedService.description} required onChange={(e) => setSelectedService({ ...selectedService, description: e.target.value })}/>
+                <TextField sx={{marginBottom: '10px'}} variant='filled' label='Preço SEM plano mensal (50.25 = 50,25 | R$)' size='small' fullWidth type='text' value={selectedService.priceNoPlan} required onChange={(e) => setSelectedService({ ...selectedService, priceNoPlan: e.target.value })}/>
+                <TextField sx={{marginBottom: '10px'}} variant='filled' label='Preço COM plano mensal (50.25 = 50,25 | R$)' size='small' fullWidth type='text' value={selectedService.priceInPlan} required onChange={(e) => setSelectedService({ ...selectedService, priceInPlan: e.target.value })}/>
 
-                  <div className="flex justify-end gap-1">
-                    <Button variant="contained" color="error" onClick={handleCloseModal}>
-                      Cancelar
-                    </Button>
-                    <Button type="submit" variant="contained" color="primary" onClick={() => {
-                        if (isEditing && selectedService.id) {
-                          handleEditSave(
-                            selectedService.id,
-                            selectedService.title,
-                            selectedService.imageUrl,
-                            selectedService.description,
-                            selectedService.priceNoPlan,
-                            selectedService.priceInPlan
-                          );
+                <div className="flex justify-end gap-1">
+                  <Button variant="contained" color="error" onClick={handleCloseModal}>
+                    Cancelar
+                  </Button>
+                  <Button type="submit" variant="contained" color="primary" onClick={() => {
+                      if (isEditing && selectedService.id) {
+                        handleEditSave(
+                          selectedService.id,
+                          selectedService.title,
+                          selectedService.imageUrl,
+                          selectedService.description,
+                          selectedService.priceNoPlan,
+                          selectedService.priceInPlan
+                        );
+                        handleCloseModal();
+                      } else {
+                        handleAddConfirm(
+                          selectedService
+                        );
+                        if (validateFields()) {
                           handleCloseModal();
                         } else {
-                          handleAddConfirm(
-                            selectedService
-                          );
-                          if (validateFields()) {
-                            handleCloseModal();
-                          } else {
-                            toast.error('Por favor, preencha todos os campos obrigatórios.');
-                          }
+                          toast.error('Por favor, preencha todos os campos obrigatórios.');
                         }
-                      }}>
-                      {isEditing ? 'Salvar' : 'Adicionar'}
-                    </Button>
-                  </div> 
+                      }
+                    }}>
+                    {isEditing ? 'Salvar' : 'Adicionar'}
+                  </Button>
+                </div> 
+              </div>
+            </div>
+          )}
+          {isModalDeleteOpen && selectedService && (
+            <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-10">
+              <div className="bg-white p-4 rounded shadow-lg w-96">
+                <h2 className="text-lg font-bold mb-4">Excluir Serviço: {selectedService.title}</h2>
+  
+                <div className="flex justify-end gap-1">
+                  <Button variant="contained" color="error" onClick={handleCloseModal}>
+                    Cancelar
+                  </Button>
+                  <Button type="submit" variant="contained" color="primary" onClick={() => {
+                      handleDeleteConfirm(selectedService.id);
+                      handleCloseModal();
+                    }}>
+                    Excluir
+                  </Button>
                 </div>
               </div>
-            )}
-            {isModalDeleteOpen && selectedService && (
-              <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-10">
-                <div className="bg-white p-4 rounded shadow-lg w-96">
-                  <h2 className="text-lg font-bold mb-4">Excluir Serviço: {selectedService.title}</h2>
-    
-                  <div className="flex justify-end gap-1">
-                    <Button variant="contained" color="error" onClick={handleCloseModal}>
-                      Cancelar
-                    </Button>
-                    <Button type="submit" variant="contained" color="primary" onClick={() => {
-                        handleDeleteConfirm(selectedService.id);
-                        handleCloseModal();
-                      }}>
-                      Excluir
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </>
