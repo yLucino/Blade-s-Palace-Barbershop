@@ -57,6 +57,7 @@ const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => voi
         navigate(`/admin/home`);
       }
     } catch (error) {
+      console.log(error);
       toast.error("Usuário/Senha incorreta ou inexistente!");
     }
   };

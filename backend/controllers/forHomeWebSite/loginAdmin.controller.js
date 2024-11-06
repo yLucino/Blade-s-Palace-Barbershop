@@ -6,7 +6,7 @@ export const postLoginAdmin = (req, res) => {
   const q = "SELECT * FROM bpbs_db.admin WHERE user = ? AND password = ?";
   
   db.query(q, [req.body.user, req.body.password], (err, data) => {
-    if(err) return res.json("ERROR");
+    if(err) return res.json("ERROR"); 
     if(data.length > 0) {
       const token = jwt.sign(
         {
