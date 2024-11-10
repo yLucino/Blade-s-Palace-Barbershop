@@ -83,7 +83,7 @@ const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => voi
                 <a href="#time">Time</a>
               </li>
               <li>
-                <a href="#agendamento">Agendamento</a>
+                <a href="#novidades">Novidades</a>
               </li>
               <li>
                 <a href="#contato">Contato</a>

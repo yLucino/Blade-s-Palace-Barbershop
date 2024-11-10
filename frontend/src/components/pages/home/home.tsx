@@ -27,7 +27,7 @@ const Home = () => {
               <a href="#precos-e-servicos"><button>Serviços</button></a>
             </li>
             <li className='btn-to-schedule'>
-              <a href="#agendamento"><button>Agendamento</button></a>
+              <a href="#novidades"><button>Novidades</button></a>
             </li>
           </ul>
         </nav>
