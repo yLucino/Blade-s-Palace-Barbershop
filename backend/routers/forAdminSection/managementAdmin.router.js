@@ -41,6 +41,7 @@ import {
   putServiceRightTitle
 } from "../../controllers/forAdminSection/managementPriceAndServiceRight.controller.js";
 import { putMonthyPlanPriceFullPlan, putMonthyPlanPriceHalfPlan } from "../../controllers/forAdminSection/managementMonthlyPlan.controller.js";
+import { deleteBarber, postBarber, putBarber } from "../../controllers/forAdminSection/managementTeam.controller.js";
 
 const router = express.Router();
 
@@ -90,5 +91,10 @@ router.delete("/delete-service-right/:id", deleteServiceRight);
 // Routers for MonthlyPlan PUT
 router.put("/update-monthly-plan-full/:id", putMonthyPlanPriceFullPlan);
 router.put("/update-monthly-plan-half/:id", putMonthyPlanPriceHalfPlan);
+
+// Routers for Team PUT | POST | DELETE
+router.put("/update-barber/:id", putBarber);
+router.post("/add-barber", postBarber);
+router.delete("/delete-barber/:id", deleteBarber);
 
 export default router;

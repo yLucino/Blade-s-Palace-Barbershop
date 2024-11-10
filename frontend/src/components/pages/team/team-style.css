@@ -41,7 +41,6 @@
   display: flex;
   position: relative;
   justify-content: center;
-  top: 98px;
 }
 
 .container-profiles .box-profiles{
@@ -71,6 +70,7 @@
 .container-profiles .profile {
   position: relative;
   background: var(--color-GrayLight);
+  min-width: 320px;
   max-width: 320px;
   border-radius: 35px;
   margin: 0 40px;
@@ -156,5 +156,5 @@
   text-align: justify;
   hyphens: auto;
   padding: 20px;
-  border-radius: 0 0 35px 35px;
+  border-radius: 0 0 0 35px;
 }

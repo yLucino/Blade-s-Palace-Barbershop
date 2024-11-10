@@ -46,7 +46,9 @@ const Profile: React.FC = () => {
               </li>
             </ul>
           </nav>
-          <p>{profile.description}</p>
+          <div className="overflow-y-scroll overflow-x-hidden h-220 ">
+            <p className="h-full">{profile.description}</p>
+          </div>
         </div>
       ))}
     </>

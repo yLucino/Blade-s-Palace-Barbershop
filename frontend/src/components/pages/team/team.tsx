@@ -1,13 +1,15 @@
 import './team-style.css';
 import './team-responsive.css'
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Profile from '../../contents/profile_TeamPage/profile';
 
 import imageBackground from '../../../../public/assets/image/team-img/bg-image.png';
 
 const Team: React.FC = () => {
   const containerTeamRef = useRef<HTMLDivElement>(null);
-  
+  const [ employee, setEmployee ] = useState<NodeListOf<Element>>();
+  const [ reRender, setReRender ] = useState(false);
+
   // employee barber carousel
   useEffect(() => {
     const container = containerTeamRef.current;
@@ -15,10 +17,11 @@ const Team: React.FC = () => {
     if (container) {
       const btnNextEmployee = container.querySelectorAll('.btn-chevron-team');
       let count = 1;
-
+      
       btnNextEmployee.forEach((button) => {
         const handleMouseClick = () => {
           const cardsEmployeeBarber = document.querySelectorAll('.profile');
+
 
           if (button.classList.contains('left')) {
             if (count >= ((cardsEmployeeBarber.length + 1) - cardsEmployeeBarber.length)) {
@@ -48,6 +51,17 @@ const Team: React.FC = () => {
     }
   });
 
+  useEffect(() => {
+    const cardsEmployeeBarber = document.querySelectorAll('.profile');
+          
+    if (cardsEmployeeBarber.length > 0) {
+      setEmployee(cardsEmployeeBarber);
+      setReRender(false);
+    } else {
+      setReRender(true);
+    }
+  }, [reRender]);
+
   return (
     <>
       <div className='team' id='time' ref={containerTeamRef}>
@@ -59,7 +73,7 @@ const Team: React.FC = () => {
           <div className="btn-arrow-carousel">
             <i className='bx bx-chevron-left bx-md btn-chevron-team left'></i>
           </div>
-          <div className='box-profiles'>
+          <div className={`box-profiles pt-28 pb-5 overflow-y-hidden 2xl:${employee && employee.length > 3 ? 'overflow-x-scroll w-auto xl:w-1500' : 'overflow-x-hidden w-auto'} `}>
             <Profile />
           </div>
           <div className="btn-arrow-carousel">

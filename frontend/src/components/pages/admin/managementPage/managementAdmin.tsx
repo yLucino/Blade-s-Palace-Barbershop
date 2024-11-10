@@ -1,12 +1,6 @@
-import EditIcon from '@mui/icons-material/Edit';
-import AddIcon from '@mui/icons-material/Add';
 import HomeIcon from '@mui/icons-material/Home';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { Button, IconButton } from '@mui/material';
-import { useEffect, useState } from 'react';
-import { EmployeeTeam } from '../../../../app/shared/models/employeeTeam';
-import { getTeam } from '../../../services/forHomeWebSite/teamPage.service';
+import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import AddressSection from '../../../contents/managementPage/addressSection';
@@ -16,22 +10,10 @@ import SocialMediaSection from '../../../contents/managementPage/socialMideaSect
 import PriceAndServicesLeftSection from '../../../contents/managementPage/priceAndServiceLeftSection';
 import PriceAndServicesRightSection from '../../../contents/managementPage/priceAndServiceRightSection';
 import MonthlyPlanPriceSection from '../../../contents/managementPage/monthlyPlanPriceSection';
+import TeamSection from '../../../contents/managementPage/teamSection';
 
 const ManagementAdmin = () => {
-  const [ team, setTeam ] = useState<EmployeeTeam[]>([]);
 
-  useEffect(() => {
-    const getAllTeam = async () => {
-      try {
-        const response = await getTeam();
-        setTeam(response);
-      } catch (error) {
-        console.error('Error in get all team from backend', error);
-      }
-    }
-
-    getAllTeam();
-  }, []);
 
   return(
     <div className="bg-Blue 2xl:h-screen flex flex-col items-center p-4">
@@ -86,43 +68,12 @@ const ManagementAdmin = () => {
         </div>
 
         {/* Time */}
-        <div className='bg-slate-300 w-auto p-5 pt-2 rounded-xl'>
+        <div className='bg-slate-300 w-full p-5 pt-2 rounded-xl'>
           <div>
             <h3 className="mb-1 font-semibold text-xl text-center">Time</h3>
             <hr className="border-black mb-3"/>
-            <div>
-              <h4 className="font-medium mb-1">Barbeiros:</h4>
-              <div className='overflow-y-scroll overflow-x-hidden max-h-96'>
-                {team.map((barber, index) => (
-                  <div className='flex' key={index}>
-                    <div className='p-1 pl-2 pr-2 bg-slate-400 rounded-lg text-sm mb-2'>
-                      <p><span className='text-black font-semibold'>Nome: </span>{barber.name}</p>
-                      <p><span className='text-black font-semibold'>Imagem URL: </span>{barber.imageUrl}</p>
-                      <p><span className='text-black font-semibold'>Cargo: </span>{barber.jobRole}</p>
-                      <p><span className='text-black font-semibold'>Endereço de Atuação:</span>{barber.businessAddress}</p>
-                      <p className='text-xs'><span className='text-black font-semibold text-sm'>Instagram: </span>{barber.instagramUrl}</p>
-                      <p className='text-xs'><span className='text-black font-semibold text-sm'>Facebook: </span>{barber.facebookUrl}</p>
-                      <p className='text-xs'><span className='text-black font-semibold text-sm'>WhatsApp: </span>{barber.whatsappUrl}</p>
-                      <p><span className='text-black font-semibold'>Descrição: </span>{barber.description}</p>
-                    </div>
-                    <div className='flex flex-col justify-evenly'>
-                      <IconButton aria-label='edit'>
-                        <EditIcon />
-                      </IconButton>
-                      <IconButton aria-label='edit'>
-                        <DeleteIcon />
-                      </IconButton>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className='mt-2'>
-              <Button variant='outlined'>
-                Adicionar novo barbeiro
-                <AddIcon />
-              </Button>
-            </div>
+            
+            <TeamSection />
           </div>
         </div>
       </div>

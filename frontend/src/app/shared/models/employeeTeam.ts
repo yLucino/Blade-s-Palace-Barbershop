@@ -1,5 +1,5 @@
 export class EmployeeTeam {
-  id!: string;
+  id?: number;
   imageUrl!: string;
   name!: string;
   jobRole!: string;

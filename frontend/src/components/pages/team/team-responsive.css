@@ -12,10 +12,6 @@
 }
 
 @media (max-width: 501px) { 
-  .container-profiles {
-    top: 128px;
-  }
-
   .container-profiles .profile {
     margin: 0 10px;
   }
@@ -40,11 +36,6 @@
     margin-top: 100px;
   }
 }
-@media (max-width: 455px) { 
-  .container-profiles {
-    top: 149px;
-  }
-}
 
 @media (max-width: 400px) { 
   .team .title {
@@ -53,10 +44,6 @@
 
   .team .title h1 {
     font-size: 22px;
-  }
-
-  .container-profiles {
-    top: 50px;
   }
 
   .container-profiles .profile img {
