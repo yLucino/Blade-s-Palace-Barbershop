@@ -29,36 +29,41 @@ const HomeAdmin = () => {
             </li>
             <li>
               <Link to={'/admin/customers'}>
-                <Button variant='contained' sx={{width: '100%', margin: '6px', opacity: '65%'}} size='large'>Clientes</Button>
+                <Button variant='contained' sx={{width: '100%', margin: '6px', opacity: '30%'}} size='large'>Clientes</Button>
               </Link>
             </li>
             <li>
               <Link to={'/admin/payments'}>
-                <Button variant='contained' sx={{width: '100%', margin: '6px', opacity: '65%'}} size='large'>Pagamentos</Button>
+                <Button variant='contained' sx={{width: '100%', margin: '6px', opacity: '30%'}} size='large'>Pagamentos</Button>
               </Link>
             </li>
           </ul>
           <ul className='w-56'>
             <li>
               <Link to={'/admin/monthly-results'}>
-                <Button variant='contained' sx={{width: '100%', margin: '6px', opacity: '65%'}} size='large'>Resultados Mensais</Button>
+                <Button variant='contained' sx={{width: '100%', margin: '6px', opacity: '30%'}} size='large'>Resultados Mensais</Button>
               </Link>
             </li>
             <li>
               <Link to={'/admin/commands'}>
-                <Button variant='contained' sx={{width: '100%', margin: '6px', opacity: '65%'}} size='large'>Comandas Abertas</Button>
+                <Button variant='contained' sx={{width: '100%', margin: '6px', opacity: '30%'}} size='large'>Comandas Abertas</Button>
               </Link>
             </li>
             <li>
               <Link to={'/admin/open-command'}>
-                <Button variant='contained' sx={{width: '100%', margin: '6px', opacity: '65%'}} size='large'>Abrir Comanda</Button>
+                <Button variant='contained' sx={{width: '100%', margin: '6px', opacity: '30%'}} size='large'>Abrir Comanda</Button>
               </Link>
             </li>
           </ul>
           <ul className='col-start-1 col-end-3'>
             <li>
               <Link to={'/admin/customer-scheduling'}>
-                <Button variant='contained' sx={{width: '100%', margin: '6px', opacity: '65%'}} size='large'>Agendamentos dos clientes</Button>
+                <Button variant='contained' sx={{width: '100%', margin: '6px', opacity: '30%'}} size='large'>Agendamentos dos clientes</Button>
+              </Link>
+            </li>
+            <li>
+              <Link to={'/admin/news'}>
+                <Button variant='contained' sx={{width: '100%', margin: '6px'}} size='large'>Adicionar Novidades</Button>
               </Link>
             </li>
           </ul>

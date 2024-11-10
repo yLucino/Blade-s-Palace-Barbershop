@@ -12,6 +12,7 @@ import MonthlyResultsAdmin from '../components/pages/admin/monthlyResultsPage/mo
 import CommandsAdmin from '../components/pages/admin/commandsPage/commandsAdmin.tsx';
 import OpenCommandAdmin from '../components/pages/admin/openCommandPage/openCommandAdmin.tsx';
 import CustomerSchedulingAdmin from '../components/pages/admin/customerSchedulingPage/customerSchedulingAdmin.tsx';
+import NewsAdmin from '../components/pages/admin/newsPage/newsAdmin.tsx';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -63,6 +64,11 @@ function App() {
           <Route path='/admin/customer-scheduling' element={
             <ProtectedRoute isAuthenticated={isAuthenticated}>
               <CustomerSchedulingAdmin />
+            </ProtectedRoute>
+          }/>
+          <Route path='/admin/news' element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <NewsAdmin />
             </ProtectedRoute>
           }/>
         </Routes>
