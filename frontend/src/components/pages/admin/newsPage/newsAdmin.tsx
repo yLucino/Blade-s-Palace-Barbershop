@@ -31,7 +31,6 @@ const NewsAdmin = () => {
           <p className="text-gray-900 font-medium text-sm">Adicione, edite e remova as novidades</p>
         </div>
         <div className="bg-BlueDarkSoft p-10 mt-3 grid 2xl:grid-cols-3 md:grid-cols-1 gap-3 rounded-md">
-          
         </div>
       </div>
     </>

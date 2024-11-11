@@ -15,10 +15,10 @@ const Index = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => void }) 
       <ToastContainer autoClose={3500} position={"bottom-left"} />
       <Header onLoginSuccess={onLoginSuccess}/>
       <Home />
+      <News />
       <PriceAndService />
       <Team />
       {/* <Scheduling /> */}
-      <News />
       <Contact />
     </>
   )

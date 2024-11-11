@@ -77,13 +77,13 @@ const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => voi
                 <a href="#inicio">Inicio</a>
               </li>
               <li>
+                <a href="#novidades">Novidades</a>
+              </li>
+              <li>
                 <a href="#precos-e-servicos">Preços e Serviços</a>
               </li>
               <li>
                 <a href="#time">Time</a>
-              </li>
-              <li>
-                <a href="#novidades">Novidades</a>
               </li>
               <li>
                 <a href="#contato">Contato</a>
