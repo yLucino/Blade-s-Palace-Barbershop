@@ -11,6 +11,7 @@ import { getEmployeeBarbers } from "../../controllers/forHomeWebSite/employeeBar
 import { getAddress } from "../../controllers/forHomeWebSite/address.controller.js";
 
 import { getCustomers } from "../../controllers/forHomeWebSite/customer.controller.js";
+import { getNews } from "../../controllers/forHomeWebSite/news.controller.js";
 
 const router = express.Router();
 
@@ -23,8 +24,7 @@ router.get("/services-left", getServicesLeft);
 router.get("/services-right", getServicesRight);
 router.get("/employee-barbers", getEmployeeBarbers);
 router.get("/address", getAddress);
-
 router.get("/customers", getCustomers);
-
+router.get("/news", getNews);
 
 export default router;
