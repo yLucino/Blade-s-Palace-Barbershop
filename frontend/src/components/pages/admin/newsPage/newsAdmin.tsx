@@ -2,6 +2,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import HomeIcon from '@mui/icons-material/Home';
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import NewsSection from '../../../contents/managementPage/newsSection';
 
 const NewsAdmin = () => {
   return(
@@ -27,10 +28,16 @@ const NewsAdmin = () => {
           </ul>
         </nav>
         <div className='text-center'>
-          <h1 className="text-4xl font-AntonSC tracking-wider text-Yellow">Gerencie as suas Novidades</h1>
-          <p className="text-gray-900 font-medium text-sm">Adicione, edite e remova as novidades</p>
+          <h1 className="text-4xl font-AntonSC tracking-wider text-Yellow">Gerencie as suas Novidades & Avisos</h1>
+          <p className="text-gray-900 font-medium text-sm">Adicione, edite e remova as novidades e avisos</p>
         </div>
-        <div className="bg-BlueDarkSoft p-10 mt-3 grid 2xl:grid-cols-3 md:grid-cols-1 gap-3 rounded-md">
+        <div className="bg-BlueDarkSoft p-10 mt-3 rounded-md">
+          <div className="bg-slate-300 w-auto p-5 pt-2 rounded-xl">
+            <h3 className="mb-1 font-semibold text-xl text-center">Novidades e Avisos</h3>
+            <hr className="border-black mb-3"/>
+
+            <NewsSection />
+          </div>
         </div>
       </div>
     </>

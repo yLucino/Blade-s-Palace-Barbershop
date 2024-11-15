@@ -1,9 +1,9 @@
-import NewsSection from "../../contents/news_NewsPage/newsSection";
+import NewsSection from "../../contents/news_NewsPage/news";
 
 const News = () => {
   return(
     <>
-      <div className="h-screen bg-Gray" id="novidades">
+      <div className="containerPage-news flex flex-col h-full 3xl:h-screen pb-20 bg-Gray justify-center" id="novidades">
         <div className='title text-4xl'>
           <h1>Novidades</h1>
         </div>

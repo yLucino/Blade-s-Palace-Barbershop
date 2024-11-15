@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { News } from "../../../app/shared/models/news";
+import { NewsModel } from "../../../app/shared/models/news";
 import { getNews } from "../../services/forHomeWebSite/newsPage.service";
 
-const NewsSection = () => {
-  const [ allNews, setAllNews ] = useState<News[]>([]);
+const News = () => {
+  const [ allNews, setAllNews ] = useState<NewsModel[]>([]);
 
   useEffect(() => {
     const getAllNews = async () => {
@@ -22,7 +22,7 @@ const NewsSection = () => {
   return(
     <>
       {/* Fazer display Grid 2cols 2rows - Responsive */}
-      <div className="flex flex-wrap ml-10 mr-10 justify-center items-center gap-6">
+      <div className="container-news flex flex-wrap ml-10 mr-10 p-3 pb-3 justify-center gap-5 overflow-y-hidden 3xl:overflow-y-scroll 3xl:h-550 h-auto">
         {/* Fazer layout se não tiver nenhuma novidade */}
         {/* Fazer popUp pedindo se o user quer ver as novidades */}
         {allNews.map((news, index) => (
@@ -49,4 +49,4 @@ const NewsSection = () => {
   )
 }
 
-export default NewsSection;
+export default News;

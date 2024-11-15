@@ -34,6 +34,7 @@ export default {
       },
       height: {
         '600': '600px',
+        '550': '550px',
         '450': '450px',
         '220': '220px',
       },
@@ -42,6 +43,9 @@ export default {
         '550': '550px',
         '1500': '1500px'
       },
+      screens: {
+        '3xl': '1638px'
+      }
     },
   },
   plugins: [],

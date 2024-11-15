@@ -78,3 +78,20 @@ button:active {
   border: 2px solid var(--color-BlueDark);
   border-radius: 5px;
 }
+
+.containerPage-news {
+  ::-webkit-scrollbar {
+    border-radius: 20px;
+    background: var(--color-GrayLight);
+  } 
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-Golden);
+    border: 2px solid var(--color-Gray);
+  }
+  & .container-news {
+    ::-webkit-scrollbar {
+      border-radius: 20px;
+      background: var(--color-Gray);
+    } 
+  }
+}
