@@ -45,6 +45,9 @@ export default {
       },
       screens: {
         '3xl': '1638px'
+      },
+      zIndex: {
+        '1100': '1100'
       }
     },
   },

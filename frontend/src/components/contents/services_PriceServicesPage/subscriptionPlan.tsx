@@ -25,7 +25,7 @@ const SubscriptionPlan: React.FC = () => {
           <li key={index}>
             <h1>{plan.title}</h1>
             <div className='flex-container'>
-              <img className='inline' src={plan.imageUrl} alt={plan.title} />
+              <img className='inline bg-white' src={plan.imageUrl} alt={plan.title} />
               <p>{plan.description}</p>
               <nav>
                 <div className="btns-container">

@@ -42,6 +42,7 @@ import {
 } from "../../controllers/forAdminSection/managementPriceAndServiceRight.controller.js";
 import { putMonthyPlanPriceFullPlan, putMonthyPlanPriceHalfPlan } from "../../controllers/forAdminSection/managementMonthlyPlan.controller.js";
 import { deleteBarber, postBarber, putBarber } from "../../controllers/forAdminSection/managementTeam.controller.js";
+import { deleteNews, postNews, putNews } from "../../controllers/forAdminSection/managementNews.controller.js";
 
 const router = express.Router();
 
@@ -96,5 +97,10 @@ router.put("/update-monthly-plan-half/:id", putMonthyPlanPriceHalfPlan);
 router.put("/update-barber/:id", putBarber);
 router.post("/add-barber", postBarber);
 router.delete("/delete-barber/:id", deleteBarber);
+
+// Routers for News PUT | POST | DELETE
+router.put("/update-news/:id", putNews);
+router.post("/add-news", postNews);
+router.delete("/delete-news/:id", deleteNews);
 
 export default router;

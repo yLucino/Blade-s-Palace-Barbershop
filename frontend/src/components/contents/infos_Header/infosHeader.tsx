@@ -103,8 +103,8 @@ const InfosHeader: React.FC = () => {
               <h2 className="text-lg font-bold mb-4">Endereços de atendimento</h2>
               <ul className="flex flex-col gap-4">
                 {address.map((location, index) => (
-                  <a href={location.url_google_maps} target='_blank'>
-                    <li className='location bg-BlueDarkSoft p-3 w-72 rounded-lg cursor-pointer hover:scale-105 hover:bg-BlueLight transition-all' key={index}
+                  <a href={location.url_google_maps} target='_blank' key={index}>
+                    <li className='location bg-BlueDarkSoft p-3 w-72 rounded-lg cursor-pointer hover:scale-105 hover:bg-BlueLight transition-all'
                     onMouseEnter={() => handleMouseEnterMap(index)}
                     onMouseLeave={handleMouseLeaveMap}
                     >

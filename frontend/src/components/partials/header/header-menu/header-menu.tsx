@@ -1,7 +1,7 @@
 import './header-menu-style.css';
 import './header-menu-login-style.css'
 import './header-menu-responsive.css';
-import logoImage from '../../../../../public/assets/image/header-img/penteado.png';
+import logoImage from '../../../../../public/assets/image/header-img/LogoIcon.png';
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -117,7 +117,7 @@ const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => voi
               <div className="box-content">
                 <div className="adm-info flex flex-col items-center">
                   <h1 className='text-3xl'>Bem-vindo ADM!</h1>
-                  <img className='logo' src={logoImage} alt="logo" />
+                  <img className='logo shadow-xl mt-3 rounded-full' src={logoImage} alt="logo" />
                 </div>
                 <div className="form-inputs">
                   <form onSubmit={handleSubmit}>

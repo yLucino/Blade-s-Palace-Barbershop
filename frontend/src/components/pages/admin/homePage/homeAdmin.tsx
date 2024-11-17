@@ -1,13 +1,15 @@
-
-
 import logo from '../../../../../public/assets/image/header-img/penteado.png';
 import { Link } from "react-router-dom";
 import { Button } from '@mui/material';
+
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const HomeAdmin = () => {
   return(
     <>
       <div className="container-admin flex flex-col h-screen items-center justify-center bg-Blue">
+        <ToastContainer autoClose={3500} position={"bottom-left"} />
         <div className="info-page flex items-center">
           <img className='size-48' src={logo} alt="Logo da Barbearia" />
           <div className='ml-3 mr-3 text-Yellow'>
@@ -63,7 +65,7 @@ const HomeAdmin = () => {
             </li>
             <li>
               <Link to={'/admin/news'}>
-                <Button variant='contained' sx={{width: '100%', margin: '6px'}} size='large'>Adicionar Novidades</Button>
+                <Button variant='contained' sx={{width: '100%', margin: '6px'}} size='large'>Novidades & Avisos</Button>
               </Link>
             </li>
           </ul>
