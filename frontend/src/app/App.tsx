@@ -13,6 +13,8 @@ import CommandsAdmin from '../components/pages/admin/commandsPage/commandsAdmin.
 import OpenCommandAdmin from '../components/pages/admin/openCommandPage/openCommandAdmin.tsx';
 import CustomerSchedulingAdmin from '../components/pages/admin/customerSchedulingPage/customerSchedulingAdmin.tsx';
 import NewsAdmin from '../components/pages/admin/newsPage/newsAdmin.tsx';
+import InfoServiceLeft from '../components/pages/infoServices/infoServiceLeft.tsx';
+import InfoServiceRight from '../components/pages/infoServices/infoServiceRight.tsx';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -26,6 +28,8 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Index onLoginSuccess={handleLoginSuccess} />}/>
+          <Route path='/info-service/left/:id' element={<InfoServiceLeft />}/>
+          <Route path='/info-service/right/:id' element={<InfoServiceRight />}/>
           <Route path='/admin/home' element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <HomeAdmin />

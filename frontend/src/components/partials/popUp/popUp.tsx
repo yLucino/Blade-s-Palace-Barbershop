@@ -24,8 +24,6 @@ export const PopUp = () => {
   }, [])
 
   useEffect(() => {
-    console.log(allNews.length > 0);
-    
     if (allNews.length > 0) {
       setDisplayHidden(false)
     } else {

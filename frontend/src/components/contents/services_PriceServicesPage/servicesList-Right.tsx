@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { getServicesRight } from '../../services/forHomeWebSite/priceAndServicesPage.service';
 import { Services } from '../../../app/shared/models/services';
+import { Link } from 'react-router-dom';
 
 const ServicesList_Right: React.FC = () => {
   // hover to shows exclusive price for plan subscribers
@@ -64,9 +65,9 @@ const ServicesList_Right: React.FC = () => {
                 <a href="#precos-e-servicos">
                   <button className="btn-service-price text-sm">R$ {service.priceNoPlan}</button>
                 </a>
-                <a href="/options">
+                <Link to={`/info-service/right/${service.id}`}>
                   <button className='btn-more-options'>Ver opções</button>
-                </a>
+                </Link>
               </nav>
             </li>
           ))}
