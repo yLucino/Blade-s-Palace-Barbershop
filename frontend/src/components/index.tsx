@@ -5,10 +5,12 @@ import PriceAndService from "./pages/priceAndService/priceAndService";
 import Team from "./pages/team/team";
 import Header from "./partials/header/header";
 import News from "./pages/newsPage/news";
+import PopUp from "./partials/popUp/popUp";
 
 const Index = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => void }) => {
   return(
     <>
+      <PopUp />
       <Header onLoginSuccess={onLoginSuccess}/>
       <Home />
       <News />

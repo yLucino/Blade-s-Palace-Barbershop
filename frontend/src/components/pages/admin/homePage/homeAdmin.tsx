@@ -1,4 +1,4 @@
-import logo from '../../../../../public/assets/image/header-img/penteado.png';
+import logo from '../../../../../public/assets/image/header-img/LogoIcon.png';
 import { Link } from "react-router-dom";
 import { Button } from '@mui/material';
 
