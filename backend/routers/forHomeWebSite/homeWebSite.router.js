@@ -5,8 +5,8 @@ import { getOpeningHours } from "../../controllers/forHomeWebSite/opening_hours.
 import { getTelephone } from "../../controllers/forHomeWebSite/telephone.controller.js";
 import { getSocialMedia } from "../../controllers/forHomeWebSite/socialMeida.controller.js";
 import { getMonthlyPlans } from "../../controllers/forHomeWebSite/monthlyPlan.controller.js";
-import { getServicesLeft } from "../../controllers/forHomeWebSite/servicesLeft.controller.js";
-import { getServicesRight } from "../../controllers/forHomeWebSite/servicesRight.controller.js";
+import { getServicesLeft, getServicesLeftId } from "../../controllers/forHomeWebSite/servicesLeft.controller.js";
+import { getServicesRight, getServicesRightId } from "../../controllers/forHomeWebSite/servicesRight.controller.js";
 import { getEmployeeBarbers } from "../../controllers/forHomeWebSite/employeeBarber.controller.js";
 import { getAddress } from "../../controllers/forHomeWebSite/address.controller.js";
 
@@ -22,6 +22,8 @@ router.get("/social-media", getSocialMedia);
 router.get("/monthly-plans", getMonthlyPlans);
 router.get("/services-left", getServicesLeft);
 router.get("/services-right", getServicesRight);
+router.get("/services-left/:id", getServicesLeftId);
+router.get("/services-right/:id", getServicesRightId);
 router.get("/employee-barbers", getEmployeeBarbers);
 router.get("/address", getAddress);
 router.get("/customers", getCustomers);

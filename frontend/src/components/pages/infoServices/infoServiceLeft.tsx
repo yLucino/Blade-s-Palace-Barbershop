@@ -1,8 +1,12 @@
+import HeaderInfo from "../../partials/header/header-info/header-info";
 
 export const InfoServiceLeft = () => {
   return(
     <>
-      Left service
+      <div className="bg-Gray w-full h-screen">
+        <HeaderInfo />
+
+      </div>
     </>
   )
 }
