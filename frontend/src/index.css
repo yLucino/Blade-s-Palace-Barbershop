@@ -50,7 +50,7 @@ h1, h2, h3, h4 {
   font-weight: 400;
 }
 
-a {
+/* a {
   text-decoration: none;
   color: var(--color-GoldenLight);
   transition: .2s;
@@ -58,7 +58,7 @@ a {
 
 a:hover {
   color: var(--color-Golden);
-}
+} */
 
 span {
   color: var(--color-Yellow);
