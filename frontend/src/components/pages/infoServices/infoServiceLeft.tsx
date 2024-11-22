@@ -9,7 +9,7 @@ import HomeIcon from '@mui/icons-material/Home';
 
 export const InfoServiceLeft: React.FC = () => {
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { title, id } = useParams();
   const serviceID = Number(id);
   const [ service, setService ] = useState<Services>();
   const [ allServiceRight, setAllServiceRight ] = useState<Services[]>([]);
@@ -72,9 +72,9 @@ export const InfoServiceLeft: React.FC = () => {
               </IconButton>
             </Link>
           </nav>
-          <div className="grid  grid-cols-1 md:grid-cols-2 gap-4 bg-GrayBlue p-10 rounded-md">
-            <div>
-              <img className="w-320 object-cover" src={service?.imageUrl} alt={service?.title} />
+          <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 bg-GrayBlue p-10 rounded-md">
+            <div className="mr-10">
+              <img className="h-80 rounded-lg" src={service?.imageUrl} alt={service?.title} />
             </div>
             <div>
               <h1 className="text-white text-3xl font-bold mb-10">{service?.title}</h1>
@@ -89,9 +89,9 @@ export const InfoServiceLeft: React.FC = () => {
             <h2 className="text-center text-xl text-GrayBlue font-semibold">Outros Serviços</h2>
             <ul className="flex flex-wrap justify-center gap-2 mt-4 mb-4">
               {allServiceRight.map((service, index) => (
-                <a href={`/info-service/right/${service.id}`} key={'right' + index}>
-                  <li className="hover:scale-105 hover:shadow-2xl cursor-pointer transition-all flex flex-col justify-between text-center border-GrayLight border-solid border p-4 rounded-2xl h-60">
-                    <img className="w-36" src={service.imageUrl} alt={service.title} />
+                <a href={`/info-service/right/${service.title}/${service.id}`} key={'right' + index}>
+                  <li className={`hover:scale-105 hover:shadow-2xl cursor-pointer transition-all flex flex-col justify-between text-center border-GrayLight border-solid border p-4 rounded-2xl h-60 ${title === service.title ? 'bg-gray-200 -translate-y-2' : ''}`}>
+                    <img className="h-20 rounded-2xl object-cover" src={service.imageUrl} alt={service.title} />
                     <hr className="m-5 border-gray-400" />
                     <h1>{service.title}</h1>
                     <div className="flex flex-col gap-2 mt-4">
@@ -102,9 +102,9 @@ export const InfoServiceLeft: React.FC = () => {
                 </a>
               ))}
               {allServiceLeft.map((service, index) => (
-                <a href={`/info-service/left/${service.id}`} key={'left' + index}>
-                  <li className="hover:scale-105 hover:shadow-2xl cursor-pointer transition-all flex flex-col justify-between text-center border-GrayLight border-solid border p-4 rounded-2xl h-60">
-                    <img className="w-36" src={service.imageUrl} alt={service.title} />
+                <a href={`/info-service/left/${service.title}/${service.id}`} key={'left' + index}>
+                  <li className={`hover:scale-105 hover:shadow-2xl cursor-pointer transition-all flex flex-col justify-between text-center border-GrayLight border-solid border p-4 rounded-2xl h-60 ${title === service.title ? 'bg-gray-200 -translate-y-2' : ''}`}>
+                    <img className="h-20 rounded-2xl object-cover" src={service.imageUrl} alt={service.title} />
                     <hr className="m-5 border-gray-400" />
                     <h1>{service.title}</h1>
                     <div className="flex flex-col gap-2 mt-4">

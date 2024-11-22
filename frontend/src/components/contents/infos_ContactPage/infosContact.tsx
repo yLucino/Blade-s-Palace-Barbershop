@@ -71,7 +71,7 @@ const InfosContact: React.FC = () => {
           <p>Copyright &copy; by Blade’s Palace Barbershop | All Rights Reserved.</p>
         </div>
         <div className="developerBy">
-          <p>WebSite developed by <a href="https://github.com/yLucino" target='_blank'>yLucino</a></p>
+          <p>WebSite developed by <a className="text-Golden hover:underline" href="https://github.com/yLucino" target='_blank'>yLucino</a></p>
         </div>
       </div>
     </>

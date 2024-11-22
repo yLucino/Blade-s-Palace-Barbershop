@@ -18,9 +18,11 @@ const HomeAdmin = () => {
           </div>
         </div>
         <nav className="return-to-home mt-5 mb-10">
-          <Button variant='outlined' size='large'>
-            <a href="/">Voltar ao inicio / Logout</a>
-          </Button>
+          <a href="/">
+            <Button variant='outlined' size='large'>
+              Voltar ao inicio / Logout
+            </Button>
+          </a>
         </nav>
         <nav className="settings-and-action-options grid grid-cols-1  lg:grid-cols-2">
           <ul className='w-56'>

@@ -72,7 +72,7 @@ const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => voi
         </div>
         <div className='box-nav-menu'>
           <nav>
-            <ul>
+            <ul className='text-GoldenLight'>
               <li>
                 <a href="#inicio">Inicio</a>
               </li>
@@ -100,7 +100,7 @@ const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => voi
                 <div className="bar3"></div>
               </li>
               <li className={`menu-content ${isOpen ? 'open' : ''}`}>
-                <a onClick={toggleHidden} href="#administrador">
+                <a className='text-GoldenLight' onClick={toggleHidden} href="#administrador">
                   <i className='bx bx-cog'></i>
                   Administrador
                 </a>

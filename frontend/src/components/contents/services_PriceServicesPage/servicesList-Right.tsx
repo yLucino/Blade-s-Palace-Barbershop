@@ -65,7 +65,7 @@ const ServicesList_Right: React.FC = () => {
                 <a href="#precos-e-servicos">
                   <button className="btn-service-price text-sm">R$ {service.priceNoPlan}</button>
                 </a>
-                <Link to={`/info-service/right/${service.id}`}>
+                <Link to={`/info-service/right/${service.title}/${service.id}`}>
                   <button className='btn-more-options'>Ver sobre</button>
                 </Link>
               </nav>
