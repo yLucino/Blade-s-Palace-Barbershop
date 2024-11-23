@@ -25,6 +25,7 @@ export default {
         sampleText: '#ffffff8a',
         sampleTextLight: '#ffffff4d',
         Shadow: '#04142296',
+        ShadowDark: '#0000005b',
         Gray: '#1f1f1f', 
         GrayBlue: '#2d3f50',
         GrayDark: '#141414', 
@@ -37,6 +38,7 @@ export default {
         '550': '550px',
         '450': '450px',
         '220': '220px',
+        '50': '50px'
       },
       width: {
         '320': '320px',
@@ -49,6 +51,9 @@ export default {
       },
       zIndex: {
         '1100': '1100'
+      },
+      boxShadow: {
+        'inset-GoldenDark': 'inset 0 0 10px #977656'
       }
     },
   },

@@ -47,7 +47,7 @@ const SubscriptionPlan: React.FC = () => {
                       </a>
                     </div>
                   </div>
-                  <a className='more-option' href="#">
+                  <a className='more-option' href="/info-plan/monthly-plan" target='_blank'>
                     <button className='btn-more-options'>Saiba mais</button>
                   </a>
                 </div>

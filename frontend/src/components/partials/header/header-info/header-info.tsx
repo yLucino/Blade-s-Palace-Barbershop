@@ -87,7 +87,7 @@ const HeaderInfo: React.FC = () => {
     <>
       <div className='header-info'>
         <div className='info-open-establishment'>
-          <p title='Seg a Sex: 09:00h as 19:30h | Sáb: 08:00h as 18:30h'>
+          <p>
             {serviceSituation()}
             <i className='bx bx-time-five' ></i>
             seg a sáb

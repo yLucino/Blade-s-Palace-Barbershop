@@ -89,7 +89,7 @@ export const InfoServiceLeft: React.FC = () => {
             <h2 className="text-center text-xl text-GrayBlue font-semibold">Outros Serviços</h2>
             <ul className="flex flex-wrap justify-center gap-2 mt-4 mb-4">
               {allServiceRight.map((service, index) => (
-                <a href={`/info-service/right/${service.title}/${service.id}`} key={'right' + index}>
+                <Link to={`/info-service/right/${service.title}/${service.id}`} key={'right' + index}>
                   <li className={`hover:scale-105 hover:shadow-2xl cursor-pointer transition-all flex flex-col justify-between text-center border-GrayLight border-solid border p-4 rounded-2xl h-60 ${title === service.title ? 'bg-gray-200 -translate-y-2' : ''}`}>
                     <img className="h-20 rounded-2xl object-cover" src={service.imageUrl} alt={service.title} />
                     <hr className="m-5 border-gray-400" />
@@ -99,10 +99,10 @@ export const InfoServiceLeft: React.FC = () => {
                       <p className="text-sm">Sem plano: <span className="text-Blue font-semibold border border-solid border-Blue p-0.5 pr-1 pl-1 rounded-full">R$ {service.priceNoPlan}</span></p>
                     </div>
                   </li>
-                </a>
+                </Link>
               ))}
               {allServiceLeft.map((service, index) => (
-                <a href={`/info-service/left/${service.title}/${service.id}`} key={'left' + index}>
+                <Link to={`/info-service/left/${service.title}/${service.id}`} key={'left' + index}>
                   <li className={`hover:scale-105 hover:shadow-2xl cursor-pointer transition-all flex flex-col justify-between text-center border-GrayLight border-solid border p-4 rounded-2xl h-60 ${title === service.title ? 'bg-gray-200 -translate-y-2' : ''}`}>
                     <img className="h-20 rounded-2xl object-cover" src={service.imageUrl} alt={service.title} />
                     <hr className="m-5 border-gray-400" />
@@ -112,7 +112,7 @@ export const InfoServiceLeft: React.FC = () => {
                       <p className="text-sm">Sem plano: <span className="text-Blue font-semibold border border-solid border-Blue p-0.5 pr-1 pl-1 rounded-full">R$ {service.priceNoPlan}</span></p>
                     </div>
                   </li>
-                </a>
+                </Link>
               ))}
             </ul>
           </div>

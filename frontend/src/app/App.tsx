@@ -15,6 +15,7 @@ import CustomerSchedulingAdmin from '../components/pages/admin/customerSchedulin
 import NewsAdmin from '../components/pages/admin/newsPage/newsAdmin.tsx';
 import InfoServiceLeft from '../components/pages/infoServices/infoServiceLeft.tsx';
 import InfoServiceRight from '../components/pages/infoServices/infoServiceRight.tsx';
+import InfoMonthlyPlan from '../components/pages/infoMonthlyPlan/infoMonthlyPlan.tsx';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -30,6 +31,7 @@ function App() {
           <Route path='/' element={<Index onLoginSuccess={handleLoginSuccess} />}/>
           <Route path='/info-service/left/:title/:id' element={<InfoServiceLeft />}/>
           <Route path='/info-service/right/:title/:id' element={<InfoServiceRight />}/>
+          <Route path='/info-plan/monthly-plan' element={<InfoMonthlyPlan />}/>
           <Route path='/admin/home' element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <HomeAdmin />
