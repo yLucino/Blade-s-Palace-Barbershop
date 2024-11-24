@@ -1,14 +1,11 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import HeaderInfo from "../../partials/header/header-info/header-info";
 import React, { useEffect, useState } from "react";
 import { getServicesLeft, getServicesLeftId, getServicesRight } from "../../services/forHomeWebSite/priceAndServicesPage.service";
 import { Services } from "../../../app/shared/models/services";
-import { IconButton } from "@mui/material";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import HomeIcon from '@mui/icons-material/Home';
+import MenuButton from "../../partials/menuButton/menuButton";
 
 export const InfoServiceLeft: React.FC = () => {
-  const navigate = useNavigate();
   const { title, id } = useParams();
   const serviceID = Number(id);
   const [ service, setService ] = useState<Services>();
@@ -48,30 +45,12 @@ export const InfoServiceLeft: React.FC = () => {
     getAllServicesLeft();
   }, [serviceID])
 
-  const handleBack = () => {
-
-    if (window.history.length > 1) {
-      navigate(-1);
-    } else {
-      navigate("/");
-    }
-  };
-
   return(
     <>
       <div className="bg-White w-full h-screen">
         <HeaderInfo />
         <div className="flex flex-col p-10 pt-40 h-screen justify-between">
-          <nav className="flex gap-1 absolute 1xl:top-14 top-24 border-gray-500 border rounded-full">
-            <IconButton onClick={handleBack}>
-              <ArrowBackIcon />
-            </IconButton>
-            <Link to={'/'}>
-              <IconButton>
-                <HomeIcon />
-              </IconButton>
-            </Link>
-          </nav>
+          <MenuButton />
           <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 bg-GrayBlue p-10 rounded-md">
             <div className="mr-10">
               <img className="h-80 rounded-lg" src={service?.imageUrl} alt={service?.title} />
@@ -90,7 +69,7 @@ export const InfoServiceLeft: React.FC = () => {
             <ul className="flex flex-wrap justify-center gap-2 mt-4 mb-4">
               {allServiceRight.map((service, index) => (
                 <Link to={`/info-service/right/${service.title}/${service.id}`} key={'right' + index}>
-                  <li className={`hover:scale-105 hover:shadow-2xl cursor-pointer transition-all flex flex-col justify-between text-center border-GrayLight border-solid border p-4 rounded-2xl h-60 ${title === service.title ? 'bg-gray-200 -translate-y-2' : ''}`}>
+                  <li className={`hover:scale-105 hover:shadow-2xl cursor-pointer transition-all flex flex-col justify-between text-center border-GrayLight border-solid border p-4 rounded-2xl h-60 ${title === service.title ? 'bg-gray-200 -translate-y-2 shadow-2xl' : ''}`}>
                     <img className="h-20 rounded-2xl object-cover" src={service.imageUrl} alt={service.title} />
                     <hr className="m-5 border-gray-400" />
                     <h1>{service.title}</h1>
@@ -103,7 +82,7 @@ export const InfoServiceLeft: React.FC = () => {
               ))}
               {allServiceLeft.map((service, index) => (
                 <Link to={`/info-service/left/${service.title}/${service.id}`} key={'left' + index}>
-                  <li className={`hover:scale-105 hover:shadow-2xl cursor-pointer transition-all flex flex-col justify-between text-center border-GrayLight border-solid border p-4 rounded-2xl h-60 ${title === service.title ? 'bg-gray-200 -translate-y-2' : ''}`}>
+                  <li className={`hover:scale-105 hover:shadow-2xl cursor-pointer transition-all flex flex-col justify-between text-center border-GrayLight border-solid border p-4 rounded-2xl h-60 ${title === service.title ? 'bg-gray-200 -translate-y-2 shadow-2xl' : ''}`}>
                     <img className="h-20 rounded-2xl object-cover" src={service.imageUrl} alt={service.title} />
                     <hr className="m-5 border-gray-400" />
                     <h1>{service.title}</h1>
