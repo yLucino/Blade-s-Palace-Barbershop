@@ -70,7 +70,7 @@ const SocialMediaSection: React.FC = () => {
         {socialMedia.map((social, index) => (
           <div className='flex items-center gap-1 mb-1' key={index}>
             <div className="p-1 pl-2 pr-2 bg-slate-400 rounded-lg">
-              <p className="text-xs"><span className='text-black text-sm'>{social.name}: </span>{social.url}</p>
+              <p className="text-xs"><span className='text-black text-sm font-semibold'>{social.name}: </span>{social.url}</p>
             </div>
             <IconButton aria-label='edit' onClick={() => handleEditClick(social)}>
               <EditIcon />

@@ -6,9 +6,12 @@ import { daysOfWeek } from '../../../../app/shared/scripts/scriptsOfDate';
 import { getOpeningHours } from '../../../services/forHomeWebSite/openingHours.service.ts';
 import { OpeningHours } from '../../../../app/shared/models/openingHours';
 import React, { useEffect, useState } from 'react';
+import { SummaryDay } from '../../../../app/shared/models/summaryDay.ts';
+import { getSummaryDay } from '../../../services/forHomeWebSite/summaryDay.service.ts';
 
 const HeaderInfo: React.FC = () => {
   const [ infosOpeningHours, setInfosOpeningHours ] = useState<OpeningHours[]>([]);
+  const [ summaryDay, setSummaryDay ] = useState<SummaryDay>();
 
   useEffect(() => {
     const getAllOpeningHours = async () => {
@@ -22,7 +25,17 @@ const HeaderInfo: React.FC = () => {
       }
     }
 
+    const getSummaryDayService = async () => {
+      try {
+        const response = await getSummaryDay();
+        setSummaryDay(response[0]);
+      } catch (error) {
+        console.log('Error in get summary day service from backend', error);
+      }
+    }
+
     getAllOpeningHours();
+    getSummaryDayService();
   }, []);
 
   function getDayName(date: Date): string {
@@ -90,7 +103,7 @@ const HeaderInfo: React.FC = () => {
           <p>
             {serviceSituation()}
             <i className='bx bx-time-five' ></i>
-            seg a sáb
+            {summaryDay?.summary}
           </p>
         </div>
         <InfosHeader />

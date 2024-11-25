@@ -43,6 +43,7 @@ import {
 import { putMonthyPlanPriceFullPlan, putMonthyPlanPriceHalfPlan } from "../../controllers/forAdminSection/managementMonthlyPlan.controller.js";
 import { deleteBarber, postBarber, putBarber } from "../../controllers/forAdminSection/managementTeam.controller.js";
 import { deleteNews, postNews, putNews } from "../../controllers/forAdminSection/managementNews.controller.js";
+import { putSummaryDayService } from "../../controllers/forAdminSection/managementSummaryDayService.controller.js";
 
 const router = express.Router();
 
@@ -102,5 +103,8 @@ router.delete("/delete-barber/:id", deleteBarber);
 router.put("/update-news/:id", putNews);
 router.post("/add-news", postNews);
 router.delete("/delete-news/:id", deleteNews);
+
+// Routers for SummaryService PUT
+router.put("/update-summary-day-service/:id", putSummaryDayService);
 
 export default router;

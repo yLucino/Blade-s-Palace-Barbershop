@@ -98,7 +98,7 @@ const OpeningHoursSection: React.FC = () => {
             <div className='flex items-center' key={index}>
               <div className="p-1 pl-2 pr-2 bg-slate-400 rounded-full">
                 <p className="text-sm">
-                  {day.name_day_week}: {day.status_open === 'Fechado' ? '' : day.time_open + 'h ás'} {day.status_open === 'Fechado' ? '' : day.time_close + 'h'} {day.status_open === 'Fechado' ? '(Fechado)' : ''}
+                  <span className="text-black font-semibold">{day.name_day_week}:</span> {day.status_open === 'Fechado' ? '' : day.time_open + 'h ás'} {day.status_open === 'Fechado' ? '' : day.time_close + 'h'} {day.status_open === 'Fechado' ? '(Fechado)' : ''}
                 </p>
               </div>
               <IconButton aria-label='edit' onClick={() => handleEditClick(day)}>

@@ -11,6 +11,7 @@ import PriceAndServicesLeftSection from '../../../contents/managementPage/priceA
 import PriceAndServicesRightSection from '../../../contents/managementPage/priceAndServiceRightSection';
 import MonthlyPlanPriceSection from '../../../contents/managementPage/monthlyPlanPriceSection';
 import TeamSection from '../../../contents/managementPage/teamSection';
+import SummaryDayServiceSection from '../../../contents/managementPage/summaryDayServiceSection';
 
 const ManagementAdmin = () => {
 
@@ -47,6 +48,7 @@ const ManagementAdmin = () => {
           <h3 className="mb-1 font-semibold text-xl text-center">Estabelecimento</h3>
           <hr className="border-black mb-3"/>
 
+          <SummaryDayServiceSection />
           <OpeningHoursSection />
           <AddressSection />
           <TelephoneSection />

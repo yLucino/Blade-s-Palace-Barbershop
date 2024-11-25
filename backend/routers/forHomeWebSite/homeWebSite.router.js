@@ -12,6 +12,7 @@ import { getAddress } from "../../controllers/forHomeWebSite/address.controller.
 
 import { getCustomers } from "../../controllers/forHomeWebSite/customer.controller.js";
 import { getNews } from "../../controllers/forHomeWebSite/news.controller.js";
+import { getSummaryDay } from "../../controllers/forHomeWebSite/summaryDay.controller.js";
 
 const router = express.Router();
 
@@ -28,5 +29,6 @@ router.get("/employee-barbers", getEmployeeBarbers);
 router.get("/address", getAddress);
 router.get("/customers", getCustomers);
 router.get("/news", getNews);
+router.get("/summary-day", getSummaryDay);
 
 export default router;
