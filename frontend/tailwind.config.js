@@ -34,6 +34,7 @@ export default {
         BrownDark: '#593831',
       },
       height: {
+        '680': '680px',
         '600': '600px',
         '550': '550px',
         '450': '450px',
@@ -47,6 +48,7 @@ export default {
       },
       screens: {
         '3xl': '1638px',
+        '1361s': '1361px',
         '1xl': '1074px'
       },
       zIndex: {

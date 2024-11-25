@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const ServicesList_Right: React.FC = () => {
   // hover to shows exclusive price for plan subscribers
   const containerRef = useRef<HTMLDivElement>(null);
-  const [services, setServices] = useState<Services[]>([]);
+  const [ services, setServices ] = useState<Services[]>([]);
 
   useEffect(() => {
     const getAllServicesRight = async () => {
@@ -44,7 +44,7 @@ const ServicesList_Right: React.FC = () => {
 
   return (
     <>
-      <div ref={containerRef}>
+      <div className={`${services.length > 4 ? '1361s:overflow-y-scroll overflow-y-hidden overflow-x-hidden 1361s:h-680 h-auto 1361s:pt-11 pt-0 1361s:pr-6 pr-0' : ''}`} ref={containerRef}>
         <ul>
           {services.map((service, index) => (
             <li key={index}>

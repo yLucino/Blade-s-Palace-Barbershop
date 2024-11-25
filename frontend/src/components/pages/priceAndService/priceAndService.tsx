@@ -13,7 +13,7 @@ const PriceAndService = () => {
         <div className="title text-4xl">
           <h1>Preços e Serviços</h1>
         </div>
-        <div className="container-cards">
+        <div className="container-cards mb-10">
           <div className="box-cards-left z-10">
             <ServicesList_Left />
           </div>
