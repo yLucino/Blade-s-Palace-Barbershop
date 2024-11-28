@@ -68,25 +68,25 @@ const InfosHeader: React.FC = () => {
 
   return(
     <>
-      <div className='info-location-numberPhone'>
-        <ul>
+      <div>
+        <ul className="flex">
           {address.map((location, index) => (
-            <li className='location disabled ml-10' key={index}
+            <li className='location disabled ml-10 flex items-center' key={index}
             onMouseEnter={() => handleMouseEnterMap(index)}
             onMouseLeave={handleMouseLeaveMap}
             >
-              <a href={location.url_google_maps} target='_blank'>
+              <a className="1500sw:flex hidden items-center" href={location.url_google_maps} target='_blank'>
                 <i className={`bx bx-map ${isHoveredMap === index ? 'bx-tada' : ''}`}></i>
                 <p title={`CEP: ${location.cep}`}>Nrº {location.number} | {location.street}</p>
               </a>
             </li>
           ))}
           {telephone.map((phone, index) => (
-            <li className='numberPhone disabled ml-10' key={index}
+            <li className='1500sw:flex hidden ml-10' key={index}
             onMouseEnter={() => handleMouseEnterPhone(index)}
             onMouseLeave={handleMouseLeavePhone}
             >
-              <a href={phone.url_api_whatsapp} target='_blank'>
+              <a className="flex items-center" href={phone.url_api_whatsapp} target='_blank'>
                 <i className={`bx bx-phone ${isHoveredPhone === index ? 'bx-tada' : ''}`}></i>
                 <p>{phone.number}</p>
               </a>

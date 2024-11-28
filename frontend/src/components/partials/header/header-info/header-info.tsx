@@ -1,5 +1,3 @@
-import './header-info-style.css';
-import './header-info-responsive.css';
 import InfosHeader from '../../../contents/infos_Header/infosHeader';
 
 import { daysOfWeek } from '../../../../app/shared/scripts/scriptsOfDate';
@@ -82,12 +80,12 @@ const HeaderInfo: React.FC = () => {
     if (dayArrayInfo.length > 0) {
       try {
         if (dayArrayInfo[0].status_open === 'Fechado') {
-          return <span>Estamos fechados</span>
+          return <span className='mr-5'>Estamos fechados</span>
         } else {
           if (hoursNow >= Number(dayArrayInfo[0].time_open) && hoursNow <= Number(dayArrayInfo[0].time_close)) {
-            return <span>Estamos abertos</span>
+            return <span className='mr-5'>Estamos abertos</span>
           } else {
-            return <span>Estamos fechados</span>
+            return <span className='mr-5'>Estamos fechados</span>
           }
         }
       } catch (error) {
@@ -98,9 +96,9 @@ const HeaderInfo: React.FC = () => {
 
   return (
     <>
-      <div className='header-info'>
-        <div className='info-open-establishment'>
-          <p>
+      <div className='flex 1070sw:flex-row flex-col absolute w-full pt-10 pb-10 1070sw:pl-50 1070sw:pr-50 pl-10 pr-10 justify-between items-center bg-BlueDark text-GoldenLight uppercase font-semibold text-13 z-1100'>
+        <div>
+          <p className='flex items-center 1070sw:mb-0 mb-2'>
             {serviceSituation()}
             <i className='bx bx-time-five' ></i>
             {summaryDay?.summary}

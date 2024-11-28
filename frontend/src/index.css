@@ -58,6 +58,12 @@ button:active {
   transform: scale(.95);
 }
 
+.bx {
+  color: var(--color-Golden);
+  font-size: 25px;
+  margin-right: 5px;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   background: var(--color-BlueDark);

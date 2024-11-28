@@ -47,8 +47,11 @@ export default {
         '1500': '1500px'
       },
       screens: {
-        '3xl': '1638px',
+        '1500sw': '1500px',
         '1361s': '1361px',
+        '1070sw': '1070px',
+        '860sw': '860px',
+        '3xl': '1638px',
         '1xl': '1074px'
       },
       zIndex: {
@@ -56,6 +59,13 @@ export default {
       },
       boxShadow: {
         'inset-GoldenDark': 'inset 0 0 10px #977656'
+      },
+      padding: {
+        '10': '10px',
+        '50': '50px',
+      },
+      fontSize: {
+        '13': '13px'
       }
     },
   },
