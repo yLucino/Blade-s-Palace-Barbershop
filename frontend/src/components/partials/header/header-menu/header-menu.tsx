@@ -1,5 +1,4 @@
 import './header-menu-login-style.css'
-import './header-menu-responsive.css';
 import logoImage from '../../../../../public/assets/image/header-img/LogoIcon.png';
 
 import React, { useState, useEffect } from 'react';
@@ -63,15 +62,15 @@ const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => voi
 
   return (
     <>
-      <div className={`flex absolute bg-transparent justify-between w-full pt-10 pb-10 pl-40 pr-40 items-center top-11 z-1100 ${isScrolled ? '!fixed !top-0 shadow-scrollOnShadow !rounded-scrollOnRadius backdrop-blur-xl' : ''}`}>
+      <div className={`flex absolute bg-transparent justify-between w-full pl-1 pr-1 1070sw:pt-10 1070sw:pb-10 1070sw:pl-40 1070sw:pr-40 items-center top-24 1070sw:top-11 z-1100 ${isScrolled ? '!fixed !top-0 shadow-scrollOnShadow !rounded-scrollOnRadius backdrop-blur-xl' : ''}`}>
         <div>
           <a href="#">
-            <img className='size-12 ml-2' src={logoImage} alt="logo" />
+            <img className='750sw:size-12 size-6 750sw:ml-2 ' src={logoImage} alt="logo" />
           </a>
         </div>
         <div>
           <nav>
-            <ul className='flex gap-10 uppercase text-sm font-bold text-GoldenLight'>
+            <ul className='flex 850sw:gap-10 750sw:gap-6 gap-2 uppercase 850sw:text-sm 750sw:text-xs text-10 font-bold text-GoldenLight'>
               <li>
                 <a href="#inicio">Inicio</a>
               </li>
@@ -93,14 +92,14 @@ const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => voi
         <div className='box-nav-services'>
           <nav>
             <ul className='flex gap-5 transition-all uppercase text-sm font-bold text-GoldenLight'>
-              <li className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-                <div className="bar1"></div>
-                <div className="bar2"></div>
-                <div className="bar3"></div>
+              <li className={`1070sw:hidden flex flex-col justify-between 750sw:w-7 w-5 h-5 cursor-pointer mr-2 ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                <div className={`w-full h-0.5 bg-Golden transition-all ${isOpen ? '-rotate-45 !translate-x-[-5px] !translate-y-[9px]' : ''}`}></div>
+                <div className={`w-full h-0.5 bg-Golden transition-all ${isOpen ? 'opacity-0' : ''}`}></div>
+                <div className={`w-full h-0.5 bg-Golden transition-all ${isOpen ? 'rotate-45 !translate-x-[-5px] !translate-y-[-8px]' : ''}`}></div>
               </li>
-              <li className={`menu-content hover:shadow-scrollOnShadow hover:backdrop-blur-3xl cursor-pointer rounded-xl transition-all ${isOpen ? 'open' : ''}`}>
-                <a className='flex items-center m-5 ' onClick={toggleHidden} href="#administrador">
-                  <i className='bx bx-cog'></i>
+              <li className={`1070sw:block ${!isOpen ? 'hidden' : 'block'} 1070sw:static absolute 1070sw:top-0 750sw:top-14 top-10 1070sw:right-0 right-2 w-auto 1070sw:bg-transparent bg-BlueDark hover:shadow-scrollOnShadow hover:backdrop-blur-3xl cursor-pointer rounded-xl transition-all ${isOpen ? 'open' : ''}`}>
+                <a className='flex items-center 750sw:m-5 m-3 750sw:text-sm text-xs ' onClick={toggleHidden} href="#administrador">
+                  <i className='bx bx-cog'></i> 
                   Administrador
                 </a>
               </li>

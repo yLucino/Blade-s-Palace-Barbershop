@@ -48,13 +48,16 @@ export default {
       },
       screens: {
         '1500sw': '1500px',
-        '1361s': '1361px',
+        '1361sw': '1361px',
         '1070sw': '1070px',
         '860sw': '860px',
+        '850sw': '850px',
+        '750sw': '750px',
         '3xl': '1638px',
         '1xl': '1074px'
       },
       zIndex: {
+        '1000': '1000',
         '1100': '1100'
       },
       boxShadow: {
@@ -67,11 +70,12 @@ export default {
         '40': '40px'
       },
       fontSize: {
-        '13': '13px'
+        '10': '10px',
+        '13': '13px',
       },
       borderRadius: {
         'scrollOnRadius': '0 0 20px 20px',
-      }
+      },
     },
   },
   plugins: [],

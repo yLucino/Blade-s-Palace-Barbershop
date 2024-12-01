@@ -44,7 +44,7 @@ const ServicesList_Right: React.FC = () => {
 
   return (
     <>
-      <div className={`${services.length > 4 ? '1361s:overflow-y-scroll overflow-y-hidden overflow-x-hidden 1361s:h-680 h-auto 1361s:pt-11 pt-0 1361s:pr-6 pr-0' : ''}`} ref={containerRef}>
+      <div className={`${services.length > 4 ? '1361sw:overflow-y-scroll overflow-y-hidden overflow-x-hidden 1361sw:h-680 h-auto 1361sw:pt-11 pt-0 1361sw:pr-6 pr-0' : ''}`} ref={containerRef}>
         <ul>
           {services.map((service, index) => (
             <li key={index}>
