@@ -1,4 +1,3 @@
-import './header-menu-style.css';
 import './header-menu-login-style.css'
 import './header-menu-responsive.css';
 import logoImage from '../../../../../public/assets/image/header-img/LogoIcon.png';
@@ -64,15 +63,15 @@ const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => voi
 
   return (
     <>
-      <div className={`header-menu ${isScrolled ? 'scrollOn' : ''}`}>
-        <div className='box-logo'>
+      <div className={`flex absolute bg-transparent justify-between w-full pt-10 pb-10 pl-40 pr-40 items-center top-11 z-1100 ${isScrolled ? '!fixed !top-0 shadow-scrollOnShadow !rounded-scrollOnRadius backdrop-blur-xl' : ''}`}>
+        <div>
           <a href="#">
-            <img className='logo' src={logoImage} alt="logo" />
+            <img className='size-12 ml-2' src={logoImage} alt="logo" />
           </a>
         </div>
-        <div className='box-nav-menu'>
+        <div>
           <nav>
-            <ul className='text-GoldenLight'>
+            <ul className='flex gap-10 uppercase text-sm font-bold text-GoldenLight'>
               <li>
                 <a href="#inicio">Inicio</a>
               </li>
@@ -93,14 +92,14 @@ const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => voi
         </div>
         <div className='box-nav-services'>
           <nav>
-            <ul>
+            <ul className='flex gap-5 transition-all uppercase text-sm font-bold text-GoldenLight'>
               <li className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
                 <div className="bar1"></div>
                 <div className="bar2"></div>
                 <div className="bar3"></div>
               </li>
-              <li className={`menu-content ${isOpen ? 'open' : ''}`}>
-                <a className='text-GoldenLight' onClick={toggleHidden} href="#administrador">
+              <li className={`menu-content hover:shadow-scrollOnShadow hover:backdrop-blur-3xl cursor-pointer rounded-xl transition-all ${isOpen ? 'open' : ''}`}>
+                <a className='flex items-center m-5 ' onClick={toggleHidden} href="#administrador">
                   <i className='bx bx-cog'></i>
                   Administrador
                 </a>

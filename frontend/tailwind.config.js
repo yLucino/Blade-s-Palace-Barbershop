@@ -58,14 +58,19 @@ export default {
         '1100': '1100'
       },
       boxShadow: {
-        'inset-GoldenDark': 'inset 0 0 10px #977656'
+        'inset-GoldenDark': 'inset 0 0 10px #977656',
+        'scrollOnShadow': '0px 17px 20px -10px rgba(0, 0, 0, 0.692)',
       },
       padding: {
         '10': '10px',
         '50': '50px',
+        '40': '40px'
       },
       fontSize: {
         '13': '13px'
+      },
+      borderRadius: {
+        'scrollOnRadius': '0 0 20px 20px',
       }
     },
   },
