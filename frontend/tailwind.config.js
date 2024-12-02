@@ -32,11 +32,13 @@ export default {
         GrayLight: '#2e2e2e',
         Brown: '#8C6D51',
         BrownDark: '#593831',
+        BlurBlueBg: '#0053fa11',
       },
       height: {
         '680': '680px',
         '600': '600px',
         '550': '550px',
+        '480': '480px',
         '450': '450px',
         '220': '220px',
         '50': '50px'
@@ -45,6 +47,9 @@ export default {
         '320': '320px',
         '550': '550px',
         '1500': '1500px'
+      },
+      maxWidth: {
+        '400': '400px',
       },
       screens: {
         '1500sw': '1500px',

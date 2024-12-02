@@ -1,4 +1,3 @@
-import './header-menu-login-style.css'
 import logoImage from '../../../../../public/assets/image/header-img/LogoIcon.png';
 
 import React, { useState, useEffect } from 'react';
@@ -106,30 +105,33 @@ const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => voi
             </ul>
           </nav>
         </div>
-        <div className={`container-adm ${isHidden ? 'hidden' : ''}`}>
-          <div className={`loginAdmin ${isHidden ? 'hidden' : ''}`}>
-            <div className="container-loginAdmin">
-              <button onClick={toggleHidden} className='btn-close'>
-                <i className='bx bx-x'></i>
+        
+        <div className={`absolute w-full h-screen left-0 right-0 top-0 bottom-0 ${isHidden ? 'hidden' : ''}`}>
+          <div className={`flex items-center justify-center fixed bottom-0 top-0 left-0 right-0 bg-BlurBlueBg w-full h-screen z-1000 ${isHidden ? 'hidden' : ''}`}>
+            <div className="bg-White max-w-400 h-480 text-center p-12 rounded-xl shadow-scrollOnShadow relative">
+              <button className='flex absolute justify-center bg-Yellow w-10 h-10 items-center rounded-tr-[10px] rounded-bl-[10px] border-none right-0 top-0 transition-all z-1100 hover:bg-YellowDark cursor-pointer' onClick={toggleHidden}>
+                <i style={{color: '#000000'}} className='bx bx-x !m-0'></i>
               </button>
-              <div className="box-content">
-                <div className="adm-info flex flex-col items-center">
-                  <h1 className='text-3xl'>Bem-vindo ADM!</h1>
-                  <img className='logo shadow-xl mt-3 rounded-full' src={logoImage} alt="logo" />
+              <div className="flex flex-col justify-between h-full">
+                <div className="flex flex-col items-center">
+                  <h1 className='text-3xl font-bold'>Bem-vindo ADM!</h1>
+                  <img className='size-36 mb-7 shadow-xl mt-3 rounded-full' src={logoImage} alt="logo" />
                 </div>
-                <div className="form-inputs">
-                  <form onSubmit={handleSubmit}>
+                <div>
+                  <form className='flex flex-col' onSubmit={handleSubmit}>
                     <TextField onChange={e => setUser(e.target.value)} variant='filled' sx={{marginBottom: '6px'}} size='small' label='Usuário' type='text' required autoComplete='off'/>
 
                     <TextField onChange={e => setPassword(e.target.value)} variant='filled' sx={{marginBottom: '20px'}} size='small' label='Senha' type='password' required autoComplete='off'/>
 
-                    <Button type='submit' size='large' variant='contained' sx={{ color: 'black'}}>
+                    <Button type='submit' size='large' variant='contained' sx={{ color: 'black', backgroundColor: '#fed35b', fontWeight: 'bold'}}>
                       Entrar
                     </Button>
                   </form>
                 </div>
-                <div className="help-info">
-                  <p>Precisa de ajuda? <a href="mailto:dev.yluciano@gmail.com" target="_blank">clique aqui!</a></p>
+                <div>
+                  <p className='text-13 mt-2'>Precisa de ajuda? 
+                    <a className='text-BlueLight hover:underline' href="mailto:dev.yluciano@gmail.com" target="_blank"> clique aqui!</a>
+                  </p>
                 </div>
               </div>
             </div>
