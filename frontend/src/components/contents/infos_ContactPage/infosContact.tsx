@@ -34,44 +34,44 @@ const InfosContact: React.FC = () => {
   return(
     <>
       <nav>
-        <ul>
+        <ul className="flex justify-center ml-12 mr-12 border border-t-0 border-l-0 border-r-0 border-b-GrayLight">
           {socialMedia.map((social, index) => (
-            <li className='btn-social' key={index}>
+            <li className='pl-3 pb-5' key={index}>
               <a href={social.url} title={`${social.name} Blade's Palace BarberShop`} target='_blank'>
-                <i className={`bx bxl-${social.name}${social.name === 'instagram' ? '-alt' : social.name === 'facebook' ?  '-circle' : ''}`}></i>
+                <i style={{height: '30px', width: '30px'}} className={`bx bxl-${social.name}${social.name === 'instagram' ? '-alt' : social.name === 'facebook' ?  '-circle' : ''} ml-3 mb-5 !text-3xl hover:scale-90 transition-all`}></i>
               </a>
             </li>
           ))}
-          <li className='btn-social'>
+          <li className='pl-3 pb-5'>
             <a href="https://www.instagram.com/canalagenteviu/" title='Instagram Canal AgenteViu!' target='_blank'>
-              <i className='bx bxl-instagram-alt'></i>
+              <i className='bx bxl-instagram-alt ml-3 mb-5 !text-3xl hover:scale-90 transition-all'></i>
             </a>
           </li>
-          <li className='btn-social'>
+          <li className='pl-3 pb-5'>
             <a href="https://www.tiktok.com/@agente.viu?_t=8mLWgZBrwnO&_r=1" title='TikTok AgenteViu' target='_blank'>
-              <i className='bx bxl-tiktok'></i>
+              <i className='bx bxl-tiktok ml-3 mb-5 !text-3xl hover:scale-90 transition-all'></i>
             </a>
           </li>
-          <li className='btn-social'>
+          <li className='pl-3 pb-5'>
             <a href="https://www.youtube.com/@AGENTEVIU" title='Youtube AgenteViu' target='_blank'>
-              <i className='bx bxl-youtube'></i>
+              <i className='bx bxl-youtube ml-3 mb-5 !text-3xl hover:scale-90 transition-all'></i>
             </a>
           </li>
         </ul>
       </nav>
-      <div className="container-text">
-        <div className="location">
+      <div className="mt-3">
+        <div>
           {address.map((location, index) => (
-            <p key={index}>
+            <p className="700sw:w-auto w-96 700sw:mb-0 mb-1 mr-auto ml-auto text-center text-sampleTextLight font-extralight text-13 " key={index}>
               Estabelecimento {index + 1}, {location.street}, {location.number} - {location.district}, {location.city} - {location.state}, {location.cep}
             </p>
           ))}
         </div>
-        <div className="copyright">
-          <p>Copyright &copy; by Blade’s Palace Barbershop | All Rights Reserved.</p>
+        <div>
+          <p className="700sw:w-auto w-96 700sw:mb-0 mb-1 mr-auto ml-auto text-center text-sampleTextLight font-extralight text-13 underline">Copyright &copy; by Blade’s Palace Barbershop | All Rights Reserved.</p>
         </div>
-        <div className="developerBy">
-          <p>WebSite developed by <a className="text-Golden hover:underline" href="https://github.com/yLucino" target='_blank'>yLucino</a></p>
+        <div>
+          <p className="700sw:w-auto w-96 700sw:mb-0 mb-1 mr-auto ml-auto text-center text-sampleTextLight font-extralight text-13 ">WebSite developed by <a className="text-Golden hover:underline" href="https://github.com/yLucino" target='_blank'>yLucino</a></p>
         </div>
       </div>
     </>
