@@ -52,7 +52,7 @@ export const PopUp = () => {
           </div>
           <div className="w-full text-center mr-5 mt-5">
             <h1 className="text-BlueLight">Temos novidades para você!</h1>
-            <p className="text-sm">Novos Serviços e Avisos</p>
+            <p className="text-sm">Serviços, Avisos & Novidades</p>
           </div>
           <div className="flex mt-2 justify-center">
             <a href="#novidades">

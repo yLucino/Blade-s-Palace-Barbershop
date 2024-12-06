@@ -36,27 +36,12 @@ const InfosContact: React.FC = () => {
       <nav>
         <ul className="flex justify-center ml-12 mr-12 border border-t-0 border-l-0 border-r-0 border-b-GrayLight">
           {socialMedia.map((social, index) => (
-            <li className='pl-3 pb-5' key={index}>
+            <li className='pr-3 pl-3 pb-5' key={index}>
               <a href={social.url} title={`${social.name} Blade's Palace BarberShop`} target='_blank'>
-                <i style={{height: '30px', width: '30px'}} className={`bx bxl-${social.name}${social.name === 'instagram' ? '-alt' : social.name === 'facebook' ?  '-circle' : ''} ml-3 mb-5 !text-3xl hover:scale-90 transition-all`}></i>
+                <i style={{height: '30px', width: '30px'}} className={`bx bxl-${social.name}${social.name === 'instagram' ? '-alt' : social.name === 'facebook' ?  '-circle' : ''} mb-5 !text-3xl hover:scale-90 transition-all`}></i>
               </a>
             </li>
           ))}
-          <li className='pl-3 pb-5'>
-            <a href="https://www.instagram.com/canalagenteviu/" title='Instagram Canal AgenteViu!' target='_blank'>
-              <i className='bx bxl-instagram-alt ml-3 mb-5 !text-3xl hover:scale-90 transition-all'></i>
-            </a>
-          </li>
-          <li className='pl-3 pb-5'>
-            <a href="https://www.tiktok.com/@agente.viu?_t=8mLWgZBrwnO&_r=1" title='TikTok AgenteViu' target='_blank'>
-              <i className='bx bxl-tiktok ml-3 mb-5 !text-3xl hover:scale-90 transition-all'></i>
-            </a>
-          </li>
-          <li className='pl-3 pb-5'>
-            <a href="https://www.youtube.com/@AGENTEVIU" title='Youtube AgenteViu' target='_blank'>
-              <i className='bx bxl-youtube ml-3 mb-5 !text-3xl hover:scale-90 transition-all'></i>
-            </a>
-          </li>
         </ul>
       </nav>
       <div className="mt-3">

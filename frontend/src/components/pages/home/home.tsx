@@ -57,9 +57,9 @@ const Home = () => {
               <a href="#precos-e-servicos"><button>Serviços</button></a>
             </li>
             <li className='btn-to-schedule'>
-              <a href="#novidades">
+              <a href="https://cashbarber.com.br/bladespalace/inicio/agendamento/novo-agendamento" target='_blank'>
                 <button className='flex items-center justify-center bg-ShadowDark h-50 border border-GoldenDark hover:shadow-inset-GoldenDark transition-all text-GoldenDark'>
-                  Novidades
+                  Agendamento
                 </button>
               </a>
             </li>
