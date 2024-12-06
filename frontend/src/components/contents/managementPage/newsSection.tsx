@@ -140,7 +140,7 @@ const NewsSection = () => {
     <>
       <div className='flex flex-wrap gap-5 h-450 overflow-y-scroll'>
         {allNews.map((news, index) => (
-          <div className='flex items-center' key={index}>
+          <div className='flex self-start' key={index}>
             <div className="p-1 pl-2 pr-2 bg-slate-400 rounded-xl">
               <img className="w-40 rounded-lg mt-1" src={news.imageUrl} alt={news.subTitle} />
               <hr className="mt-2 mb-2 border-black"/>

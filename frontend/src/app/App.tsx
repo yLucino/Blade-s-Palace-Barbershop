@@ -29,8 +29,8 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Index onLoginSuccess={handleLoginSuccess} />}/>
-          <Route path='/info-service/left/:title/:id' element={<InfoServiceLeft />}/>
-          <Route path='/info-service/right/:title/:id' element={<InfoServiceRight />}/>
+          <Route path='/info-service/:section/:title/:id' element={<InfoServiceLeft />}/>
+          <Route path='/info-service/:section/:title/:id' element={<InfoServiceRight />}/>
           <Route path='/info-plan/monthly-plan' element={<InfoMonthlyPlan />}/>
           <Route path='/admin/home' element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>

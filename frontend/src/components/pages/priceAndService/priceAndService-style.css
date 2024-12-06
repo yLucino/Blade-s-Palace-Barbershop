@@ -40,7 +40,7 @@
   background: var(--color-Blue);
   text-align: center;
   padding: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   border-radius: 20px;
   transition: .3s;
   z-index: 1;
@@ -136,7 +136,7 @@
   transform: scale(1.05);
   background: var(--color-Yellow);
   text-align: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 20px;

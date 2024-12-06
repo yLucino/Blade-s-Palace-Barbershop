@@ -46,10 +46,6 @@
   display: flex;
 }
 
-.nav-home-buttons nav ul li {
-  margin-right: 20px;
-}
-
 .nav-home-buttons nav ul li button { 
   padding: 15px;
   width: 157px;

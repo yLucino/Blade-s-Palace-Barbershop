@@ -52,7 +52,7 @@ const Home = () => {
       </div>
       <div className='nav-home-buttons'>
         <nav>
-          <ul>
+          <ul className='flex flex-wrap gap-2'>
             <li className='btn-book-haircut'>
               <a href="#precos-e-servicos"><button>Serviços</button></a>
             </li>
@@ -73,8 +73,8 @@ const Home = () => {
       </div>
       <SocialMedia />
       {isModalOpen && hours && (
-        <div className='fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center'>
-          <div className="bg-BlueDark p-4 rounded shadow-lg w-96 flex flex-col items-center">
+        <div className='fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-1000'>
+          <div className="bg-BlueDark p-4 rounded-md shadow-lg w-96 flex flex-col items-center">
             <h2 className="text-lg text-GoldenLight font-bold mb-4">Horários de Atendimento</h2>
 
             {hours.map((day, index) => (

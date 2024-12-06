@@ -9,7 +9,7 @@ export const InfoServiceLeft = () => {
     <>
       <div className="bg-White w-full h-screen">
         <HeaderInfo />
-        <div className="flex flex-col p-10 pt-40 h-screen justify-between">
+        <div className="flex flex-col p-10 pt-36 justify-center">
           <MenuButton />
           <InfoServiceIndex />
           <div className="mt-10">

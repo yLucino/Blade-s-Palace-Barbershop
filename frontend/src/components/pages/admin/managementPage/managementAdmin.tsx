@@ -38,7 +38,7 @@ const ManagementAdmin = () => {
           </li>
         </ul>
       </nav>
-      <div className="text-center">
+      <div className="pt-12 text-center">
         <h1 className="text-4xl font-AntonSC tracking-wider text-Yellow">Gerenciamento do Site</h1>
         <p className="text-gray-900 font-medium text-sm">gerencie dados e informações essenciais que podem mudar com o tempo</p>
       </div>

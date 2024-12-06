@@ -25,7 +25,7 @@ const OpenCommandAdmin = () => {
           </li>
         </ul>
       </nav>
-      <h1 className="text-4xl font-AntonSC tracking-wider text-Yellow">Open Command Admin</h1>
+      <h1 className="pt-12 text-4xl font-AntonSC tracking-wider text-Yellow">Open Command Admin</h1>
       <div className="flex h-screen justify-center items-center">
         <div className="flex flex-col items-center bg-slate-600 p-10 rounded-lg">
           <p className="text-white">Precisa do desenvolvimento desda página?</p>

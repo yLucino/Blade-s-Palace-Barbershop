@@ -61,7 +61,7 @@ const HeaderMenu = ({ onLoginSuccess }: { onLoginSuccess: (token: string) => voi
 
   return (
     <>
-      <div className={`flex absolute bg-transparent justify-between w-full pl-1 pr-1 1070sw:pt-10 1070sw:pb-10 1070sw:pl-40 1070sw:pr-40 items-center top-24 1070sw:top-11 z-1100 ${isScrolled ? '!fixed !top-0 shadow-scrollOnShadow !rounded-scrollOnRadius backdrop-blur-xl' : ''}`}>
+      <div className={`flex absolute bg-transparent justify-between w-full pl-2 pr-2 pt-10 pb-10 1070sw:pl-40 1070sw:pr-40 items-center top-24 1070sw:top-11 z-1100 ${isScrolled ? '!fixed !top-0 shadow-scrollOnShadow !rounded-scrollOnRadius backdrop-blur-xl' : ''}`}>
         <div>
           <a href="#">
             <img className='750sw:size-12 size-6 750sw:ml-2 ' src={logoImage} alt="logo" />

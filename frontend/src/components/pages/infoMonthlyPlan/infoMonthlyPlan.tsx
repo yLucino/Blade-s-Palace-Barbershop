@@ -32,13 +32,13 @@ const InfoMonthlyPlan = () => {
     <>
       <div>
         <HeaderInfo />
-        <div className="flex flex-col gap-10 p-10 pt-40">
+        <div className="flex flex-col gap-10 p-10 pt-36">
           <MenuButton />
-          <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 bg-GrayBlue p-10 rounded-md">
-            <div className="mr-10">
+          <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 bg-GrayBlue p-10 rounded-md w-5/6 mr-auto ml-auto">
+            <div className="flex justify-center">
               <img className="h-80 rounded-lg" src={monthlyPlan?.imageUrl} alt={monthlyPlan?.title} />
             </div>
-            <div className="flex flex-col justify-evenly">
+            <div className="flex flex-col justify-center items-center text-center ">
               <h1 className="text-white text-3xl font-bold mb-10">{monthlyPlan?.title} - Estilo o Mês Todo!</h1>
               <p className="text-white font-extralight w-2/3">{monthlyPlan?.description}</p>
               <div className="flex flex-col mt-4 w-72 text-center gap-2">
@@ -52,7 +52,7 @@ const InfoMonthlyPlan = () => {
             </div>
           </div>
 
-          <div className="text-center bg-gray-200 p-10 rounded-md">
+          <div className="text-center bg-gray-200 p-10 rounded-md 750sw:w-4/6 w-5/6 mr-auto ml-auto">
             <h2 className="text-Blue font-bold text-xl mb-5">Por que escolher nossa assinatura mensal?</h2>
             <p className="font-extralight">Com nossa Assinatura Mensal, você terá acesso ilimitado aos nossos serviços de corte de cabelo e barba ao longo de todo o mês. Isso significa liberdade para cuidar do seu visual sempre que quiser, sem preocupações e com a qualidade que você merece.</p>
             <hr className="border-gray-400 m-20 mb-5 mt-5" />
@@ -66,7 +66,7 @@ const InfoMonthlyPlan = () => {
             <p className="font-extralight">Você merece o melhor cuidado. Invista em você e garanta um visual impecável o mês inteiro com nosso plano exclusivo. Estamos prontos para receber você a qualquer momento!</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 text-center bg-gray-200 p-10 rounded-md" id="about">
+          <div className="grid grid-cols-1 lg:grid-cols-2 text-center bg-gray-200 p-10 rounded-md 750sw:w-4/6 w-5/6 mr-auto ml-auto mb-10" id="about">
             <div className="lg:mb-0 mb-20">
               <h2 className="text-lg font-bold text-Blue mb-5">Plano Completo</h2>
               <h3 className="mb-2 text-Blue font-semibold">💈Cabelo + Barba (Ilimitados)</h3>

@@ -31,7 +31,7 @@ const NewsAdmin = () => {
             </li>
           </ul>
         </nav>
-        <div className='text-center'>
+        <div className='pt-12 text-center'>
           <h1 className="text-4xl font-AntonSC tracking-wider text-Yellow">Gerencie as suas Novidades & Avisos</h1>
           <p className="text-gray-900 font-medium text-sm">Adicione, edite e remova as novidades e avisos</p>
         </div>
