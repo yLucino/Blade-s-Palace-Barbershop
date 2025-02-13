@@ -93,7 +93,7 @@ const InfosHeader: React.FC = () => {
             </li>
           ))}
         </ul>
-        <div className="2xl:hidden">
+        <div className="1500sw:hidden">
           <Button variant="outlined" sx={{color: '#fed35b', borderColor: '#fed35b', margin: '0 4px'}} size="small" onClick={() => handleAddressClick()}>Endereços</Button>
           <Button variant="outlined" sx={{color: '#fed35b', borderColor: '#fed35b', margin: '0 4px'}} size="small" onClick={() => handleTelephoneClick()}>Telefones</Button>
         </div>
